@@ -1027,7 +1027,7 @@ gg.alert(
 
 ----------- OFFSET LIST ----------------
 local offsets = {
-    ["28.2.169"] = {
+    ["28.3.175"] = {
         Remove=0x318a664, --SVInventory::Remove
 CanExpandWithCoins=0x3264468, --LandExpansionManager::CanExpandWithCoins
 GetItemCost=0x3246df8, --ItemManager::GetItemCost
