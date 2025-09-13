@@ -1095,6 +1095,7 @@ setValue(currentOffset.set_CheaterTrackingEnabled, 4, "~A8 RET")
 setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
 
+gg.setVisible(false)
 x = "BoatRaceV4Context" 
 o = 0x18A --<CheaterTrackingEnabled>k__BackingField
 t = 1 
