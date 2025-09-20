@@ -1057,6 +1057,7 @@ Start=0x2a49ad8, --ZyngaPlayerSuspensionManager::Start
 get_amount=0x32a257c, --ProtoQuestReward::get_amount
 get_GetCurrentLeaguePersonalQuota=0x3739cf0, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
 get_personalQuotaCompleted=0x2bd9b3c, --BaseBoatRaceContext::get_personalQuotaCompleted
+get_bonusTaskCount=0x2BD9AFC,--Game.StateMachine.Machines.BaseBoatRace.BaseBoatRaceContext::get_bonusTaskCount
 get_GetBonusTaskSkipPrice=0x2634468, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
 getAmount=0x32a3530, --ProtoQuestTask::getAmount
 set_MyWeeklyContribution=0x379b1dc, --CoopOrderHelpContext::set_MyWeeklyContribution
@@ -1096,29 +1097,16 @@ setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
 
 gg.setVisible(false)
-x = "BoatRaceV4Context" 
-o = 0x18A --<CheaterTrackingEnabled>k__BackingField
-t = 1 
-findClass()
-
-local count = gg.getResultsCount()
-if count == 0 then
-    gg.toast("💥")
+x="BoatRaceV4Context"
+o=0xF0 t=4 findClass()
+x=3 t=4 refineNum()
+o=0x9A t=1 applyOffset()
+local count=gg.getResultsCount()
+if count==0 then gg.toast("Error 99")
 else
-    x = 1 
-    t = 1 
-    refineNum()
-
-    local count2 = gg.getResultsCount()
-    if count2 == 0 then
-        gg.toast("💥")
-    else
-        x = 0 
-        t = 1 
-        editAll()
-    end
-    clearAll()
+x=0 t=1 editAll()
 end
+clearAll()
   
 
 function Translate(InputText, SystemLangCode, TargetLangCode)
