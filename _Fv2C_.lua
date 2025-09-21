@@ -12,7 +12,7 @@ end
 local passwords = {"uservip1", "cheatcode", "modmenu2025", "julfikur", "manav"}
 
 -- Check if key file exists
-local keyPath = "sdcard/fvc"
+local keyPath = "/storage/emulated/0/fvc"
 if not fileExists(keyPath) then
   gg.alert("Required key file not found!")
   os.exit()
