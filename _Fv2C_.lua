@@ -5,6 +5,7 @@ local function fileExists(path)
         return true
     else
         return false
+    end
 end
 
 -- Default password list
