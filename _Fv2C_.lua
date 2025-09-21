@@ -5,7 +5,6 @@ local function fileExists(path)
         return true
     else
         return false
-    end
 end
 
 -- Default password list
@@ -13,7 +12,8 @@ local passwords = {
     "uservip_1",
     "cheatcode",
     "modmenu2025",
-    "julfikur"
+    "julfikur",
+    "manav"
 }
 
 -- Check if key file exists
