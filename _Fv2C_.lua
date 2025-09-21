@@ -1,3 +1,56 @@
+local function fileExists(path)
+    local file = io.open(path, "r")
+    if file then
+        file:close()
+        return true
+    else
+        return false
+    end
+end
+
+-- Default password list
+local passwords = {
+    "uservip_1",
+    "cheatcode",
+    "modmenu2025",
+    "julfikur"
+}
+
+-- Check if key file exists
+local keyPath = "/sdcard/fvc"
+if not fileExists(keyPath) then
+    gg.alert("Required key file not found!")
+    os.exit()
+end
+
+-- Read key file
+local file = io.open(keyPath, "r")
+local key = file:read("*a") -- read all contents
+file:close()
+
+-- Trim spaces/newlines
+key = key:match("^%s*(.-)%s*$")
+
+-- Check against default passwords
+local valid = false
+for _, pass in ipairs(passwords) do
+    if key == pass then
+        valid = true
+        break
+    end
+end
+
+if not valid then
+    gg.alert("Invalid key! Access denied.")
+    os.exit()
+end
+
+-- If valid, continue rest of code
+gg.toast("Key verified. Access granted!")
+-- your other codes here
+
+
+
 local gg = gg
 local info = gg.getTargetInfo()
 local orig = {}
@@ -1027,52 +1080,54 @@ gg.alert(
 
 ----------- OFFSET LIST ----------------
 local offsets = {
-    ["28.3.175"] = {
-        Remove=0x318a664, --SVInventory::Remove
-CanExpandWithCoins=0x3264468, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x3246df8, --ItemManager::GetItemCost
-GetFastFinishCost=0x34e5820, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2876c70, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x29cd550, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x29cd5c0, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x2df0360, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x2df21a8, --AllianceManager::get_HandsToSend
-CreateOffer=0x36c58ec, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x36b8870, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x36bc4c4, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x264a96c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x264ab0c, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x264af00, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x30c6d04, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x30c6e40, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x37db868, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x356f544, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x3771adc, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x3765938, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x3765940, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x37720c8, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2d11a14, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2d11a1c, --ZyngaUsersession::set_Suspended
-Start=0x2a49ad8, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x32a257c, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x3739cf0, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2bd9b3c, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2BD9AFC,--Game.StateMachine.Machines.BaseBoatRace.BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2634468, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x32a3530, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x379b1dc, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2a1d630, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x2e9439c, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x2f61c98, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x3203abc, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x32ab294, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x34b2aa4, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x36f88b0, --SocialDailyBonusManager::get_SpinLeft
-get_ServerTime=0x37b3ffc, --CountyFairContext::get_ServerTime
+    ["28.4.177"] = {
+        Remove=0x31bec2c,  -- SVInventory::Remove
+        CanExpandWithCoins=0x32b3968,  -- LandExpansionManager::CanExpandWithCoins
+        GetItemCost=0x32962f8,  -- ItemManager::GetItemCost
+        GetFastFinishCost=0x351ce2c,  -- SVFastFinish::GetFastFinishCost
+        CalculateBuyThroughCost=0x28b6cec,  -- MerchantOfferCell::CalculateBuyThroughCost
+        GetCraftingTimeMultiplierForBuildingLevel=0x2a0dc84,  -- UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
+        GetCountyFairPointsMultiplierForBuildingLevel=0x2a0dcf4,  -- UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
+        get_KnightRequestIntervalSeconds=0x2e30fb8,  -- AllianceKnightsManager::get_KnightRequestIntervalSeconds
+        get_HandsToSend=0x2e32e00,  -- AllianceManager::get_HandsToSend
+        CreateOffer=0x373d008,  -- SeafarerManager::CreateOffer
+        GetAutoBuyTime=0x372fe94,  -- SeafarerManager::GetAutoBuyTime
+        GetNumCoopOnlySlotsInUse=0x3733b88,  -- SeafarerManager::GetNumCoopOnlySlotsInUse
+        get_getAmountHas=0x268a874,  -- CoopOrderCard_ViewModel::get_getAmountHas
+        get_getAmountRequired=0x268aa14,  -- CoopOrderCard_ViewModel::get_getAmountRequired
+        get_isCoopOrderExpired=0x268ae08,  -- CoopOrderCard_ViewModel::get_isCoopOrderExpired
+        canShowThanksGivingStickers=0x311653c,  -- GameExpression::canShowThanksGivingStickers
+        canShowChristmasStickers=0x3116678,  -- GameExpression::canShowChristmasStickers
+        CanPlayForFree=0x261cb00,  -- GameOfChanceGame::CanPlayForFree
+        get_totalItemsCount=0x35c8550,  -- ProtoStorageLevel::get_totalItemsCount
+        get_IsCheaterFixOn=0x37d0b34,  -- BoatRaceV4Context::get_IsCheaterFixOn
+        get_CheaterTrackingEnabled=0x37c4990,  -- BoatRaceV4Context::get_CheaterTrackingEnabled
+        set_CheaterTrackingEnabled=0x37c4998,  -- BoatRaceV4Context::set_CheaterTrackingEnabled
+        CheaterFixedScore=0x37d1120,  -- BoatRaceV4Context::CheaterFixedScore
+        get_Suspended=0x2d52440,  -- ZyngaUsersession::get_Suspended
+        set_Suspended=0x2d52448,  -- ZyngaUsersession::set_Suspended
+        Start=0x2a8a20c,  -- ZyngaPlayerSuspensionManager::Start
+        get_amount=0x32d72fc,  -- ProtoQuestReward::get_amount
+        get_GetCurrentLeaguePersonalQuota=0x3798d48,  -- BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
+        get_personalQuotaCompleted=0x2c1a270,  -- BaseBoatRaceContext::get_personalQuotaCompleted
+        get_bonusTaskCount=0x2c1a230,  -- BaseBoatRaceContext::get_bonusTaskCount
+        get_GetBonusTaskSkipPrice=0x2674370,  -- BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
+        getAmount=0x32d82b0,  -- ProtoQuestTask::getAmount
+        set_MyWeeklyContribution=0x37fa234,  -- CoopOrderHelpContext::set_MyWeeklyContribution
+        StartCrafting=0x2a72640,  -- WorkshopManager::StartCrafting
+        get_inventoryTokens=0x2ed50f0,  -- BattlePassManager::get_inventoryTokens
+        isEntityObstructed=0x2fa3c94,  -- EntityPlacementController::isEntityObstructed
+        get_IsAvailable=0x325330c,  -- HeroBehavior::get_IsAvailable
+        OnTamperDetected=0x32e0014,  -- SecureVarInt::OnTamperDetected
+        CurrentUnix=0x3502bdc,  -- PartnerAnimalTime::CurrentUnix
+        get_SpinLeft=0x375784c,  -- SocialDailyBonusManager::get_SpinLeft
+        get_groupLimit=0x31c3ba8,  -- ProtoMarketItem::get_groupLimit
     },
+
+    -- Template for future versions:
     -- ["1.2.4"] = {
-    --     Remove = 0x40AFE28,
-    --     CanExpandWithCoins = 0x41853B8
+    --     Remove=0x40AFE28,
+    --     CanExpandWithCoins=0x41853B8,
     -- },
 }
 
@@ -1151,8 +1206,12 @@ local langChoice = gg.choice(
     "🇷🇺 Русский"
 }, nil, "- SELECT YOUR LANGUAGE -\n_______________________________" )
 
-if not langChoice then os.exit() end
+if not langChoice then 
+    langChoice = 1  -- default to English 
+end
+
 local TargetLang = langtable[langChoice][2]
+
 
 ----------- PATCH METHODS -----------
 
@@ -1353,15 +1412,15 @@ end
 
 -- Add these functions for the new feature
 function CFF_ON()
-    setHex(currentOffset.get_ServerTime, "00 00 80 12 C0 03 5F D6")
-    gg.toast("County Fair Fast Finish: ON")
+    setHex(currentOffset.get_groupLimit, "E0 E1 84 D2 C0 03 5F D6")
+    gg.toast("Unlimited Crops/Workshop/Decoration ON")
     -- Add your hack implementation here
     return true
 end
 
 function CFF_OFF()
-    reset(currentOffset.get_ServerTime)
-    gg.toast("County Fair Fast Finish: OFF")
+    reset(currentOffset.get_groupLimit)
+    gg.toast("Unlimited Crops/Workshop/Decoration OFF")
     -- Add your hack removal implementation here
     return nil
 end
@@ -2938,160 +2997,6 @@ function AWI_OFF()
 end
 
 
--- function NC_ON()
-    -- gg.alert("@credit - Ertan Hancer\n@ertanhancer", "","")
-    -- local choice = gg.alert(
-        -- "📝 TUTORIAL 📝\n-----------------\n" ..
-        -- "1️⃣ Go to settings → rename your name to: 12345678901234567890\n" ..
-        -- "2️⃣ Close settings and choose Step 1 complete\n" ..
-        -- "3️⃣ Then choose Go to Step 2",
-        -- "✅ OK, I understand",
-        -- "✅ Step 1 complete",
-        -- "✅ Go to Step 2"
-    -- )
-
-    -- -- Step 0: Copy Name
-    -- if choice == 1 then
-        -- gg.copyText("12345678901234567890")
-        -- gg.toast("Name copied 📋")
-        -- return
-    -- end
-
-    -- -- Step 1: Search & Patch
-    -- if choice == 2 then
-        -- -- Prompt for character length with maximum of 148
-        -- local charLengthPrompt = gg.prompt(
-            -- {"Enter character length (max 148):"},
-            -- {63},
-            -- {"number"}
-        -- )
-        
-        -- if not charLengthPrompt then 
-            -- gg.toast("❌ Cancelled")
-            -- return 
-        -- end
-        
-        -- local charLength = tonumber(charLengthPrompt[1]) or 63
-        
-        -- -- Enforce maximum limit of 148
-        -- if charLength > 148 then
-            -- charLength = 148
-            -- gg.toast("Character length limited to 148")
-        -- elseif charLength < 1 then
-            -- charLength = 1
-            -- gg.toast("Character length set to minimum 1")
-        -- end
-        
-        -- gg.setRanges(gg.REGION_ANONYMOUS)
-        -- gg.searchNumber(";12345678901234567890")
-        -- o = -0x4 t = 4 applyOffset()
-        -- x = 20 t = 4 refineNum()
-        -- x = charLength -- Use the input character length
-        -- t = 4 editAll()
-        -- clearAll()
-        -- gg.alert("✅ Done!\nRestart your game.\nThen choose 'Go to Step 2'.", "OK")
-        -- return
-    -- end
-
-    -- -- Step 2: Rename
-    -- if choice == 3 then
-        -- gg.alert("🔑 Step 2: Change Name", "CONTINUE")
-
-        -- local pr1 = gg.prompt({"Enter new name length:"}, {63}, {[1] = 'number'})
-        -- if not pr1 then return end
-        -- local nameLength = pr1[1]
-
-        -- -- UTF16 Handling
-        -- local function isUTF16(flag)
-            -- return flag and ";" or ":", flag and 2 or 1
-        -- end
-
-        -- -- Replace name with new one
-        -- local function setNewName(editname, playername)
-            -- local stringTag, step = isUTF16(playername[2])
-            -- local results = gg.getResults(gg.getResultsCount())
-            -- local replace, sizes = {}, {}
-            
-            -- gg.clearResults()
-            -- for _, res in ipairs(results) do
-                -- sizes[#sizes+1] = {address = res.address - 0x4, flags = gg.TYPE_WORD}
-                -- local addr = res.address
-                -- for i = 1, #editname do
-                    -- replace[#replace+1] = {address = addr, flags = gg.TYPE_WORD, value = string.byte(editname:sub(i,i))}
-                    -- addr = addr + step
-                -- end
-            -- end
-            
-            -- sizes = gg.getValues(sizes)
-            -- for i, v in ipairs(sizes) do
-                -- if v.value == #playername[1] then
-                    -- v.value = #editname
-                -- end
-            -- end
-
-            -- gg.setValues(sizes)
-            -- gg.setValues(replace)
-            -- gg.alert("✅ New name set: " .. editname)
-        -- end
-
-        -- -- Search for name in memory
-        -- local function findName64(playername, nameLength)
-            -- local stringTag, step = isUTF16(playername[2])
-            -- gg.setRanges(gg.REGION_ANONYMOUS)
-            -- gg.searchNumber(stringTag .. playername[1])
-
-            -- if gg.getResultsCount() == 0 then
-                -- gg.toast("⚠️ Name not found, try again")
-                -- return
-            -- end
-
-            -- local length = #playername[1]
-            -- for i = 1, length do
-                -- gg.refineNumber(stringTag .. playername[1]:sub(1, length))
-                -- length = length - 1
-            -- end
-
-            -- -- Refinements (your fixed pattern)
-            -- local refineVals = {3407923, 3538997, 3670071, 3145785}
-            -- for _, val in ipairs(refineVals) do
-                -- o = 0x4 t = 4 applyOffset()
-                -- x = val t = 4 refineNum()
-                -- gg.sleep(800)
-            -- end
-
-            -- o = -0x14 t = 4 applyOffset()
-            -- x = nameLength t = 4 refineNum()
-            -- o = -0x10 t = 4 applyOffset()
-            -- x = "C351h~FFFF3CAFh" t = 4 refineNum()
-            -- o = 0x14 t = 2 applyOffset()
-
-            -- local newname = gg.prompt({"Enter new name:"}, nil, {[1] = 'text'})
-            -- if newname and newname[1] ~= "" then
-                -- setNewName(newname[1], playername)
-            -- end
-        -- end
-
-        -- -- Start Step 2
-        -- local playername = gg.prompt(
-            -- {"Input current name to search", "UTF-16 Encoding"},
-            -- {"12345678901234567890", true},
-            -- {"text", "checkBox"}
-        -- )
-
-        -- if playername then
-            -- findName64(playername, nameLength)
-        -- end
-
-        -- gg.toast("Step 2 complete ✅")
-        -- return
-    -- end
-
-    -- -- Cancel
-    -- gg.toast("❌ Cancelled")
-    -- return nil
--- end
-
-
 function NC_ON()
     gg.alert("@credit - Ertan Hancer\n@ertanhancer", "","")
     
@@ -3374,7 +3279,7 @@ local menuList = {
 
     -- 🎄 Fair & Workshops
     "🎄 Country Fair Workshop Multiplier",
-    "🎄 County Fair Fast Finish",  -- Added new item here
+    "🍁 Unlimited Crops/Workshop/Decoration",  -- Added new item here
     "⛏️ Workshops Crafting Amount",
 
     -- 🎰 Co-Op
