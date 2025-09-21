@@ -1,54 +1,54 @@
-local function fileExists(path)
-    local file = io.open(path, "r")
-    if file then
-        file:close()
-        return true
-    else
-        return false
-    end
-end
+-- local function fileExists(path)
+    -- local file = io.open(path, "r")
+    -- if file then
+        -- file:close()
+        -- return true
+    -- else
+        -- return false
+    -- end
+-- end
 
--- Default password list
-local passwords = {
-    "uservip_1",
-    "cheatcode",
-    "modmenu2025",
-    "julfikur",
-    "manav"
-}
+-- -- Default password list
+-- local passwords = {
+    -- "uservip_1",
+    -- "cheatcode",
+    -- "modmenu2025",
+    -- "julfikur",
+    -- "manav"
+-- }
 
--- Check if key file exists
-local keyPath = "/sdcard/fvc"
-if not fileExists(keyPath) then
-    gg.alert("Required key file not found!")
-    os.exit()
-end
+-- -- Check if key file exists
+-- local keyPath = "/sdcard/fvc"
+-- if not fileExists(keyPath) then
+    -- gg.alert("Required key file not found!")
+    -- os.exit()
+-- end
 
--- Read key file
-local file = io.open(keyPath, "r")
-local key = file:read("*a") -- read all contents
-file:close()
+-- -- Read key file
+-- local file = io.open(keyPath, "r")
+-- local key = file:read("*a") -- read all contents
+-- file:close()
 
--- Trim spaces/newlines
-key = key:match("^%s*(.-)%s*$")
+-- -- Trim spaces/newlines
+-- key = key:match("^%s*(.-)%s*$")
 
--- Check against default passwords
-local valid = false
-for _, pass in ipairs(passwords) do
-    if key == pass then
-        valid = true
-        break
-    end
-end
+-- -- Check against default passwords
+-- local valid = false
+-- for _, pass in ipairs(passwords) do
+    -- if key == pass then
+        -- valid = true
+        -- break
+    -- end
+-- end
 
-if not valid then
-    gg.alert("Invalid key! Access denied.")
-    os.exit()
-end
+-- if not valid then
+    -- gg.alert("Invalid key! Access denied.")
+    -- os.exit()
+-- end
 
--- If valid, continue rest of code
-gg.toast("Key verified. Access granted!")
--- your other codes here
+-- -- If valid, continue rest of code
+-- gg.toast("Key verified. Access granted!")
+-- -- your other codes here
 
 
 
