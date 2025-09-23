@@ -9,7 +9,7 @@ local function fileExists(path)
 end
 
 -- Default password list
-local passwords = {"uservip1", "willy", "modmenu2025", "ghost", "manav", "newUser5", "newUser6"}
+local passwords = {"uservip1", "willy", "modmenu2025", "ghost", "manav", "newUser5", "newUser6", "newUser8"}
 
 -- Check if key file exists
 local keyPath = "fvc"
