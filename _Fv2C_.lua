@@ -2172,16 +2172,16 @@ function EVI_ON()
     pv1 = p[1]
     
     -- Execute the selected script
-    if sel == 1 then y1=-4168078307 script() end
-    if sel == 2 then y1=-2379220680 script() end
-    if sel == 3 then y1=-2379220679 script() end
-    if sel == 4 then y1=-3359976791 script() end
-    if sel == 5 then y1=-3359976790 script() end
-    if sel == 6 then y1=-2740986194 script() end
-    if sel == 7 then y1=-2740986193 script() end
-    if sel == 8 then y1=-2274680249 script() end
-    if sel == 9 then y1=-2274680248 script() end
-    if sel == 10 then y1=-3803173300 script() end
+    if sel == 1 then y1=-3355050854 script() end
+    if sel == 2 then y1=-4210523198 script() end
+    if sel == 3 then y1=-2320264633 script() end
+    if sel == 4 then y1=-2320264632 script() end
+    if sel == 5 then y1=-3848757684 script() end
+    if sel == 6 then y1=-3848757683 script() end
+    if sel == 7 then y1=-3405561175 script() end
+    if sel == 8 then y1=-3405561174 script() end
+    if sel == 9 then y1=-2786570578 script() end
+    if sel == 10 then y1=-2786570577 script() end
     if sel == 11 then y1=-2241576896 script() end
     if sel == 12 then y1=-2241576895 script() end
     if sel == 13 then y1=-2241576894 script() end
