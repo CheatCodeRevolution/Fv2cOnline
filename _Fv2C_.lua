@@ -3400,7 +3400,7 @@ local menuList = {
     "🔥 Get Event Items (From Water)",
     "⚽ Get Normal Items (From Water)",
     
-    "🧑‍🔧 Farm Hands Reward Amount",
+    "🙌 Farm Hands Reward Amount",
     "💯 Farm Hands Reward Chance 100%",
     "🃏 Confection Collection Fast Finish",
 
