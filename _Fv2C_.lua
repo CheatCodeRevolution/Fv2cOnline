@@ -3422,7 +3422,8 @@ local checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
-    nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+    nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 
+    nil, nil
 }
 
 function menu()
