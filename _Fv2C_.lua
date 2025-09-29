@@ -1074,6 +1074,8 @@ local offsets = {
         CurrentUnix=0x3502bdc,  -- PartnerAnimalTime::CurrentUnix
         get_SpinLeft=0x375784c,  -- SocialDailyBonusManager::get_SpinLeft
         get_groupLimit=0x31c3ba8,  -- ProtoMarketItem::get_groupLimit
+        GetAmount=0x32ccf58,  -- ProtoLootInfoExtensions::GetAmount
+        GetDropRate=0x32cf0e0,  -- ProtoLootInfoExtensions::GetDropRate
     },
 
     -- Template for future versions:
@@ -3190,6 +3192,124 @@ function SPN_OFF()
     return nil
 end
 
+
+function FHA_ON()
+    local input = gg.prompt({'Enter Amount:'}, nil, {[1] = 'number'})
+    if input == nil then return end -- user cancelled
+    local amount = tonumber(input[1])
+    if not amount then
+        gg.alert("Invalid input!")
+        return
+    end
+    injectAssembly(currentOffset.GetAmount, amount)
+    gg.toast("- Activated with value: " .. amount .. " -")
+    return true
+end
+
+function FHA_OFF()
+    reset(currentOffset.GetAmount)
+    gg.toast("- Restored -")
+    return nil
+end
+
+function FHD_ON()
+    -- auto detect ELF indices for libil2cpp.so
+    local indices, libList = getLibIndices('libil2cpp.so')
+    if #indices == 0 then
+        gg.toast("Error: libil2cpp.so ELF index not found")
+        return false
+    end
+
+    for _, idx in ipairs(indices) do
+        local baseAddress = libList[idx].start
+
+        local patchData = {
+            {
+                address = baseAddress + currentOffset.GetDropRate + 0,
+                value = '52800000h',
+                flags = 4
+            },
+            {
+                address = baseAddress + currentOffset.GetDropRate + 4,
+                value = '72A87F40h',
+                flags = 4
+            },
+            {
+                address = baseAddress + currentOffset.GetDropRate + 8,
+                value = '1E270000h',
+                flags = 4
+            },
+            {
+                address = baseAddress + currentOffset.GetDropRate + 12,
+                value = 'D65F03C0h',
+                flags = 4
+            }
+        }
+
+        gg.setValues(patchData)
+    end
+
+    gg.toast("- Activated on all ELF ranges -")
+    return true
+end
+
+function FHD_OFF()
+    reset(currentOffset.GetDropRate)
+    gg.toast("- Restored -")
+    return nil
+end
+
+
+function CCF_ON()
+    x = "CardCollectionCardInfo"
+    o = 0x18
+    t = 4
+    findClass()
+
+    x = "0~30000"
+    t = 4
+    refineNum()
+
+    o = -0x10
+    t = 4
+    applyOffset()
+
+    x = 0
+    t = 4
+    refineNum()
+
+    o = 0x18
+    t = 4
+    applyOffset()
+
+    x = 0
+    t = 4
+    refineNum()
+
+    checkResults()
+    if count == 0 then
+        gg.alert("Error : Meoww Happened [2] - No results found")
+        return nil
+    end
+
+    o = -0x8
+    t = 4
+    applyOffset()
+
+    x = 100
+    t = 4
+    editAll()
+
+    clearAll()
+    gg.alert("Success ✌️", "")
+    return true
+end
+
+function CCF_OFF()
+    gg.toast("- Turn OFF -")
+    return true
+end
+
 ----------- MENU -----------
 
 gg.setVisible(true)
@@ -3279,6 +3399,10 @@ local menuList = {
     -- 🔥 Water Items
     "🔥 Get Event Items (From Water)",
     "⚽ Get Normal Items (From Water)",
+    
+    "🧑‍🔧 Farm Hands Reward Amount",
+    "💯 Farm Hands Reward Chance 100%",
+    "🃏 Confection Collection Fast Finish",
 
     -- 🚫 Exit
     "🚫 Exit Script...."
@@ -3298,7 +3422,7 @@ local checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
-    nil, nil, nil, nil, nil, nil, nil, nil, nil  -- Added one more nil
+    nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
 }
 
 function menu()
@@ -3647,7 +3771,28 @@ function menu()
             checkList[48] = ITM_OFF()
         end
     end
-    if tsu[49]  then
+    if tsu[49] ~= checkList[49]  then
+        if tsu[49]  then
+            checkList[49] = FHA_ON()
+        else
+            checkList[49] = FHA_OFF()
+        end
+    end
+    if tsu[50] ~= checkList[50]  then
+        if tsu[50]  then
+            checkList[50] = FHD_ON()
+        else
+            checkList[50] = FHD_OFF()
+        end
+    end
+    if tsu[51] ~= checkList[51]  then
+        if tsu[51]  then
+            checkList[51] = CCF_ON()
+        else
+            checkList[51] = CCF_OFF()
+        end
+    end
+    if tsu[52]  then
         gg.getListItems()
         gg.clearList()
         print("────୨ৎ────────୨ৎ────")
