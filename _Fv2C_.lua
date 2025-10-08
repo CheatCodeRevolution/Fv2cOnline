@@ -2174,19 +2174,19 @@ function EVI_ON()
     pv1 = p[1]
     
     -- Execute the selected script
-    if sel == 1 then y1=-3107894531 script() end
+    if sel == 1 then y1=-2231682369 script() end
     if sel == 2 then y1=-3478778563 script() end
-    if sel == 3 then y1=-2487631612 script() end
-    if sel == 4 then y1=-2320264632 script() end
-    if sel == 5 then y1=1907406129 script() end
-    if sel == 6 then y1=-3082422326 script() end
-    if sel == 7 then y1=-3405561175 script() end
-    if sel == 8 then y1=-3117013049 script() end
-    if sel == 9 then y1=-3151009990 script() end
-    if sel == 10 then y1=-2786570577 script() end
-    if sel == 11 then y1=-2241576896 script() end
-    if sel == 12 then y1=-2241576895 script() end
-    if sel == 13 then y1=-2241576894 script() end
+    if sel == 3 then y1=-3478778562 script() end
+    if sel == 4 then y1=-2498022452 script() end
+    if sel == 5 then y1=-2498022451 script() end
+    if sel == 6 then y1=-3117013049 script() end
+    if sel == 7 then y1=-3117013048 script() end
+    if sel == 8 then y1=-3583318994 script() end
+    if sel == 9 then y1=-3583318993 script() end
+    if sel == 10 then y1=-4202309591 script() end
+    if sel == 11 then y1=-4202309590 script() end
+    if sel == 12 then y1=-3221553480 script() end
+    if sel == 13 then y1=-3221553479 script() end
     gg.toast("- Activated -")
     return nil
 end
