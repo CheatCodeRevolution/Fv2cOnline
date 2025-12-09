@@ -1234,16 +1234,6 @@ setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
 
 gg.setVisible(false)
-x="BoatRaceV4Context"
-o=0xF0 t=4 findClass()
-x=3 t=4 refineNum()
-o=0x9A t=1 applyOffset()
-local count=gg.getResultsCount()
-if count==0 then gg.toast("Error 99")
-else
-x=0 t=1 editAll()
-end
-clearAll()
   
 
 function Translate(InputText, SystemLangCode, TargetLangCode)
