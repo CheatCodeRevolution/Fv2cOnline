@@ -1222,7 +1222,7 @@ if not currentOffset then
   gg.alert("🤷 Game version is too old or not supported!\n🔖 Current Version: " .. version, "","")
   os.exit()
 end
-
+--[[
 gg.toast("Bypass Is Running Please Waite...!!")
 setValue(currentOffset.Start, 4, "~A8 RET")
 setValue(currentOffset.get_Suspended, 4, "~A8 RET")
@@ -1232,6 +1232,7 @@ setValue(currentOffset.get_CheaterTrackingEnabled, 4, "~A8 RET")
 setValue(currentOffset.set_CheaterTrackingEnabled, 4, "~A8 RET")
 setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
+--]]
 
 gg.setVisible(false)
   
