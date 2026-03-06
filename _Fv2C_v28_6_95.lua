@@ -1007,7 +1007,7 @@ function findClass()
     end
     finalLoad = gg.getValues(finalLoad)
     gg.loadResults(finalLoad)
-    gg.removeListItems(finalRemove)
+    gg.removeListItems(inalRemove)
 end
 
 
@@ -1028,52 +1028,6 @@ gg.alert(
 ----------- OFFSET LIST ----------------
 
 local offsets = {
-  ["28.8.101"] = {
-    Remove = 0x32cf590, --SVInventory::Remove
-    CanExpandWithCoins = 0x34108cc, --LandExpansionManager::CanExpandWithCoins
-    GetItemCost = 0x33f3104, --ItemManager::GetItemCost
-    GetFastFinishCost = 0x3631c28, --SVFastFinish::GetFastFinishCost
-    CalculateBuyThroughCost = 0x298b884, --MerchantOfferCell::CalculateBuyThroughCost
-    GetCraftingTimeMultiplierForBuildingLevel = 0x2afc7f0, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-    GetCountyFairPointsMultiplierForBuildingLevel = 0x2afc860, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-    get_KnightRequestIntervalSeconds = 0x2f31568, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-    get_HandsToSend = 0x2f3357c, --AllianceManager::get_HandsToSend
-    CreateOffer = 0x389a35c, --SeafarerManager::CreateOffer
-    GetAutoBuyTime = 0x388c808, --SeafarerManager::GetAutoBuyTime
-    GetNumCoopOnlySlotsInUse = 0x389047c, --SeafarerManager::GetNumCoopOnlySlotsInUse
-    get_getAmountHas = 0x274e4b8, --CoopOrderCard_ViewModel::get_getAmountHas
-    get_getAmountRequired = 0x274e658, --CoopOrderCard_ViewModel::get_getAmountRequired
-    get_isCoopOrderExpired = 0x274ea4c, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-    canShowThanksGivingStickers = 0x3259aec, --GameExpression::canShowThanksGivingStickers
-    canShowChristmasStickers = 0x3259c28, --GameExpression::canShowChristmasStickers
-    CanPlayForFree = 0x26dff04, --GameOfChanceGame::CanPlayForFree
-    get_totalItemsCount = 0x371df84, --ProtoStorageLevel::get_totalItemsCount
-    get_IsCheaterFixOn = 0x392eda8, --BoatRaceV4Context::get_IsCheaterFixOn
-    get_CheaterTrackingEnabled = 0x3922adc, --BoatRaceV4Context::get_CheaterTrackingEnabled
-    set_CheaterTrackingEnabled = 0x3922ae4, --BoatRaceV4Context::set_CheaterTrackingEnabled
-    CheaterFixedScore = 0x392f394, --BoatRaceV4Context::CheaterFixedScore
-    get_Suspended = 0x2e5e7b4, --ZyngaUsersession::get_Suspended
-    set_Suspended = 0x2e5e7bc, --ZyngaUsersession::set_Suspended
-    Start = 0x2b64af4, --ZyngaPlayerSuspensionManager::Start
-    get_amount = 0x33dc48c, --ProtoQuestReward::get_amount
-    get_GetCurrentLeaguePersonalQuota = 0x38f08d4, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-    get_personalQuotaCompleted = 0x2cf6434, --BaseBoatRaceContext::get_personalQuotaCompleted
-    get_bonusTaskCount = 0x2cf63f4, --BaseBoatRaceContext::get_bonusTaskCount
-    get_GetBonusTaskSkipPrice = 0x2737cd0, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-    getAmount = 0x33dd41c, --ProtoQuestTask::getAmount
-    set_MyWeeklyContribution = 0x269f2b8, --CoopOrderHelpContext::set_MyWeeklyContribution
-    StartCrafting = 0x2b4cbe8, --WorkshopManager::StartCrafting
-    get_inventoryTokens = 0x2fd660c, --BattlePassManager::get_inventoryTokens
-    isEntityObstructed = 0x30ab36c, --EntityPlacementController::isEntityObstructed
-    get_IsAvailable = 0x33996f4, --HeroBehavior::get_IsAvailable
-    OnTamperDetected = 0x33e4dac, --SecureVarInt::OnTamperDetected
-    CurrentUnix = 0x366ec68, --PartnerAnimalTime::CurrentUnix
-    get_SpinLeft = 0x38b5790, --SocialDailyBonusManager::get_SpinLeft
-    get_groupLimit = 0x33db348, --ProtoMarketItem::get_groupLimit
-    GetAmount = 0x342febc, --ProtoLootInfoExtensions::GetAmount
-    GetDropRate = 0x34316f4, --ProtoLootInfoExtensions::GetDropRate
-
-  },
   ["28.7.99"] = {
     Remove = 0x32b2a1c, --SVInventory::Remove
     CanExpandWithCoins = 0x33f385c, --LandExpansionManager::CanExpandWithCoins
