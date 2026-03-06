@@ -1344,7 +1344,7 @@ get_SpinLeft=0x3a13478, --SocialDailyBonusManager::get_SpinLeft
 get_groupLimit=0x34ffe2c, --ProtoMarketItem::get_groupLimit
 GetAmount=0x35714c4, --ProtoLootInfoExtensions::GetAmount
 GetDropRate=0x3572cfc, --ProtoLootInfoExtensions::GetDropRate
-    }
+    },
     
 
 }
