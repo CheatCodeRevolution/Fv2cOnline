@@ -1369,7 +1369,7 @@ setValue(currentOffset.set_CheaterTrackingEnabled, 4, "~A8 RET")
 setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
 --]]
-
+--[[
 gg.setVisible(false)
 x="BoatRaceV4Context"
 o=0x18a t=4 findClass()
@@ -1381,7 +1381,7 @@ else
 x=0 t=1 editAll()
 end
 clearAll()
-  
+--]]
 
 function Translate(InputText, SystemLangCode, TargetLangCode)
   _ = InputText __ = SystemLangCode ___ = TargetLangCode
