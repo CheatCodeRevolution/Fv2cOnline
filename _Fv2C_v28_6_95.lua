@@ -1013,7 +1013,6 @@ end
 
 
 gg.setVisible(false)
-gg.alert("🧑‍💻 Welcome 🙏","","")
 gg.alert(
     "────୨ৎ────────୨ৎ────\n" ..
     "🌹 MANAV PREMIUM SCRIPT\n" ..
