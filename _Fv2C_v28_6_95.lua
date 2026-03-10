@@ -893,126 +893,75 @@ end
 -- Class/Pointer Finder
 --========================
 function findClass()
-    gg.clearResults()
-    gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_OTHER)
-    
-    gg.searchNumber(":"..x, 1)
-    if gg.getResultsCount() == 0 then E = 0 return end
-
-    local res = gg.getResults(1)
-    gg.getResults(gg.getResultsCount())
-    gg.refineNumber(tonumber(res[1].value), 1)
-
-    local results = gg.getResults(gg.getResultsCount())
-    gg.clearResults()
-    for i, v in ipairs(results) do
-        results[i].address = results[i].address - 1
-        results[i].flags = 1
-    end
-
-    results = gg.getValues(results)
-    local zeroAddrs = {}
-    for i, v in ipairs(results) do
-        if v.value == 0 then table.insert(zeroAddrs, {address=v.address, flags=1}) end
-    end
-    if #zeroAddrs == 0 then gg.clearResults() E = 0 return end
-
-    for i, v in ipairs(zeroAddrs) do
-        zeroAddrs[i].address = zeroAddrs[i].address + #x + 1
-    end
-
-    zeroAddrs = gg.getValues(zeroAddrs)
-    local finalAddrs = {}
-    for i, v in ipairs(zeroAddrs) do
-        if v.value == 0 then table.insert(finalAddrs, {address=v.address - #x, flags=1}) end
-    end
-    if #finalAddrs == 0 then gg.clearResults() E = 0 return end
-
-    gg.loadResults(finalAddrs)
-
-    -- Check memory region
-    local memRange = gg.getResults(gg.getResultsCount())
-    local hasC, hasO = false, false
-    for i, v in ipairs(memRange) do
-        local r = gg.getValuesRange(v)
-        if r.address == "Ca" then hasC = true end
-        if r.address == "O" then hasO = true end
-    end
-    if (hasC and not hasO) or (not hasC and hasO) then
-        gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_OTHER | gg.REGION_ANONYMOUS)
-    end
-
-    local fix = gg.getResults(gg.getResultsCount())
-    gg.clearResults()
-    gg.loadResults(fix)
-
-    -- Pointer search
-    gg.searchPointer(0)
-    if gg.getResultsCount() == 0 then E = 0 return end
-    local ptrs = gg.getResults(gg.getResultsCount())
-    gg.clearResults()
-
-    local off1, off2, vt = 0, 0, 0
-    if gg.getTargetInfo().x64 then off1, off2, vt = 48, 56, 32 else off1, off2, vt = 24, 28, 4 end
-
-    local errorFlag = 0
-    local matched = {}
-    ::TRYAGAIN::
-    local vals1, vals2 = {}, {}
-    for i, v in ipairs(ptrs) do
-        table.insert(vals1, {address=v.address+off1, flags=vt})
-        table.insert(vals2, {address=v.address+off2, flags=vt})
-    end
-    vals1 = gg.getValues(vals1)
-    vals2 = gg.getValues(vals2)
-
-    matched = {}
-    for i, v in ipairs(vals1) do
-        if vals1[i].value == vals2[i].value and #(tostring(vals1[i].value)) >= 8 then
-            table.insert(matched, vals1[i].value)
-        end
-    end
-
-    if #matched == 0 and errorFlag == 0 then
-        if gg.getTargetInfo().x64 then off1, off2 = 32, 40 else off1, off2 = 16, 20 end
-        errorFlag = 2
-        goto TRYAGAIN
-    end
-    if #matched == 0 and errorFlag == 2 then E = 0 return end
-
-    gg.setRanges(gg.REGION_ANONYMOUS)
-    gg.clearResults()
-
-    for i, v in ipairs(matched) do
-        gg.searchNumber(tonumber(v), vt)
-        if gg.getResultsCount() ~= 0 then
-            local tmp = gg.getResults(gg.getResultsCount())
-            gg.clearResults()
-            for j = 1, #tmp do tmp[j].name = "Cheatcode" end
-            gg.addListItems(tmp)
-        end
-        gg.clearResults()
-    end
-
-    -- Load and offset
-    local finalLoad, finalRemove = {}, {}
-    local list = gg.getListItems()
-    local idx = 1
-    for i, v in ipairs(list) do
-        if v.name == "Cheatcode" then
-            finalLoad[idx] = {address=v.address+o, flags=t}
-            finalRemove[idx] = v
-            idx = idx + 1
-        end
-    end
-    finalLoad = gg.getValues(finalLoad)
-    gg.loadResults(finalLoad)
-    gg.removeListItems(inalRemove)
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_OTHER)
+gg.searchNumber(":"..x,1)
+if gg.getResultsCount()==0 then E=0 return end
+local apexu=gg.getResults(gg.getResultsCount())
+local filtered={}
+for i, v in ipairs(apexu) do
+local baseAddr=v.address - 1
+local checkVal=gg.getValues({{address=baseAddr, flags=1}})[1].value
+if checkVal==0 then
+local secondCheckAddr=baseAddr + #x + 1
+local secondCheckVal=gg.getValues({{address=secondCheckAddr, flags=1}})[1].value
+if secondCheckVal==0 then
+filtered[#filtered + 1]={address=secondCheckAddr - #x, flags=1}
+end
+end
+end
+if #filtered==0 then E=0 return end
+gg.setRanges(gg.REGION_C_ALLOC | gg.REGION_OTHER | gg.REGION_ANONYMOUS)
+gg.loadResults(filtered)
+gg.searchPointer(0)
+if gg.getResultsCount()==0 then E=0 return end
+local pointers=gg.getResults(gg.getResultsCount())
+local is64=gg.getTargetInfo().x64
+local offsets=is64 and {o1=48, o2=56, vt=32} or {o1=24, o2=28, vt=4}
+local function find_matches(off1, off2)
+local targets={}
+local addr_list1, addr_list2={}, {}
+for i, v in ipairs(pointers) do
+addr_list1[i]={address=v.address + off1, flags=offsets.vt}
+addr_list2[i]={address=v.address + off2, flags=offsets.vt}
+end
+local vals1=gg.getValues(addr_list1)
+local vals2=gg.getValues(addr_list2)
+for i=1, #vals1 do
+if vals1[i].value==vals2[i].value and #tostring(vals1[i].value) >= 8 then
+targets[#targets + 1]=vals1[i].value
+end
+end
+return targets
+end
+local apexp=find_matches(offsets.o1, offsets.o2)
+if #apexp==0 then
+local retry_o1, retry_o2=(is64 and 32 or 16), (is64 and 40 or 20)
+apexp=find_matches(retry_o1, retry_o2)
+end
+if #apexp==0 then E=0 return end
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.clearResults()
+local final_results={}
+for i, val in ipairs(apexp) do
+gg.searchNumber(tonumber(val), offsets.vt)
+local found=gg.getResults(gg.getResultsCount())
+for j, res in ipairs(found) do
+res.name="APEX[GG]v2"
+final_results[#final_results + 1]=res
+end
+gg.clearResults()
+end
+if #final_results==0 then E=0 return end
+local load_list={}
+for i, v in ipairs(final_results) do
+load_list[#load_list + 1]={address=v.address + o, flags=t}
+end
+gg.loadResults(load_list)
 end
 
-
-
 gg.setVisible(false)
+gg.alert("🧑‍💻 Welcome 🙏","","")
 gg.alert(
     "────୨ৎ────────୨ৎ────\n" ..
     "🌹 MANAV PREMIUM SCRIPT\n" ..
@@ -1368,19 +1317,9 @@ setValue(currentOffset.set_CheaterTrackingEnabled, 4, "~A8 RET")
 setValue(currentOffset.CheaterFixedScore, 4, "~A8 RET")
 setValue(currentOffset.OnTamperDetected, 4, "~A8 RET")
 --]]
---[[
+
 gg.setVisible(false)
-x="BoatRaceV4Context"
-o=0x18a t=4 findClass()
-x=3 t=4 refineNum()
-o=0x9A t=1 applyOffset()
-local count=gg.getResultsCount()
-if count==0 then gg.toast("Error 99")
-else
-x=0 t=1 editAll()
-end
-clearAll()
---]]
+  
 
 function Translate(InputText, SystemLangCode, TargetLangCode)
   _ = InputText __ = SystemLangCode ___ = TargetLangCode
@@ -2059,7 +1998,6 @@ function MWS_ON()
   o=0x1C t=32 sv=strv4 checkString()
   o=0xC8 t=4 applyOffset()
   x=0 t=4 editAll()
-  freezeValues()
   clearAll()
   setValue(currentOffset.set_MyWeeklyContribution+0x28, 4, "~A8 MOV W20, #0x64")
   gg.toast("- Marie weekly score enabled -")
