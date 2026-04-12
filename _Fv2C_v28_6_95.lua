@@ -2722,7 +2722,12 @@ function ITM_ON()
         "[ + ] Wind Chime",
         "[ + ] Wool",
         "[ + ] Woolen Scarf",
-        "[ + ] Yarn Doll"
+        "[ + ] Yarn Doll",
+        "[ + ] Grandmas Glade",
+        "[ + ] Mariner Orders (Lighthouse)",
+        "[ + ] Merryweather Mine",
+        "[ + ] Pappys Pond",
+        "[ + ] Silo"
     }
     local menu2 = gg.choice(items, nil, "💥 Select an item:\n────୨ৎ────────୨ৎ────")
     if not menu2 then
@@ -2964,9 +2969,12 @@ function ITM_ON()
     if menu2==206 then y1=395809115 y2=-1 scripNew() end
     if menu2==207 then y1=763312769 y2=-1 scripNew() end
     if menu2==208 then y1=184046900 y2=-1 scripNew() end
-    
-    
     if menu2==209 then y1=1398167486 y2=-1 scripNew() end
+    if menu2==210 then y1=-3033444999 y2=-1 scripNew() end
+    if menu2==211 then y1=-2906145885 y2=-1 scripNew() end
+    if menu2==212 then y1=804473471055 y2=-1 scripNew() end
+    if menu2==213 then y1=-3193205514 y2=-1 scripNew() end
+    if menu2==214 then y1=-4092688356 y2=-1 scripNew() end
     
     gg.toast("- Activated -")
 end
