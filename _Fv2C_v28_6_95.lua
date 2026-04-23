@@ -3654,6 +3654,30 @@ function CCF_OFF()
     return true
 end
 
+function CARD_ON()
+    x = "CardCollectionManager"
+    o = 0x68
+    t = 1
+    findClass()
+    x="1" t=1 refineNum()
+    x="0" t=1 editAll()
+    clearAll()
+    gg.alert("Success ✌️", "")
+    return true
+end
+
+function CARD_OFF()
+    x = "CardCollectionManager"
+    o = 0x68
+    t = 1
+    findClass()
+    x="0" t=1 refineNum()
+    x="1" t=1 editAll()
+    clearAll()
+    gg.toast("Success ✌️")
+    return true
+end
+
 ----------- MENU -----------
 
 gg.setVisible(true)
@@ -3747,6 +3771,7 @@ local menuList = {
     "🙌 Farm Hands Reward Amount",
     "💯 Farm Hands Reward Chance 100%",
     "🃏 Confection Collection Fast Finish",
+    "⛔ Disable Card Collection Pop-up",
 
     -- 🚫 Exit
     "🚫 Exit Script...."
@@ -3767,11 +3792,11 @@ local checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 
-    nil, nil
+    nil, nil, nil
 }
 
 function menu()
-    local tsu = gg.multiChoice(menuList, checkList, "🌹 Script By : @CheatCode\n🔖 Bypass Protection Is Running.....\n🟢 Script Mode : Full Safe\n────୨ৎ────────୨ৎ────")
+    local tsu = gg.multiChoice(menuList, checkList, "🌹 Script By : Manav\n🔰 Bypass Protection Is Running.....\n🧨 Script Mode : Full Safe\n────୨ৎ────────୨ৎ────")
     if not tsu  then
         return
     end
@@ -4137,7 +4162,14 @@ function menu()
             checkList[51] = CCF_OFF()
         end
     end
-    if tsu[52]  then
+    if tsu[52] ~= checkList[52]  then
+        if tsu[52]  then
+            checkList[52] = CARD_ON()
+        else
+            checkList[52] = CARD_OFF()
+        end
+    end
+    if tsu[53]  then
         gg.getListItems()
         gg.clearList()
         print("────୨ৎ────────୨ৎ────")
