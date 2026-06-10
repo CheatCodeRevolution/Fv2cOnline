@@ -1519,6 +1519,52 @@ get_groupLimit=0x370f220, --ProtoMarketItem::get_groupLimit
 GetAmount=0x379aba8, --ProtoLootInfoExtensions::GetAmount
 GetDropRate=0x379cdc8, --ProtoLootInfoExtensions::GetDropRate
         
+    },
+    ["30.1.190"] = {
+        Remove=0x3590488, --SVInventory::Remove
+CanExpandWithCoins=0x3712fbc, --LandExpansionManager::CanExpandWithCoins
+GetItemCost=0x36f44ac, --ItemManager::GetItemCost
+GetFastFinishCost=0x39077fc, --SVFastFinish::GetFastFinishCost
+CalculateBuyThroughCost=0x2b8c598, --MerchantOfferCell::CalculateBuyThroughCost
+GetCraftingTimeMultiplierForBuildingLevel=0x2cedfcc, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
+GetCountyFairPointsMultiplierForBuildingLevel=0x2cee03c, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
+get_KnightRequestIntervalSeconds=0x3222c7c, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
+get_HandsToSend=0x3224c90, --AllianceManager::get_HandsToSend
+CreateOffer=0x3c0b40c, --SeafarerManager::CreateOffer
+GetAutoBuyTime=0x3bfdb30, --SeafarerManager::GetAutoBuyTime
+GetNumCoopOnlySlotsInUse=0x3c01794, --SeafarerManager::GetNumCoopOnlySlotsInUse
+get_getAmountHas=0x2942d10, --CoopOrderCard_ViewModel::get_getAmountHas
+get_getAmountRequired=0x2942ec0, --CoopOrderCard_ViewModel::get_getAmountRequired
+get_isCoopOrderExpired=0x29432b4, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
+canShowThanksGivingStickers=0x35517b4, --GameExpression::canShowThanksGivingStickers
+canShowChristmasStickers=0x35518f0, --GameExpression::canShowChristmasStickers
+CanPlayForFree=0x28b71cc, --GameOfChanceGame::CanPlayForFree
+get_totalItemsCount=0x3a968e4, --ProtoStorageLevel::get_totalItemsCount
+get_IsCheaterFixOn=0x284c0d4, --BoatRaceV4Context::get_IsCheaterFixOn
+get_CheaterTrackingEnabled=0x283fee8, --BoatRaceV4Context::get_CheaterTrackingEnabled
+set_CheaterTrackingEnabled=0x283fef0, --BoatRaceV4Context::set_CheaterTrackingEnabled
+CheaterFixedScore=0x284c6c0, --BoatRaceV4Context::CheaterFixedScore
+get_Suspended=0x3113234, --ZyngaUsersession::get_Suspended
+set_Suspended=0x311323c, --ZyngaUsersession::set_Suspended
+Start=0x2da6ab4, --ZyngaPlayerSuspensionManager::Start
+get_amount=0x36a3790, --ProtoQuestReward::get_amount
+get_GetCurrentLeaguePersonalQuota=0x2813fcc, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
+get_personalQuotaCompleted=0x2f3bb4c, --BaseBoatRaceContext::get_personalQuotaCompleted
+get_bonusTaskCount=0x2f3bb0c, --BaseBoatRaceContext::get_bonusTaskCount
+get_GetBonusTaskSkipPrice=0x292b4c0, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
+getAmount=0x36a4720, --ProtoQuestTask::getAmount
+set_MyWeeklyContribution=0x2875d2c, --CoopOrderHelpContext::set_MyWeeklyContribution
+StartCrafting=0x2d506e8, --WorkshopManager::StartCrafting
+get_inventoryTokens=0x32b6640, --BattlePassManager::get_inventoryTokens
+isEntityObstructed=0x3394304, --EntityPlacementController::isEntityObstructed
+get_IsAvailable=0x36945f0, --HeroBehavior::get_IsAvailable
+OnTamperDetected=0x36ac0b0, --SecureVarInt::OnTamperDetected
+CurrentUnix=0x39d5378, --PartnerAnimalTime::CurrentUnix
+get_SpinLeft=0x27d00f8, --SocialDailyBonusManager::get_SpinLeft
+get_groupLimit=0x36a263c, --ProtoMarketItem::get_groupLimit
+GetAmount=0x372dfc4, --ProtoLootInfoExtensions::GetAmount
+GetDropRate=0x37301e4, --ProtoLootInfoExtensions::GetDropRate
+        
     }
     
 }
