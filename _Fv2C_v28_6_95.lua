@@ -1,4 +1,4 @@
-local gg = gg
+﻿local gg = gg
 local info = gg.getTargetInfo()
 local orig = {}
 local xg = {}
@@ -966,8 +966,7 @@ gg.alert(
     "🌹 MANAV PREMIUM SCRIPT\n" ..
     "✨ Script By: CheatCode Revolution\n" ..
     "📱 Telegram: @BadLuck_69\n" ..
-    "🎮 YouTube: CheatCode Revolution\n" ..
-    "────୨ৎ────────୨ৎ────\n\n" ..
+    "────୨ৎ────────୨ৎ────\n" ..
     "🕹️ : " .. gameName .. "\n" ..
     "📦 : " .. package .. "\n" ..
     "🔖 : " .. version
@@ -976,734 +975,6 @@ gg.alert(
 ----------- OFFSET LIST ----------------
 
 local offsets = {
-  ["28.7.99"] = {
-    Remove = 0x32b2a1c, --SVInventory::Remove
-    CanExpandWithCoins = 0x33f385c, --LandExpansionManager::CanExpandWithCoins
-    GetItemCost = 0x33d6094, --ItemManager::GetItemCost
-    GetFastFinishCost = 0x3614b08, --SVFastFinish::GetFastFinishCost
-    CalculateBuyThroughCost = 0x2973e38, --MerchantOfferCell::CalculateBuyThroughCost
-    GetCraftingTimeMultiplierForBuildingLevel = 0x2ae4b70, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-    GetCountyFairPointsMultiplierForBuildingLevel = 0x2ae4be0, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-    get_KnightRequestIntervalSeconds = 0x2f18738, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-    get_HandsToSend = 0x2f1a74c, --AllianceManager::get_HandsToSend
-    CreateOffer = 0x387b9d4, --SeafarerManager::CreateOffer
-    GetAutoBuyTime = 0x386e66c, --SeafarerManager::GetAutoBuyTime
-    GetNumCoopOnlySlotsInUse = 0x38722c0, --SeafarerManager::GetNumCoopOnlySlotsInUse
-    get_getAmountHas = 0x2743998, --CoopOrderCard_ViewModel::get_getAmountHas
-    get_getAmountRequired = 0x2743b38, --CoopOrderCard_ViewModel::get_getAmountRequired
-    get_isCoopOrderExpired = 0x2743f2c, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-    canShowThanksGivingStickers = 0x323cf78, --GameExpression::canShowThanksGivingStickers
-    canShowChristmasStickers = 0x323d0b4, --GameExpression::canShowChristmasStickers
-    CanPlayForFree = 0x26d53e4, --GameOfChanceGame::CanPlayForFree
-    get_totalItemsCount = 0x3700e50, --ProtoStorageLevel::get_totalItemsCount
-    get_IsCheaterFixOn = 0x390fda4, --BoatRaceV4Context::get_IsCheaterFixOn
-    get_CheaterTrackingEnabled = 0x3903ad8, --BoatRaceV4Context::get_CheaterTrackingEnabled
-    set_CheaterTrackingEnabled = 0x3903ae0, --BoatRaceV4Context::set_CheaterTrackingEnabled
-    CheaterFixedScore = 0x3910390, --BoatRaceV4Context::CheaterFixedScore
-    get_Suspended = 0x2e370a0, --ZyngaUsersession::get_Suspended
-    set_Suspended = 0x2e370a8, --ZyngaUsersession::set_Suspended
-    Start = 0x2b4ce18, --ZyngaPlayerSuspensionManager::Start
-    get_amount = 0x33bf41c, --ProtoQuestReward::get_amount
-    get_GetCurrentLeaguePersonalQuota = 0x38d18d0, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-    get_personalQuotaCompleted = 0x2cde8f4, --BaseBoatRaceContext::get_personalQuotaCompleted
-    get_bonusTaskCount = 0x2cde8b4, --BaseBoatRaceContext::get_bonusTaskCount
-    get_GetBonusTaskSkipPrice = 0x272d1b0, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-    getAmount = 0x33c03ac, --ProtoQuestTask::getAmount
-    set_MyWeeklyContribution = 0x2694798, --CoopOrderHelpContext::set_MyWeeklyContribution
-    StartCrafting = 0x2b34f68, --WorkshopManager::StartCrafting
-    get_inventoryTokens = 0x2fbd418, --BattlePassManager::get_inventoryTokens
-    isEntityObstructed = 0x308e930, --EntityPlacementController::isEntityObstructed
-    get_IsAvailable = 0x337c684, --HeroBehavior::get_IsAvailable
-    OnTamperDetected = 0x33c7d3c, --SecureVarInt::OnTamperDetected
-    CurrentUnix = 0x3651b44, --PartnerAnimalTime::CurrentUnix
-    get_SpinLeft = 0x389678c, --SocialDailyBonusManager::get_SpinLeft
-    get_groupLimit = 0x33be2d8, --ProtoMarketItem::get_groupLimit
-    GetAmount = 0x3412e4c, --ProtoLootInfoExtensions::GetAmount
-    GetDropRate = 0x3414684, --ProtoLootInfoExtensions::GetDropRate
-
-
-  },
-    ["28.9.102"] = {
-    Remove=0x32cf6e4, --SVInventory::Remove
-CanExpandWithCoins=0x3410a20, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x33f3258, --ItemManager::GetItemCost
-GetFastFinishCost=0x3631d7c, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x298b8dc, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2afc848, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2afc8b8, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x2f315c0, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x2f335d4, --AllianceManager::get_HandsToSend
-CreateOffer=0x389a4b0, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x388c95c, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x38905d0, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x274e510, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x274e6b0, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x274eaa4, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3259c40, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3259d7c, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x26dff5c, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x371e0d8, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x392eefc, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x3922c30, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x3922c38, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x392f4e8, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2e5e80c, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2e5e814, --ZyngaUsersession::set_Suspended
-Start=0x2b64b4c, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x33dc5e0, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x38f0a28, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2cf648c, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2cf644c, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2737d28, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x33dd570, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x269f310, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2b4cc40, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x2fd6664, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x30ab4c0, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x3399848, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x33e4f00, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x366edbc, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x38b58e4, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x33db49c, --ProtoMarketItem::get_groupLimit
-GetAmount=0x3430010, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3431848, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.0.103"] = {
-    Remove=0x32cf6e4, --SVInventory::Remove
-CanExpandWithCoins=0x3410a20, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x33f3258, --ItemManager::GetItemCost
-GetFastFinishCost=0x3631d7c, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x298b8dc, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2afc848, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2afc8b8, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x2f315c0, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x2f335d4, --AllianceManager::get_HandsToSend
-CreateOffer=0x389a4b0, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x388c95c, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x38905d0, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x274e510, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x274e6b0, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x274eaa4, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3259c40, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3259d7c, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x26dff5c, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x371e0d8, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x392eefc, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x3922c30, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x3922c38, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x392f4e8, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2e5e80c, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2e5e814, --ZyngaUsersession::set_Suspended
-Start=0x2b64b4c, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x33dc5e0, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x38f0a28, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2cf648c, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2cf644c, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2737d28, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x33dd570, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x269f310, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2b4cc40, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x2fd6664, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x30ab4c0, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x3399848, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x33e4f00, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x366edbc, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x38b58e4, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x33db49c, --ProtoMarketItem::get_groupLimit
-GetAmount=0x3430010, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3431848, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.1.105"] = {
-    Remove=0x32fcde8, --SVInventory::Remove
-CanExpandWithCoins=0x3440014, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x3422804, --ItemManager::GetItemCost
-GetFastFinishCost=0x3656fd4, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x29afdac, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2b24de0, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2b24e50, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x2f5d978, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x2f5f98c, --AllianceManager::get_HandsToSend
-CreateOffer=0x38cc580, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x38beca4, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x38c2908, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x2770dd8, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x2770f78, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x277136c, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3287344, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3287480, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x27019d8, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x374f5a4, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x39748e4, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x39686f8, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x3968700, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x3974ed0, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2e8a308, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2e8a310, --ZyngaUsersession::set_Suspended
-Start=0x2b8d928, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x340a0d4, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x393c920, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2d1f5a4, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2d1f564, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x275a324, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x340b064, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x26c0c80, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2b75978, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x3002a1c, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x30d8824, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x33c727c, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x34129f4, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x36aa220, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x38f91a8, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x3408f80, --ProtoMarketItem::get_groupLimit
-GetAmount=0x345f970, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x34611a8, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.2.106"] = {
- Remove=0x33d40a0, --SVInventory::Remove
-CanExpandWithCoins=0x352b2ac, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x350df88, --ItemManager::GetItemCost
-GetFastFinishCost=0x373fce8, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2a76158, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2bd59b0, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2bd5a20, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x305995c, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x305ba9c, --AllianceManager::get_HandsToSend
-CreateOffer=0x39bf914, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x39b2038, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x39b5c9c, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x281f19c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x281f33c, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x281f730, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x337227c, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x33723b8, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x27afd9c, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3840900, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x2744fe4, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x2738df8, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x2738e00, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x27455d0, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2f432c4, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2f432cc, --ZyngaUsersession::set_Suspended
-Start=0x2c3e558, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x34f3084, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x3a30710, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2de1704, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2de16c4, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x28086e8, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x34f4014, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x276ebfc, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c265a8, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x30ed7b4, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x31c2514, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x34b2c60, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x34fb9a4, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x379b458, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x39ec8d0, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x34f1f30, --ProtoMarketItem::get_groupLimit
-GetAmount=0x3545208, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3547428, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.4.108"] = {
-        Remove=0x33e7578, --SVInventory::Remove
-CanExpandWithCoins=0x3549d70, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x352c248, --ItemManager::GetItemCost
-GetFastFinishCost=0x3753950, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2a869b0, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2be643c, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2be64ac, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x306bc28, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x306dd68, --AllianceManager::get_HandsToSend
-CreateOffer=0x39deb0c, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x39d1230, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x39d4e94, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x282eff8, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x282f198, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x282f58c, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x33903ec, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3390528, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x27bfbf8, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x385f3cc, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x2754e40, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x2748c54, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x2748c5c, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x275542c, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2f53ebc, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2f53ec4, --ZyngaUsersession::set_Suspended
-Start=0x2c4efe4, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x34f92b0, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x3a4f96c, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2df2190, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2df2150, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2818544, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x34fa240, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x277ea58, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c37034, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x30ffa84, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x31d89b0, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x34d1038, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x3501bd0, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x37b9f24, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x3a0bb2c, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x34f815c, --ProtoMarketItem::get_groupLimit
-GetAmount=0x35696cc, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x356af04, --ProtoLootInfoExtensions::GetDropRate
-    },
-   ["29.5.110"] = {
-        Remove=0x33eecbc, --SVInventory::Remove
-CanExpandWithCoins=0x3551b3c, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x3533f84, --ItemManager::GetItemCost
-GetFastFinishCost=0x375c000, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2a8a2b4, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2be9ef0, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2be9f60, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x306facc, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x3071c0c, --AllianceManager::get_HandsToSend
-CreateOffer=0x39e6410, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x39d8b34, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x39dc798, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x283224c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x28323ec, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x28327e0, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x33975b4, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x33976f0, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x27c2d64, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x386808c, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x2757de8, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x274bbfc, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x274bc04, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x27583d4, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2f57d58, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2f57d60, --ZyngaUsersession::set_Suspended
-Start=0x2c52c10, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x3500f80, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x3a572f0, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2df5eb4, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2df5e74, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x281b798, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x3501f10, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x27819ec, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c3ac60, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x3103df8, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x31dcfd4, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x34d8c54, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x35098a0, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x37c2b54, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x3a13478, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x34ffe2c, --ProtoMarketItem::get_groupLimit
-GetAmount=0x35714c4, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3572cfc, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.6.111"] = {
-        Remove=0x346ced8, --SVInventory::Remove
-CanExpandWithCoins=0x35d07b8, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x35b2c00, --ItemManager::GetItemCost
-GetFastFinishCost=0x37d586c, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2ad84d8, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2c38f20, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2c38f90, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x30e9648, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x30eb788, --AllianceManager::get_HandsToSend
-CreateOffer=0x3a6dc5c, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3a60380, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3a63fe4, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x28989fc, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x2898b9c, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x2898f90, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3415538, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3415674, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x280de54, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x38e83bc, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x27a2e3c, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x2796c50, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x2796c58, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x27a3428, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2fd13a8, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2fd13b0, --ZyngaUsersession::set_Suspended
-Start=0x2cdc154, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x357fbfc, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x276ad34, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2e6e9a8, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2e6e968, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2866888, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x3580b8c, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x27cca40, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c8a26c, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x317e994, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3259ec4, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x355731c, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x358851c, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3837ad8, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x3a9acc4, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x357eaa8, --ProtoMarketItem::get_groupLimit
-GetAmount=0x35f0140, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x35f1978, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.7.118"] = {
-        Remove=0x347abf4, --SVInventory::Remove
-CanExpandWithCoins=0x35df764, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x35c1bac, --ItemManager::GetItemCost
-GetFastFinishCost=0x37e4438, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2ae49cc, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2c44c70, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2c44ce0, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x30f65a8, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x30f86e8, --AllianceManager::get_HandsToSend
-CreateOffer=0x3a7ed38, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3a7145c, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3a750c0, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x289ddb4, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x289df54, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x289e348, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3423254, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3423390, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x281301c, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3a1e410, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x27a8004, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x279be18, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x279be20, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x27a85f0, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2fde308, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2fde310, --ZyngaUsersession::set_Suspended
-Start=0x2ce8268, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x358e03c, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x276fefc, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2e7aabc, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2e7aa7c, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x286bde8, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x358efcc, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x27d1c08, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c9630c, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x318b8f4, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3266eb4, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x356575c, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x359695c, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x38480bc, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x3aabda0, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x358cee8, --ProtoMarketItem::get_groupLimit
-GetAmount=0x35ff0ec, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3600924, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["29.8.122"] = {
-        Remove=0x347a9b4, --SVInventory::Remove
-CanExpandWithCoins=0x35df524, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x35c196c, --ItemManager::GetItemCost
-GetFastFinishCost=0x37e41f8, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2ae478c, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2c44a30, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2c44aa0, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x30f6368, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x30f84a8, --AllianceManager::get_HandsToSend
-CreateOffer=0x3a7eaf8, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3a7121c, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3a74e80, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x289dd0c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x289deac, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x289e2a0, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x3423014, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x3423150, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x2812f74, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3a1e1d0, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x27a7f5c, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x279bd70, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x279bd78, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x27a8548, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x2fde0c8, --ZyngaUsersession::get_Suspended
-set_Suspended=0x2fde0d0, --ZyngaUsersession::set_Suspended
-Start=0x2ce8028, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x358ddfc, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x276fe54, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2e7a87c, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2e7a83c, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x286bd40, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x358ed8c, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x27d1b60, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2c960cc, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x318b6b4, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3266c74, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x356551c, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x359671c, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3847e7c, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x3aabb60, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x358cca8, --ProtoMarketItem::get_groupLimit
-GetAmount=0x35feeac, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x36006e4, --ProtoLootInfoExtensions::GetDropRate
-
-    },
-    ["29.9.184"] = {
-        Remove=0x358d4c8, --SVInventory::Remove
-CanExpandWithCoins=0x370e9ac, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x36f12e0, --ItemManager::GetItemCost
-GetFastFinishCost=0x3901a20, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2ba88dc, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2d08eec, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2d08f5c, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x3221890, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x32238a4, --AllianceManager::get_HandsToSend
-CreateOffer=0x3c026bc, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3bf4de0, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3bf8a44, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x295f568, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x295f718, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x295fb0c, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x354ecb0, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x354edec, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x28d3a24, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3a9041c, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x286892c, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x285c740, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x285c748, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x2868f18, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x3116b70, --ZyngaUsersession::get_Suspended
-set_Suspended=0x3116b78, --ZyngaUsersession::set_Suspended
-Start=0x2dae47c, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x36a0874, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x2830824, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2f412c8, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2f41288, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2947d18, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x36a1804, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x2892584, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2d6b3b4, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x32b5254, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x33923a0, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x36916d4, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x36a9194, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x39cf7a8, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x27ec950, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x369f720, --ProtoMarketItem::get_groupLimit
-GetAmount=0x3728934, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x372ab54, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["30.0.185"] = {
-        Remove=0x35fd06c, --SVInventory::Remove
-CanExpandWithCoins=0x377fba0, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x3761090, --ItemManager::GetItemCost
-GetFastFinishCost=0x39743e0, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2bfb2c8, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2d5cb54, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2d5cbc4, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x328fa50, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x3291a64, --AllianceManager::get_HandsToSend
-CreateOffer=0x3c77ff0, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3c6a714, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3c6e378, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x29b1c4c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x29b1dfc, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x29b21f0, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x35be588, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x35be6c4, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x2926108, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3b034c8, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x28bb010, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x28aee24, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x28aee2c, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x28bb5fc, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x3182038, --ZyngaUsersession::get_Suspended
-set_Suspended=0x3182040, --ZyngaUsersession::set_Suspended
-Start=0x2e15868, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x3710374, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x2882f08, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2faa900, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2faa8c0, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x299a3fc, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x3711304, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x28e4c68, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2dbf49c, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x3323414, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x34010d8, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x37011d4, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x3718c94, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3a41f5c, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x283f034, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x370f220, --ProtoMarketItem::get_groupLimit
-GetAmount=0x379aba8, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x379cdc8, --ProtoLootInfoExtensions::GetDropRate
-        
-    },
-    ["30.1.190"] = {
-        Remove=0x3590488, --SVInventory::Remove
-CanExpandWithCoins=0x3712fbc, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x36f44ac, --ItemManager::GetItemCost
-GetFastFinishCost=0x39077fc, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2b8c598, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2cedfcc, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2cee03c, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x3222c7c, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x3224c90, --AllianceManager::get_HandsToSend
-CreateOffer=0x3c0b40c, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3bfdb30, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3c01794, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x2942d10, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x2942ec0, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x29432b4, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x35517b4, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x35518f0, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x28b71cc, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3a968e4, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x284c0d4, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x283fee8, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x283fef0, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x284c6c0, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x3113234, --ZyngaUsersession::get_Suspended
-set_Suspended=0x311323c, --ZyngaUsersession::set_Suspended
-Start=0x2da6ab4, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x36a3790, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x2813fcc, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2f3bb4c, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2f3bb0c, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x292b4c0, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x36a4720, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x2875d2c, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2d506e8, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x32b6640, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3394304, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x36945f0, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x36ac0b0, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x39d5378, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x27d00f8, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x36a263c, --ProtoMarketItem::get_groupLimit
-GetAmount=0x372dfc4, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x37301e4, --ProtoLootInfoExtensions::GetDropRate
-        
-    },
-        ["30.2.191"] = {
-        Remove=0x3621b2c, --SVInventory::Remove
-CanExpandWithCoins=0x37a4d54, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x378602c, --ItemManager::GetItemCost
-GetFastFinishCost=0x399964c, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2c05d34, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2d68718, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2d68788, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x32acbb8, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x32aebcc, --AllianceManager::get_HandsToSend
-CreateOffer=0x3ca85d8, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x3c9aa64, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x3c9e6d8, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x29aab3c, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x29aacec, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x29ab0e0, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x35e2e54, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x35e2f90, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x293a6ac, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3b30a50, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x28b6110, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x28a9f24, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x28a9f2c, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x28b66fc, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x319ccfc, --ZyngaUsersession::get_Suspended
-set_Suspended=0x319cd04, --ZyngaUsersession::set_Suspended
-Start=0x2e205b8, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x3734eb8, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x287e010, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x2fb59f8, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x2fb59b8, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x29931f8, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x3735e9c, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x28dfcc4, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2dca1dc, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x3347058, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3423568, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x3725d18, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x373d82c, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3a67bf0, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x283a13c, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x3733d64, --ProtoMarketItem::get_groupLimit
-GetAmount=0x37bfdfc, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x37c201c, --ProtoLootInfoExtensions::GetDropRate
-
-    },
-    ["30.4.192"] = {
-        Remove=0x3683BA0, --SVInventory::Remove
-Add=0x3682394, --SVInventory::Add
-CanExpandWithCoins=0x38204F4, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x38014F0, --ItemManager::GetItemCost
-GetFastFinishCost=0x39F90FC, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2C6EEE0, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2DE4284, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2DE42F4, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x3319218, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x331B22C, --AllianceManager::get_HandsToSend
-CreateOffer=0x286ED9C, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x28614C0, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x2865124, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x2A0F064, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x2A0F214, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x2A0F608, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x365DF58, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x365E094, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x299EB64, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3BDD958, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x291A5C8, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x290E3DC, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x290E3E4, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x291ABB4, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x3209424, --ZyngaUsersession::get_Suspended
-set_Suspended=0x320942C, --ZyngaUsersession::set_Suspended
-Start=0x2E8B590, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x3792A98, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x28E24C8, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x3031C94, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x3031C54, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x29F76B0, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x3793A7C, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x294417C, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2E35168, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x33B36B8, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x3495610, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x37B7708, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x379B40C, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3B08E7C, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x289E4FC, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x3791944, --ProtoMarketItem::get_groupLimit
-GetAmount=0x383B680, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x3837534, --ProtoLootInfoExtensions::GetDropRate
-    },
-    ["30.5.194"] = {
-        Remove=0x3778258, --SVInventory::Remove
-Add=0x3776a4c, --SVInventory::Add
-CanExpandWithCoins=0x3934420, --LandExpansionManager::CanExpandWithCoins
-GetItemCost=0x391541c, --ItemManager::GetItemCost
-GetFastFinishCost=0x3aea058, --SVFastFinish::GetFastFinishCost
-CalculateBuyThroughCost=0x2d817c4, --MerchantOfferCell::CalculateBuyThroughCost
-GetCraftingTimeMultiplierForBuildingLevel=0x2edc080, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
-GetCountyFairPointsMultiplierForBuildingLevel=0x2edc0f0, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
-get_KnightRequestIntervalSeconds=0x3413b6c, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
-get_HandsToSend=0x3415b80, --AllianceManager::get_HandsToSend
-CreateOffer=0x2953f58, --SeafarerManager::CreateOffer
-GetAutoBuyTime=0x294667c, --SeafarerManager::GetAutoBuyTime
-GetNumCoopOnlySlotsInUse=0x294a2e0, --SeafarerManager::GetNumCoopOnlySlotsInUse
-get_getAmountHas=0x2af46c0, --CoopOrderCard_ViewModel::get_getAmountHas
-get_getAmountRequired=0x2af4870, --CoopOrderCard_ViewModel::get_getAmountRequired
-get_isCoopOrderExpired=0x2af4c64, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
-canShowThanksGivingStickers=0x378d2d8, --GameExpression::canShowThanksGivingStickers
-canShowChristmasStickers=0x378d414, --GameExpression::canShowChristmasStickers
-CanPlayForFree=0x2a84098, --GameOfChanceGame::CanPlayForFree
-get_totalItemsCount=0x3d0b3f4, --ProtoStorageLevel::get_totalItemsCount
-get_IsCheaterFixOn=0x29ff934, --BoatRaceV4Context::get_IsCheaterFixOn
-get_CheaterTrackingEnabled=0x29f3748, --BoatRaceV4Context::get_CheaterTrackingEnabled
-set_CheaterTrackingEnabled=0x29f3750, --BoatRaceV4Context::set_CheaterTrackingEnabled
-CheaterFixedScore=0x29fff20, --BoatRaceV4Context::CheaterFixedScore
-get_Suspended=0x33218ac, --ZyngaUsersession::get_Suspended
-set_Suspended=0x33218b4, --ZyngaUsersession::set_Suspended
-Start=0x2f97a24, --ZyngaPlayerSuspensionManager::Start
-get_amount=0x3890858, --ProtoQuestReward::get_amount
-get_GetCurrentLeaguePersonalQuota=0x29c7834, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
-get_personalQuotaCompleted=0x3129bb4, --BaseBoatRaceContext::get_personalQuotaCompleted
-get_bonusTaskCount=0x3129b74, --BaseBoatRaceContext::get_bonusTaskCount
-get_GetBonusTaskSkipPrice=0x2adcbe4, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
-getAmount=0x389183c, --ProtoQuestTask::getAmount
-set_MyWeeklyContribution=0x2a42a30, --CoopOrderHelpContext::set_MyWeeklyContribution
-StartCrafting=0x2f2cf64, --WorkshopManager::StartCrafting
-get_inventoryTokens=0x34b0e70, --BattlePassManager::get_inventoryTokens
-isEntityObstructed=0x35a57e0, --EntityPlacementController::isEntityObstructed
-get_IsAvailable=0x38cb634, --HeroBehavior::get_IsAvailable
-OnTamperDetected=0x38991cc, --SecureVarInt::OnTamperDetected
-CurrentUnix=0x3c36cb8, --PartnerAnimalTime::CurrentUnix
-get_SpinLeft=0x2983868, --SocialDailyBonusManager::get_SpinLeft
-get_groupLimit=0x388f704, --ProtoMarketItem::get_groupLimit
-GetAmount=0x394f5ac, --ProtoLootInfoExtensions::GetAmount
-GetDropRate=0x39517cc, --ProtoLootInfoExtensions::GetDropRate
-    },
     ["30.6.195"] = {
         Remove=0x38670fc, --SVInventory::Remove
 Add=0x38658f0, --SVInventory::Add
@@ -1749,9 +1020,53 @@ get_SpinLeft=0x2a60588, --SocialDailyBonusManager::get_SpinLeft
 get_groupLimit=0x3985734, --ProtoMarketItem::get_groupLimit
 GetAmount=0x3a5e954, --ProtoLootInfoExtensions::GetAmount
 GetDropRate=0x3a60b74, --ProtoLootInfoExtensions::GetDropRate
-
-    }
-    
+    },
+["30.7.196"] = {
+Remove=0x38abbf0, --SVInventory::Remove
+Add=0x38aa59c, --SVInventory::Add
+CanExpandWithCoins=0x3a87ff8, --LandExpansionManager::CanExpandWithCoins
+GetItemCost=0x3a68e78, --ItemManager::GetItemCost
+GetFastFinishCost=0x3d4ba5c, --SVFastFinish::GetFastFinishCost
+CalculateBuyThroughCost=0x2ec5690, --MerchantOfferCell::CalculateBuyThroughCost
+GetCraftingTimeMultiplierForBuildingLevel=0x3032648, --UpgradeableBuilding::GetCraftingTimeMultiplierForBuildingLevel
+GetCountyFairPointsMultiplierForBuildingLevel=0x30326b8, --UpgradeableBuilding::GetCountyFairPointsMultiplierForBuildingLevel
+get_KnightRequestIntervalSeconds=0x356f4c0, --AllianceKnightsManager::get_KnightRequestIntervalSeconds
+get_HandsToSend=0x35713bc, --AllianceManager::get_HandsToSend
+CreateOffer=0x2a7062c, --SeafarerManager::CreateOffer
+GetAutoBuyTime=0x2a631b0, --SeafarerManager::GetAutoBuyTime
+GetNumCoopOnlySlotsInUse=0x2a66b7c, --SeafarerManager::GetNumCoopOnlySlotsInUse
+get_getAmountHas=0x2c2badc, --CoopOrderCard_ViewModel::get_getAmountHas
+get_getAmountRequired=0x2c2bc8c, --CoopOrderCard_ViewModel::get_getAmountRequired
+get_isCoopOrderExpired=0x2c2c074, --CoopOrderCard_ViewModel::get_isCoopOrderExpired
+canShowThanksGivingStickers=0x38e92f8, --GameExpression::canShowThanksGivingStickers
+canShowChristmasStickers=0x38e9434, --GameExpression::canShowChristmasStickers
+CanPlayForFree=0x2ba4f44, --GameOfChanceGame::CanPlayForFree
+get_totalItemsCount=0x28f05e4, --ProtoStorageLevel::get_totalItemsCount
+get_IsCheaterFixOn=0x2b3c31c, --BoatRaceV4Context::get_IsCheaterFixOn
+get_CheaterTrackingEnabled=0x2b3049c, --BoatRaceV4Context::get_CheaterTrackingEnabled
+set_CheaterTrackingEnabled=0x2b304a4, --BoatRaceV4Context::set_CheaterTrackingEnabled
+CheaterFixedScore=0x2b3c8fc, --BoatRaceV4Context::CheaterFixedScore
+get_Suspended=0x3464628, --ZyngaUsersession::get_Suspended
+set_Suspended=0x3464630, --ZyngaUsersession::set_Suspended
+Start=0x30d7fa8, --ZyngaPlayerSuspensionManager::Start
+get_amount=0x39beb18, --ProtoQuestReward::get_amount
+get_GetCurrentLeaguePersonalQuota=0x2b05608, --BoatRaceLeagueManager::get_GetCurrentLeaguePersonalQuota
+get_personalQuotaCompleted=0x32738c4, --BaseBoatRaceContext::get_personalQuotaCompleted
+get_bonusTaskCount=0x3273884, --BaseBoatRaceContext::get_bonusTaskCount
+get_GetBonusTaskSkipPrice=0x2c1496c, --BoatRace_TaskTabViewModel::get_GetBonusTaskSkipPrice
+getAmount=0x39bfa7c, --ProtoQuestTask::getAmount
+set_MyWeeklyContribution=0x2b64b28, --CoopOrderHelpContext::set_MyWeeklyContribution
+StartCrafting=0x3083a80, --WorkshopManager::StartCrafting
+get_inventoryTokens=0x36061f0, --BattlePassManager::get_inventoryTokens
+isEntityObstructed=0x36fb094, --EntityPlacementController::isEntityObstructed
+get_IsAvailable=0x3a20d80, --HeroBehavior::get_IsAvailable
+OnTamperDetected=0x39c73f8, --SecureVarInt::OnTamperDetected
+CurrentUnix=0x3dbe838, --PartnerAnimalTime::CurrentUnix
+get_SpinLeft=0x2ac26cc, --SocialDailyBonusManager::get_SpinLeft
+get_groupLimit=0x39bda84, --ProtoMarketItem::get_groupLimit
+GetAmount=0x3aa77d4, --ProtoLootInfoExtensions::GetAmount
+GetDropRate=0x3aa8ee0, --ProtoLootInfoExtensions::GetDropRate
+}  
 }
 
 
@@ -1831,26 +1146,26 @@ local TargetLang = langtable[langChoice][2]
 
 function Remove_ON()
     injectAssembly(currentOffset.Remove, true)
-    gg.toast("- Hack Enabled -")
+    gg.toast("❄️ Freeze Items - ON")
     return true
 end
 
 function Remove_OFF()
     reset(currentOffset.Remove)
-    gg.toast("- Hack Disabled -")
+    gg.toast("❄️ Freeze Items - OFF")
     return nil
 end
 ----------------
 
 function CanExpandWithCoins_ON()
     setHex(currentOffset.CanExpandWithCoins, "20 00 80 D2 C0 03 5F D6")
-    gg.toast("- Hack Enabled -")
+    gg.toast("💰 Expand With Coins - ON")
     return true
 end
 
 function CanExpandWithCoins_OFF()
     setHex(currentOffset.CanExpandWithCoins, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Hack Disabled -")
+    gg.toast("💰 Expand With Coins - OFF")
     return nil
 end
 ----------------
@@ -1873,97 +1188,97 @@ end
 
 function FFC_ON()
     setHex(currentOffset.GetCraftingTimeMultiplierForBuildingLevel, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Hack Enabled -")
+    gg.toast("⚡ Fast Farming - ON")
     return true
 end
 function FFC_OFF()
     reset(currentOffset.GetCraftingTimeMultiplierForBuildingLevel)
-    gg.toast("- Hack Disabled -")
+    gg.toast("⚡ Fast Farming - OFF")
     return nil
 end
 ----------------
 
 function FHND_ON()
     setHex(currentOffset.get_KnightRequestIntervalSeconds, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Hack Enabled -")
+    gg.toast("💂 Farm Hands Available - ON")
     return true
 end
 function FHND_OFF()
     reset(currentOffset.get_KnightRequestIntervalSeconds)
-    gg.toast("- Hack Disabled -")
+    gg.toast("💂 Farm Hands Available - OFF")
     return nil
 end
 ----------------
 
 function SHND_ON()
     setHex(currentOffset.get_HandsToSend, "E0 E1 84 D2 C0 03 5F D6")
-    gg.toast("- Hack Enabled -")
+    gg.toast("🤝 Send Helping Hands - ON")
     return true
 end
 function SHND_OFF()
     reset(currentOffset.get_HandsToSend)
-    gg.toast("- Hack Disabled -")
+    gg.toast("🤝 Send Helping Hands - OFF")
     return nil
 end
 ----------------
 
 function SG_ON()
     setValue(currentOffset.CreateOffer+0x34, 4, "~A8 MOV W22, WZR")
-    gg.toast("- Hack Enabled -")
+    gg.toast("💰 Sell Goods Free - ON")
     return true
 end
 function SG_OFF()
     reset(currentOffset.CreateOffer+0x34)
-    gg.toast("- Hack Disabled -")
+    gg.toast("💰 Sell Goods Free - OFF")
     return nil
 end
 ----------------
 
 function QuestBookFastFinish_ON()
     setHex(currentOffset.getAmount, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Quest Book Fast Finish Enabled -")
+    gg.toast("📜 Quest Book Fast Finish - ON")
     return true
 end
 
 function QuestBookFastFinish_OFF()
     reset(currentOffset.getAmount)
-    gg.toast("- Quest Book Fast Finish Disabled -")
+    gg.toast("📜 Quest Book Fast Finish - OFF")
     return nil
 end
 
 function MariesOrdersAskButton_ON()
     setHex(currentOffset.get_getAmountHas, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Maries Orders Ask Button Enabled -")
+    gg.toast("📝 Marie Orders Ask - ON")
     return true
 end
 
 function MariesOrdersAskButton_OFF()
     reset(currentOffset.get_getAmountHas)
-    gg.toast("- Maries Orders Ask Button Disabled -")
+    gg.toast("📝 Marie Orders Ask - OFF")
     return nil
 end
 
 function MariesOrdersSellActive_ON()
     setHex(currentOffset.get_getAmountRequired, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Maries Orders Sell Active Enabled -")
+    gg.toast("🛒 Marie Orders Sell - ON")
     return true
 end
 
 function MariesOrdersSellActive_OFF()
     reset(currentOffset.get_getAmountRequired)
-    gg.toast("- Maries Orders Sell Active Disabled -")
+    gg.toast("🛒 Marie Orders Sell - OFF")
     return nil
 end
 
 function AutoBuyMarket_ON()
     setHex(currentOffset.GetAutoBuyTime, "20 00 80 D2 C0 03 5F D6")
-    gg.toast("- Auto Buy (Market) Enabled -")
+    gg.toast("🛒 Auto Buy Market - ON")
     return true
 end
 
 function AutoBuyMarket_OFF()
     reset(currentOffset.GetAutoBuyTime)
-    gg.toast("- Auto Buy (Market) Disabled -")
+    gg.toast("🛒 Auto Buy Market - OFF")
     return nil
 end
 
@@ -2106,40 +1421,40 @@ end
 
 function CoopSlots8_ON()
     setHex(currentOffset.GetNumCoopOnlySlotsInUse, "00 00 80 D2 C0 03 5F D6")
-    gg.toast("- Enable 8 Co-op slots Enabled -")
+    gg.toast("🎰 8 Co-op Slots - ON")
     return true
 end
 
 function CoopSlots8_OFF()
     reset(currentOffset.GetNumCoopOnlySlotsInUse)
-    gg.toast("- Enable 8 Co-op slots Disabled -")
+    gg.toast("🎰 8 Co-op Slots - OFF")
     return nil
 end
 
 function UnlockChatEmoji_ON()
     setValue(currentOffset.canShowThanksGivingStickers+0x20, 4, "~A8 MOV X19, XZR")
     setValue(currentOffset.canShowChristmasStickers+0x20, 4, "~A8 MOV X19, XZR")
-    gg.toast("- Unlock Chat Emoji Enabled -")
+    gg.toast("💬 Chat Emoji Unlocked - ON")
     return true
 end
 
 function UnlockChatEmoji_OFF()
     reset(currentOffset.canShowThanksGivingStickers+0x20)
     reset(currentOffset.canShowChristmasStickers+0x20)
-    gg.toast("- Unlock Chat Emoji Disabled -")
+    gg.toast("💬 Chat Emoji - OFF")
     return nil
 end
 
 
 function ProspectorCornerFreePlay_ON()
     setHex(currentOffset.CanPlayForFree, "20 00 80 D2 C0 03 5F D6")
-    gg.toast("- PORSPECTOR CORNER FREE PLAY Enabled -")
+    gg.toast("🆓 Prospector Free Play - ON")
     return true
 end
 
 function ProspectorCornerFreePlay_OFF()
     reset(currentOffset.CanPlayForFree)
-    gg.toast("- PORSPECTOR CORNER FREE PLAY Disabled -")
+    gg.toast("🆓 Prospector Free Play - OFF")
     return nil
 end
 
@@ -2157,7 +1472,7 @@ function SetBarnSeaway_ON()
     if userInput >= 1 and userInput <= 99999 then
         -- Positive number branch: normal 32-bit int inject
         injectAssembly(currentOffset.get_totalItemsCount, userInput) -- 32-bit int inject
-        gg.toast("- Set Barn Seaway: " .. userInput .. " -")
+        gg.toast("📦 Set Barn Seaway: " .. userInput)
     elseif userInput < 0 then
         -- Negative number branch: generate hex patch via hexG & setHex
         local hexValue = hexG(userInput)
@@ -2180,7 +1495,7 @@ end
 
 function SetBarnSeaway_OFF()
     reset(currentOffset.get_totalItemsCount)
-    gg.toast("- Set Barn Seaway Hack Disabled -")
+    gg.toast("📦 Set Barn Seaway - OFF")
     return nil
 end
 
@@ -2421,13 +1736,13 @@ function AHM_ON()
   gg.getResults(gg.getResultsCount())
   gg.editAll("1705391652", gg.TYPE_DWORD)
   gg.clearResults()
-  gg.toast("ALL MARKET HIDDEN ITEMS ACTIVE")
+  gg.toast("👁 Hidden Market Items - ON")
   return true
 end
 
 
 function AHM_OFF()
-    gg.toast("-  Can't turn Off This hack -")
+    gg.toast("⚠ Can't turn Off This hack")
     return true
 end
 
@@ -2549,7 +1864,7 @@ end
 
 
 function ELtoken_OFF()
-    gg.toast("-  Can't turn Off This hack -")
+    gg.toast("⚠ Can't turn Off This hack")
     return true
 end
 
@@ -2565,7 +1880,7 @@ function ELItoken_ON()
     return
   end
   injectAssembly(currentOffset.get_inventoryTokens, ELInventory)
-  gg.toast("- Success....."..ELInventory)
+  gg.toast("🏅 Elite Badge Tokens Set: "..ELInventory)
   return true
 end
 
@@ -2573,26 +1888,11 @@ end
 
 function ELItoken_OFF()
     reset(currentOffset.get_inventoryTokens)
-    gg.toast("- Reset To The Orginal -")
+    gg.toast("🏅 Elite Badge Tokens - OFF")
     return nil
 end
 
 
-function EVP_ON()
-  x="SeasonPassManager"
-  o=0x28 t=1 findClass()
-  x="0" t=1 refineNum()
-  x="1" t=1 editAll()
-  clearAll()
-  gg.toast("🔓 Success.....")
-  return true
-end
-
-
-function EVP_OFF()
-    gg.toast("-  Can't turn Off This hack -")
-    return true
-end
 
 function PEA_ON()
   x="EntityPlacementController"
@@ -2613,7 +1913,7 @@ function PEA_OFF()
     x="1" t=1 editAll()
     clearAll()
     reset(currentOffset.isEntityObstructed)
-    gg.toast("- Reset To The Orginal -")
+    gg.toast("📍 Place Entity - OFF")
     return nil
 end
 
@@ -2624,7 +1924,7 @@ function SE_ON()
   x="0" t=4 refineNum()
   x="1" t=4 editAll()
   clearAll()
-  gg.toast("- Sell Enabled -")
+  gg.toast("🏷 Sell Anything - ON")
   return true
 end
 
@@ -2635,7 +1935,7 @@ function SE_OFF()
     x="1" t=4 refineNum()
     x="0" t=4 editAll()
     clearAll()
-    gg.toast("- Sell Disabled  -")
+    gg.toast("🏷 Sell Anything - OFF")
     return nil
 end
 
@@ -2661,7 +1961,7 @@ function UB_OFF()
     x="1~5" t = 4 refineNum()
     x=0 t=4 editAll()
     clearAll()
-    gg.toast("- Building's Are Downgraded -")
+    gg.toast("⛩ Buildings Downgraded")
     return nil
 end
 
@@ -2707,7 +2007,7 @@ function UC_ON()
 end
 
 function UC_OFF()
-    gg.toast("- Can't Turn This Hack Off -")
+    gg.toast("⚠ Can't Turn This Hack Off")
     return true
 end
 
@@ -2721,7 +2021,7 @@ end
 
 function HH_OFF()
     reset(currentOffset.get_IsAvailable)
-    gg.toast("- Deactivated -")
+    gg.toast("💂 Farm Hands Always Available - OFF")
     return nil
 end
 
@@ -2770,89 +2070,545 @@ end
 
 
 function MB_OFF()
-    gg.toast("- Can't Restore To The Orginal -")
+    gg.toast("⚠ Can't Restore To Original")
     return nil
 end
 
 
+-- ===== Event Items Helper Functions (credit: Ertan Hancer) =====
+local EVI_offsetLength = info.x64 and 0x10 or 0x8
+local EVI_protoLootResults = nil
+local EVI_RVT1 = nil
+local EVI_RVT2 = nil
+local EVI_RVT3 = nil
+local EVI_xxx = nil
+local EVI_dynamicNames = nil
+local EVI_initialized = false
+
+function EVI_class()
+    gg.clearResults()
+    gg.setRanges(gg.REGION_OTHER)
+    gg.searchNumber(":"..x, 1)
+    if gg.getResultsCount() == 0 then E = 0 return end
+    local apexu = gg.getResults(gg.getResultsCount())
+    local filtered = {}
+    for i, v in ipairs(apexu) do
+        local baseAddr = v.address - 1
+        local checkVal = gg.getValues({{address = baseAddr, flags = 1}})[1].value
+        if checkVal == 0 then
+            local secondCheckAddr = baseAddr + #x + 1
+            local secondCheckVal = gg.getValues({{address = secondCheckAddr, flags = 1}})[1].value
+            if secondCheckVal == 0 then
+                filtered[#filtered + 1] = {address = secondCheckAddr - #x, flags = 1}
+            end
+        end
+    end
+    if #filtered == 0 then E = 0 return end
+    gg.setRanges(gg.REGION_ANONYMOUS)
+    gg.loadResults(filtered)
+    gg.searchPointer(0)
+    if gg.getResultsCount() == 0 then E = 0 return end
+    local pointers = gg.getResults(gg.getResultsCount())
+    local is64 = info.x64
+    local offsets = is64 and {o1 = 48, o2 = 56, vt = 32} or {o1 = 24, o2 = 28, vt = 4}
+    local function find_matches(off1, off2)
+        local targets = {}
+        local addr_list1, addr_list2 = {}, {}
+        for i, v in ipairs(pointers) do
+            addr_list1[i] = {address = v.address + off1, flags = offsets.vt}
+            addr_list2[i] = {address = v.address + off2, flags = offsets.vt}
+        end
+        local vals1 = gg.getValues(addr_list1)
+        local vals2 = gg.getValues(addr_list2)
+        for i = 1, #vals1 do
+            if vals1[i].value == vals2[i].value and #tostring(vals1[i].value) >= 8 then
+                targets[#targets + 1] = vals1[i].value
+            end
+        end
+        return targets
+    end
+    local apexp = find_matches(offsets.o1, offsets.o2)
+    if #apexp == 0 then
+        local retry_o1, retry_o2 = (is64 and 32 or 16), (is64 and 40 or 20)
+        apexp = find_matches(retry_o1, retry_o2)
+    end
+    if #apexp == 0 then E = 0 return end
+    gg.setRanges(gg.REGION_ANONYMOUS)
+    gg.clearResults()
+    local final_results = {}
+    for i, val in ipairs(apexp) do
+        gg.searchNumber(tonumber(val), offsets.vt)
+        local found = gg.getResults(gg.getResultsCount())
+        for j, res in ipairs(found) do
+            res.name = "APEX[GG]v2"
+            final_results[#final_results + 1] = res
+        end
+        gg.clearResults()
+    end
+    if #final_results == 0 then E = 0 return end
+    local load_list = {}
+    for i, v in ipairs(final_results) do
+        load_list[#load_list + 1] = {address = v.address + o, flags = t}
+    end
+    gg.loadResults(load_list)
+end
+
+function EVI_refineclassname()
+    local pointerSize = (info.x64 and 8 or 4)
+    local pointerType = (info.x64 and gg.TYPE_QWORD or gg.TYPE_DWORD)
+    local libstart = 0
+    local libil2cppXaCdRange
+    local metadata
+    local searchRanges = {
+        ["Ca"] = gg.REGION_C_ALLOC,
+        ["A"] = gg.REGION_ANONYMOUS,
+        ["O"] = gg.REGION_OTHER,
+    }
+    local unsignedFixers = {
+        [1] = 0xFF, [2] = 0xFFFF, [4] = 0xFFFFFFFF, [8] = 0xFFFFFFFFFFFFFFFF,
+    }
+
+    local function toUnsigned(value, size)
+        if value < 0 then value = value & unsignedFixers[size] end
+        return value
+    end
+
+    local function fixAddressForPointer(address, size)
+        local remainder = address % size
+        return remainder == 0 and address or (address - remainder)
+    end
+
+    local targetClass = EVI_targetClassname
+    local targetClassLen = #targetClass
+    local targetBytes = {string.byte(targetClass, 1, targetClassLen)}
+
+    local function isTargetClass(addr)
+        local tt = {}
+        for i = 1, targetClassLen + 1 do
+            tt[i] = {address = addr + (i - 1), flags = gg.TYPE_BYTE}
+        end
+        tt = gg.getValues(tt)
+        for i = 1, targetClassLen do
+            if (tt[i].value & 0xFF) ~= targetBytes[i] then return false end
+        end
+        return (tt[targetClassLen + 1].value & 0xFF) == 0
+    end
+
+    local function get_metadata()
+        local ranges = gg.getRangesList("global-metadata.dat")
+        if #ranges > 0 then return ranges end
+        local allRanges = gg.getRangesList()
+        local stringOffsetReq = {}
+        for i, val in ipairs(allRanges) do stringOffsetReq[i] = {address = val.start + 0x18, flags = gg.TYPE_DWORD} end
+        stringOffsetReq = gg.getValues(stringOffsetReq)
+        local checkReq = {}
+        for i, val in ipairs(allRanges) do checkReq[i] = {address = val.start + stringOffsetReq[i].value, flags = gg.TYPE_DWORD} end
+        checkReq = gg.getValues(checkReq)
+        for i, val in ipairs(checkReq) do
+            if val.value == 0x6F63736D then return {allRanges[i]} end
+        end
+        return {}
+    end
+
+    local function getMainLib_Xa_Cd_Region()
+        local packageName = info.packageName
+        local libName = (packageName == "com.mobile.legends") and "liblogic.so" or "libil2cpp.so"
+        local libRanges = gg.getRangesList(libName)
+        if #libRanges == 0 then return nil end
+        local XaCdRange = {["start"] = 0, ["end"] = 0}
+        for i, val in ipairs(libRanges) do
+            if val.state == "Xa" then
+                if XaCdRange.start == 0 then XaCdRange.start = val.start end
+                XaCdRange["end"] = val["end"]
+            end
+        end
+        libstart = libRanges[1].start
+        return XaCdRange
+    end
+    libil2cppXaCdRange = getMainLib_Xa_Cd_Region()
+    if not libil2cppXaCdRange then gg.alert("libil2cpp not found") return end
+    metadata = get_metadata()
+    if #metadata == 0 then gg.alert("Metadata not found") return end
+    gg.clearResults()
+    gg.setRanges(gg.REGION_ANONYMOUS)
+    gg.searchNumber(";" .. EVI_item, 2)
+    local resCount = gg.getResultsCount()
+    if resCount == 0 then gg.alert("String " .. EVI_item .. " not found") return end
+    local stringObjects = {}
+    local off = info.x64 and -0x10 or -0x8
+    local maxCount = resCount > 1000000 and 1000000 or resCount
+    local step = 50000
+    for i = 1, maxCount, step do
+        gg.toast("Processing strings: " .. i .. " to " .. math.min(i + step - 1, maxCount) .. " of " .. maxCount .. "...\nPlease wait.")
+        local limit = step
+        if i + step - 1 > maxCount then
+            limit = maxCount - i + 1
+        end
+        local results = gg.getResults(limit, i - 1)
+        local lengthCheck = {}
+        for j = 1, limit do
+            lengthCheck[j] = {address = results[j].address - 4, flags = gg.TYPE_DWORD}
+        end
+        lengthCheck = gg.getValues(lengthCheck)
+        for j = 1, limit do
+            if lengthCheck[j].value == EVI_stringlengthvalue then
+                table.insert(stringObjects, {address = lengthCheck[j].address + off, flags = pointerType})
+            end
+        end
+    end
+    gg.toast("String processing complete!")
+    if #stringObjects == 0 then gg.alert("No strings with length " .. EVI_stringlengthvalue .. " found") return end
+    gg.loadResults(stringObjects)
+    gg.searchPointer(0)
+    if info.x64 then o = EVI_oo t = 32 applyOffset() else o = EVI_oo t = 4 applyOffset() end
+    local pointerResults = gg.getResults(gg.getResultsCount())
+    if #pointerResults == 0 then gg.alert("No pointers to the string found") return end
+    local finalResults = {}
+    local headerRequests = {}
+    for i, res in ipairs(pointerResults) do
+        local fixedPointer = fixAddressForPointer(res.address, pointerSize)
+        headerRequests[#headerRequests + 1] = {address = fixedPointer, flags = pointerType}
+    end
+    local headers = gg.getValues(headerRequests)
+    local classRequests = {}
+    for i, hdr in ipairs(headers) do
+        local parentPtr = hdr.value
+        classRequests[#classRequests + 1] = {address = parentPtr + (pointerSize * 2), flags = pointerType}
+        classRequests[#classRequests + 1] = {address = parentPtr + (pointerSize * 3), flags = pointerType}
+    end
+    local classInfo = gg.getValues(classRequests)
+    for i = 1, #classInfo, 2 do
+        local namePtr = toUnsigned(classInfo[i].value, pointerSize)
+        if namePtr > metadata[1].start and namePtr < metadata[1]["end"] then
+            if isTargetClass(namePtr) then
+                table.insert(finalResults, pointerResults[(i + 1) / 2])
+            end
+        end
+    end
+    gg.clearResults()
+    gg.loadResults(finalResults)
+end
+
+function EVI_getPointedString(pointerAddress)
+    local offsetChars = EVI_offsetLength + 4
+    if pointerAddress == 0 then return nil end
+    local lengthData = gg.getValues({{address = pointerAddress + EVI_offsetLength, flags = gg.TYPE_DWORD}})
+    local len = lengthData[1].value
+    if len <= 0 or len > 200 then return nil end
+
+    local charTable = {}
+    for i = 0, len - 1 do
+        table.insert(charTable, {address = pointerAddress + offsetChars + (i * 2), flags = gg.TYPE_WORD})
+    end
+    charTable = gg.getValues(charTable)
+    local str = ""
+    for _, val in ipairs(charTable) do
+        local charCode = val.value & 0xFFFF
+        if charCode > 0 then
+            if charCode <= 0x7F then
+                str = str .. string.char(charCode)
+            elseif charCode <= 0x7FF then
+                str = str .. string.char(0xC0 | (charCode >> 6), 0x80 | (charCode & 0x3F))
+            else
+                str = str .. string.char(0xE0 | (charCode >> 12), 0x80 | ((charCode >> 6) & 0x3F), 0x80 | (charCode & 0x3F))
+            end
+        end
+    end
+    return str
+end
+
+function EVI_filterstringname()
+    local count = gg.getResultsCount()
+    local results = gg.getResults(count)
+    local pointers = {}
+
+    for i, v in ipairs(results) do
+        pointers[i] = {address = v.value + EVI_offsetLength, flags = gg.TYPE_DWORD}
+    end
+
+    local values = gg.getValues(pointers)
+    local matchingAddresses = {}
+    for i, val in ipairs(values) do
+        if val.value == EVI_targetLen then
+            table.insert(matchingAddresses, results[i].address)
+        end
+    end
+
+    if #matchingAddresses > 0 then
+        local finalResults = {}
+        for i, address in ipairs(matchingAddresses) do
+            finalResults[i] = {address = address, flags = t}
+        end
+        gg.loadResults(finalResults)
+    else
+        gg.alert("No matching addresses found for string length value " .. EVI_targetLen)
+        gg.clearResults()
+        return false
+    end
+
+    local results2 = gg.getResults(gg.getResultsCount())
+    local foundVal = nil
+    local finalMatchingAddresses = {}
+
+    for _, res in ipairs(results2) do
+        if EVI_getPointedString(res.value) == EVI_targetName then
+            foundVal = res.value
+            table.insert(finalMatchingAddresses, res.address)
+            break
+        end
+    end
+
+    if #finalMatchingAddresses > 0 then
+        local finalResults = {}
+        for i, address in ipairs(finalMatchingAddresses) do
+            finalResults[i] = {address = address, flags = t}
+        end
+        gg.loadResults(finalResults)
+
+        if info.x64 then
+            EVI_x1 = foundVal & 0xFFFFFFFF
+            EVI_x2 = (foundVal >> 32) & 0xFFFFFFFF
+        else
+            EVI_x1 = foundVal
+        end
+    else
+        gg.alert("Could not find string: " .. EVI_targetName)
+        return false
+    end
+    return true
+end
+
+function EVI_script()
+    local target = tonumber(EVI_pv1)
+    local pType = info.x64 and gg.TYPE_QWORD or gg.TYPE_DWORD
+    local itemOff = info.x64 and 0x10 or 0x8
+    local amountOff = info.x64 and 0x18 or 0xC
+
+    for i, res in ipairs(EVI_protoLootResults) do
+        local baseAddr = res.address
+
+        -- Edit item string pointer
+        if info.x64 then
+            gg.setValues({
+                {address = baseAddr + itemOff, flags = gg.TYPE_DWORD, value = EVI_x1},
+                {address = baseAddr + itemOff + 0x4, flags = gg.TYPE_DWORD, value = EVI_x2}
+            })
+        else
+            gg.setValues({
+                {address = baseAddr + itemOff, flags = gg.TYPE_DWORD, value = EVI_x1}
+            })
+        end
+
+        -- Bypass ISecureVar<int> _amount
+        local p = gg.getValues({{address = baseAddr + amountOff, flags = pType}})
+        local secureObj = p[1].value
+
+        if secureObj ~= nil and secureObj ~= 0 then
+            local q = gg.getValues({{address = secureObj + 0x20, flags = pType}})
+            local partsPtr = q[1].value
+
+            if partsPtr ~= nil and partsPtr ~= 0 then
+                local b = gg.getValues({{address = partsPtr + 0x20, flags = gg.TYPE_BYTE}})
+                local function ub(n) if n < 0 then return n + 256 else return n end end
+                local k0 = ub(b[1].value)
+
+                local encoded = (k0 ~ target) & 0xFF
+
+                gg.setValues({
+                    {address = partsPtr + 0x22, flags = gg.TYPE_BYTE, value = encoded},
+                    {address = secureObj + 0x38, flags = gg.TYPE_DWORD, value = target},
+                    {address = secureObj + 0x40, flags = gg.TYPE_BYTE, value = target}
+                })
+            end
+        end
+    end
+    clearAll()
+    gg.toast("FINISH")
+end
+
+-- ===== Main EVI_ON / EVI_OFF Functions =====
+
 function EVI_ON()
-    gg.alert("@credit - Ertan Hancer\n@ertanhancer", "","")
-    local saved = gg.getListItems()
-    
-    if #saved == 0 then
-        -- Run only if no saved items
-        x = "ProtoFixedLootInfo"
-        o = 0x10 t = 32 findClass()
-        o = 0x10 t = 32 sv = 8 checkString()
-        o = 0x14 t = 32 sv = 6357079 checkString()
-        o = 0x18 t = 32 sv = 6619252 checkString()
-        o = 0x1C t = 32 sv = 6226034 checkString()
-        o = 0x20 t = 32 sv = 3211312 checkString()
-        o = 0x0  t = 4 applyOffset()
+
+    if not EVI_initialized then
+        -- Ask source
+        local selectfrom = gg.choice({
+            "🍎 Apple Tree",
+            "💧 Water",
+        }, nil, '👇 Get Items From 👇')
+        if not selectfrom then return nil end
+        if selectfrom == 1 then EVI_item = "Apple_01" end
+        if selectfrom == 2 then EVI_item = "Water_01" end
+
+        -- Find ProtoFixedLootInfo via refineclassname
+        EVI_targetClassname = "ProtoFixedLootInfo"
+        EVI_stringlengthvalue = 8
+        if info.x64 then EVI_oo = -0x10 else EVI_oo = -0x8 end
+        EVI_refineclassname()
+
         checkResults()
-        if E == 0 then 
-            gg.alert("Error : Meoww Happened") 
+        if E == 0 then
+            gg.alert("Error: Could not find ProtoFixedLootInfo")
             return nil
         end
-        freeze()
+        EVI_protoLootResults = gg.getResults(gg.getResultsCount())
+
+        -- Get offset values for reset
+        if info.x64 then
+            o = 0x10 t = 4 applyOffset()
+            EVI_RVT1 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            EVI_RVT2 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            EVI_RVT3 = gg.getResults(gg.getResultsCount())
+        else
+            checkResults()
+            if E == 0 then
+                gg.alert("Error: No results after ProtoFixedLootInfo search")
+                return nil
+            end
+            o = 0x8 t = 4 applyOffset()
+            EVI_RVT1 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            EVI_RVT2 = gg.getResults(gg.getResultsCount())
+        end
         clearAll()
-        gg.setValues(frz)
+
+        -- Find ProtoInventoryItem class
+        x = "ProtoInventoryItem"
+        if info.x64 then o = 0x10 t = 32 else o = 0x8 t = 4 end
+        EVI_class()
+
+        EVI_xxx = gg.getResults(gg.getResultsCount())
+        clearAll()
+        gg.loadResults(EVI_xxx)
+
+        -- Extract dynamic item names
+        EVI_dynamicNames = {}
+        local nameExists = {}
+
+        local maxCount = #EVI_xxx
+        local step = 100
+        for i = 1, maxCount, step do
+            gg.toast("Processing strings: " .. i .. " to " .. math.min(i + step - 1, maxCount) .. " of " .. maxCount .. "...\nPlease wait.")
+            local stop = math.min(i + step - 1, maxCount)
+            for j = i, stop do
+                local res = EVI_xxx[j]
+                local str = EVI_getPointedString(res.value)
+                if str and str ~= "" then
+                    if not nameExists[str] then
+                        table.insert(EVI_dynamicNames, str)
+                        nameExists[str] = true
+                    end
+                end
+            end
+        end
+        gg.toast("String processing complete!")
+
+        if #EVI_dynamicNames == 0 then
+            gg.alert("Could not extract any string names!")
+            return nil
+        end
+        clearAll()
+        EVI_initialized = true
+    end
+
+    -- Reset values each time
+    if info.x64 then
+        gg.setValues(EVI_RVT1)
+        gg.setValues(EVI_RVT2)
+        gg.setValues(EVI_RVT3)
     else
-        frz = saved
+        gg.setValues(EVI_RVT1)
+        gg.setValues(EVI_RVT2)
     end
-    
-    -- Item selection menu
-    local items = {
-        "[ + ] Event Supplies", --1
-        "[ + ] Event Phase 1 Item 1", --2
-        "[ + ] Event Phase 2 Item 1", --3
-        "[ + ] Event Phase 2 Item 2", --4
-        "[ + ] Event Phase 3 Item 1", --5
-        "[ + ] Event Phase 3 Item 2", --6
-        "[ + ] Event Phase 4 Item 1", --7
-        "[ + ] Event Phase 4 Item 2", --8
-        "[ + ] Event Phase 5 Item 1", --9
-        "[ + ] Event Phase 5 Item 2", --10
-        "[ + ] Event Leaderboard Item 1", --11
-        "[ + ] Event Leaderboard Item 2", --12
-        "[ + ] Event Leaderboard Item 3" --13
-    }
-    sel = gg.choice(items, nil, "💥 Select an item: \n────୨ৎ────────୨ৎ────")
-    
-    if not sel then
-        gg.alert("No item selected")
-        return
+
+    -- Find the highest event number
+    local maxEventNum = -1
+    for _, name in ipairs(EVI_dynamicNames) do
+        local evNum = string.match(name, "^Event(%d+)")
+        if evNum then
+            local num = tonumber(evNum)
+            if num > maxEventNum then
+                maxEventNum = num
+            end
+        end
     end
-    
-    -- Ask for amount
-    p = gg.prompt({"Input Amount"}, nil, {[1] = "number"})
-    if not p or not tonumber(p[1]) or tonumber(p[1]) < 1 then
-        gg.alert("Invalid input")
+
+    if maxEventNum == -1 then
+        gg.alert("No Event items found.")
         return nil
     end
-    pv1 = p[1]
-    
-    -- Execute the selected script
-    if sel == 1 then y1=-2231682369 script() end
-    if sel == 2 then y1=-3478778563 script() end
-    if sel == 3 then y1=-3478778562 script() end
-    if sel == 4 then y1=-2498022452 script() end
-    if sel == 5 then y1=-2498022451 script() end
-    if sel == 6 then y1=-3117013049 script() end
-    if sel == 7 then y1=-3117013048 script() end
-    if sel == 8 then y1=-3583318994 script() end
-    if sel == 9 then y1=-3583318993 script() end
-    if sel == 10 then y1=-4202309591 script() end
-    if sel == 11 then y1=-4202309590 script() end
-    if sel == 12 then y1=-3221553480 script() end
-    if sel == 13 then y1=-3221553479 script() end
-    gg.toast("- Activated -")
-    return nil
+
+    -- Filter items for highest event AND containing "BNI" or "Intermediate"
+    local prefix = "Event" .. tostring(maxEventNum)
+    local filteredItems = {}
+    for _, name in ipairs(EVI_dynamicNames) do
+        if string.sub(name, 1, #prefix) == prefix then
+            if string.find(name, "BNI") or string.find(name, "Intermediate") then
+                table.insert(filteredItems, name)
+            end
+        end
+    end
+
+    if #filteredItems == 0 then
+        gg.alert("No BNI or Intermediate items found for " .. prefix)
+        return nil
+    end
+
+    -- Sort the filtered items alphabetically
+    table.sort(filteredItems, function(a, b) return a:lower() < b:lower() end)
+
+    -- Ask for amount
+    ::EVI_SELECT_AMT::
+    local pr1 = gg.prompt({'Input Amount'}, nil, {[1] = 'number'})
+    if pr1 == nil then return nil end
+    if #(pr1[1]) == 0 then goto EVI_SELECT_AMT return end
+    if type(tonumber(pr1[1])) ~= "number" then gg.alert("INPUT VALUE") goto EVI_SELECT_AMT return end
+    if tonumber(pr1[1]) < 1 or tonumber(pr1[1]) > 255 then gg.alert("INPUT VALUE 1~255") goto EVI_SELECT_AMT return end
+    EVI_pv1 = pr1[1]
+
+    local itemIndex = gg.choice(filteredItems, nil, "Select Item (" .. prefix .. "):")
+    if not itemIndex then return nil end
+
+    EVI_targetName = filteredItems[itemIndex]
+    EVI_targetLen = #EVI_targetName
+    gg.toast("Searching for " .. EVI_targetName)
+
+    if info.x64 then t = 32 else t = 4 end
+    gg.loadResults(EVI_xxx)
+    local ok = EVI_filterstringname()
+    if ok then
+        EVI_script()
+    end
+    return true
 end
 
 
 function EVI_OFF()
-    gg.toast("- Meowww -")
+    -- Restore original loot table values (undo the hack)
+    if EVI_initialized then
+        if info.x64 then
+            gg.setValues(EVI_RVT1)
+            gg.setValues(EVI_RVT2)
+            gg.setValues(EVI_RVT3)
+        else
+            gg.setValues(EVI_RVT1)
+            gg.setValues(EVI_RVT2)
+        end
+    end
+    -- Clear saved list items
+    gg.getListItems()
+    gg.clearList()
+    -- Reset cached data
+    EVI_initialized = false
+    EVI_protoLootResults = nil
+    EVI_RVT1 = nil
+    EVI_RVT2 = nil
+    EVI_RVT3 = nil
+    EVI_xxx = nil
+    EVI_dynamicNames = nil
+    gg.toast("- Event Items Reset -")
     return nil
 end
 
@@ -3344,7 +3100,7 @@ function ITM_ON()
     if menu2==213 then y1=-3193205514 y2=-1 scripNew() end
     if menu2==214 then y1=-4092688356 y2=-1 scripNew() end
     
-    gg.toast("- Activated -")
+    gg.toast("💂 Farm Hands Always Available - ON")
 end
 
 
@@ -3359,13 +3115,13 @@ function OFG_ON()
   x="70~80" t=16 refineNum()
   x="100000" t=16 editAll()
   clearAll()
-  gg.toast("- One Feed Gold Activated -")
+  gg.toast("🌾 One Feed Gold - ON")
   return true
 end
 
 
 function OFG_OFF()
-    gg.toast("Can't Restore to Orginal")
+    gg.toast("⚠ Can't Restore to Original")
     return true
 end
 
@@ -3849,13 +3605,13 @@ end
 
 function SPN_ON()
     injectAssembly(currentOffset.get_SpinLeft, 9999)
-    gg.toast("- Activated -")
+    gg.toast("🎡 Prize Wheel Spins - ON")
     return true
 end
 
 function SPN_OFF()
     reset(currentOffset.get_SpinLeft)
-    gg.toast("- Restored -")
+    gg.toast("🎡 Prize Wheel Spins - OFF")
     return nil
 end
 
@@ -3869,13 +3625,13 @@ function FHA_ON()
         return
     end
     injectAssembly(currentOffset.GetAmount, amount)
-    gg.toast("- Activated with value: " .. amount .. " -")
+    gg.toast("🎁 Farm Hands Reward: " .. amount .. " - ON")
     return true
 end
 
 function FHA_OFF()
     reset(currentOffset.GetAmount)
-    gg.toast("- Restored -")
+    gg.toast("🎁 Farm Hands Reward - OFF")
     return nil
 end
 
@@ -3916,13 +3672,13 @@ function FHD_ON()
         gg.setValues(patchData)
     end
 
-    gg.toast("- Activated on all ELF ranges -")
+    gg.toast("🎯 Farm Hands 100% Drop - ON")
     return true
 end
 
 function FHD_OFF()
     reset(currentOffset.GetDropRate)
-    gg.toast("- Restored -")
+    gg.toast("🎯 Farm Hands Drop - OFF")
     return nil
 end
 
@@ -4005,109 +3761,111 @@ end
 
 gg.setVisible(true)
 local menuList = {
-    -- 🐾 Items & Selling
-    "❄️ Freez All Items",
-    "💰 Sell Goods For Free",
-    "💰 Sell Anything In Farm",
-    "🎉 Porspector Corner Item",
+	-- 🐾 Items & Selling
+	"❄️ Freeze All Items",
+	"💰 Sell Goods For Free",
+	"🏷️ Sell Anything In Farm",
+	"🤠 Prospector Corner Item",
 
-    -- 💰 Expansions & Buildings
-    "💰 Expend Farm With Coins",
-    "⛩️ Upgrade All Buildings",
+	-- 💰 Expansions & Buildings
+	"🚜 Expand Farm With Coins",
+	"⛩️ Upgrade All Buildings",
 
-    -- 🗝️ Costs & Keys
-    "🗝️ Item Cost 0 Key",
-    "🆓 Porspector Corner Free Play",
+	-- 🗝️ Costs & Keys
+	"🗝️ Item Cost 0 Key",
+	"🆓 Prospector Corner Free Play",
 
-    -- 🐷 Animals
-    "🐷 One Feed Gold",
-    "🐷 Show Animal Wiegh-in",
+	-- 🐷 Animals
+	"🌾 One Feed Gold",
+	"⚖️ Show Animal Weigh-in",
 
-    -- 🏕️ Farming & Barn
-    "🏕️ Fast Farming",
-    "🐾 Set Barn Seaway",
-    "💂 Farm Hands Always Available For Use",
+	-- 🏕️ Farming & Barn
+	"⚡ Fast Farming",
+	"📦 Set Barn Seaway",
+	"💂 Farm Hands Always Available For Use",
 
-    -- 🙌 Helpers
-    "🙌 Request Farmhands",
-    "🎁 Send Helping Hands",
+	-- 🙌 Helpers
+	"🙋 Request Farmhands",
+	"🤝 Send Helping Hands",
 
-    -- ⚡ Quest & Orders
-    "⚡ Quest Book Fast Finish",
-    "📝 Maries Orders Ask Button",
-    "🛒 Maries Orders Sell Active",
-    "📋 Marie Order Item Amount",
-    "📋 Maries Board Get/Send Xp, Coin, Timber",
-    "🎯 Maries Order Weekly Score",
+	-- ⚡ Quest & Orders
+	"📜 Quest Book Fast Finish",
+	"📝 Maries Orders Ask Button",
+	"🛒 Maries Orders Sell Active",
+	"📦 Marie Order Item Amount",
+	"📊 Maries Board Get/Send Xp, Coin, Timber",
+	"🏆 Maries Order Weekly Score",
 
-    -- 🛒 Market
-    "🛒 Auto Buy (Market)",
-    "🎖️ Active Hidden Market Items",
+	-- 🛒 Market
+	"🛒 Auto Buy (Market)",
+	"👁️ Active Hidden Market Items",
 
-    -- 🎄 Fair & Workshops
-    "🎄 Country Fair Workshop Multiplier",
-    "🍁 Unlimited Crops/Workshop/Decoration",  -- Added new item here
-    "⛏️ Workshops Crafting Amount",
+	-- 🎄 Fair & Workshops
+	"🎪 Country Fair Workshop Multiplier",
+	"🌾 Unlimited Crops/Workshop/Decoration",
+	"🛠️ Workshops Crafting Amount",
 
-    -- 🎰 Co-Op
-    "🎰 Enable 8 Co-Op Slots",
-    "⛔ Co-op Order Instant Expire",
+	-- 🎰 Co-Op
+	"🎰 Enable 8 Co-Op Slots",
+	"⏳ Co-op Order Instant Expire",
 
-    -- 🙃 Chat & Social
-    "🙃 Unlock Chat Emoji",
-    "🌈 Edit UserName With Rainbow Colour",
+	-- 🙃 Chat & Social
+	"💬 Unlock Chat Emoji",
+	"🎨 Edit UserName With Rainbow Colour",
 
-    -- ⛵ Boat Race
-    "⛵ (Br) Bonus Task Points",
-    "⛵ (Br) Set Bonus Task Completed",
-    "⛵ (Br) Set Task Limit",
-    "⛵ (Br) Bonus Task Skip Price",
-    "⛵ (Br) Task Requirement (1)",
-    "⛵ (Br) Co-op Shoot Point",
+	-- ⛵ Boat Race
+	"⛵ (Br) Bonus Task Points",
+	"⛵ (Br) Set Bonus Task Completed",
+	"⛵ (Br) Set Task Limit",
+	"⛵ (Br) Bonus Task Skip Price",
+	"⛵ (Br) Task Requirement (1)",
+	"⛵ (Br) Co-op Shoot Point",
 
-    -- ♻️ Wheel & Spins
-    "♻️ Prize Whell Unlimited Spins",
+	-- ♻️ Wheel & Spins
+	"🎡 Prize Wheel Unlimited Spins",
 
-    -- ⭐ Decoration
-    "⭐ Unlimited Decoration",
+	-- ⭐ Decoration
+	"⭐ Unlimited Decoration",
 
-    -- 🔓 Unlocks & Passes
-    "🔓 Unlock Hairloom Pass",
-    "🔓 Unlock Mystery Master Pass",
-    "🔓 Unlock Elite Plus Badge",
-    "🔓 Unlock Event Pass",
+	-- 🔓 Unlocks & Passes
+	"📜 Unlock Heirloom Pass",
+	"🔮 Unlock Mystery Master Pass",
+	"🥇 Unlock Elite Plus Badge",
 
-    -- 🎃 Elite Features
-    "🎃 Auto Complete Elite Tokens",
-    "🧩 Get Elite Badge Tokens",
 
-    -- 🤷 Place & Entity
-    "🤷 Place Entity Anywhere (Water/Land)",
+	-- 🎃 Elite Features
+	"⚡ Auto Complete Elite Tokens",
+	"🎖️ Get Elite Badge Tokens",
 
-    -- 🔓 Unlimited Resources
-    "🔓 Unlimited Crops, Animals, Key Maker",
+	-- 🤷 Place & Entity
+	"🗺️ Place Entity Anywhere (Water/Land)",
 
-    -- 🔥 Water Items
-    "🔥 Get Event Items (From Water)",
-    "⚽ Get Normal Items (From Water)",
-    
-    "🙌 Farm Hands Reward Amount",
-    "💯 Farm Hands Reward Chance 100%",
-    "🃏 Confection Collection Fast Finish",
-    "⛔ Disable Card Collection Pop-up",
+	-- 🔓 Unlimited Resources
+	"🌾 Unlimited Crops, Animals, Key Maker",
 
-    -- 🚫 Exit
-    "🚫 Exit Script...."
+	-- 🔥 Water Items
+	"🌊 Get Event Items",
+	"💧 Get Normal Items (From Water)",
+
+	"🎁 Farm Hands Reward Amount",
+	"🎯 Farm Hands Reward Chance 100%",
+	"🍬 Confection Collection Fast Finish",
+	"🎴 Disable Card Collection Pop-up",
+
+	-- 🚫 Exit
+	"🚫 Exit Script...."
 }
 
--- 🌐 Auto-translate menu
-gg.setVisible(false)
-gg.toast("- Translation Started.....-")
-for i, v in ipairs(menuList) do
-    menuList[i] = Translate(v, "en", TargetLang)
+-- Auto-translate menu (skip if English is selected)
+if TargetLang ~= "en" then
+    gg.setVisible(false)
+    gg.toast("- Translation Started.....-")
+    for i, v in ipairs(menuList) do
+        menuList[i] = Translate(v, "en", TargetLang)
+    end
+    gg.toast("- Translation Completed! -")
+    gg.setVisible(true)
 end
-gg.toast("- Translation Completed! -")
-gg.setVisible(true)
 
 local checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
@@ -4115,7 +3873,7 @@ local checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 
-    nil, nil, nil
+    nil, nil
 }
 
 function menu()
@@ -4415,84 +4173,78 @@ function menu()
             checkList[41] = ELPass_OFF()
         end
     end
+
     if tsu[42] ~= checkList[42]  then
         if tsu[42]  then
-            checkList[42] = EVP_ON()
+            checkList[42] = ELtoken_ON()
         else
-            checkList[42] = EVP_OFF()
+            checkList[42] = ELtoken_OFF()
         end
     end
     if tsu[43] ~= checkList[43]  then
         if tsu[43]  then
-            checkList[43] = ELtoken_ON()
+            checkList[43] = ELItoken_ON()
         else
-            checkList[43] = ELtoken_OFF()
+            checkList[43] = ELItoken_OFF()
         end
     end
     if tsu[44] ~= checkList[44]  then
         if tsu[44]  then
-            checkList[44] = ELItoken_ON()
+            checkList[44] = PEA_ON()
         else
-            checkList[44] = ELItoken_OFF()
+            checkList[44] = PEA_OFF()
         end
     end
     if tsu[45] ~= checkList[45]  then
         if tsu[45]  then
-            checkList[45] = PEA_ON()
+            checkList[45] = UC_ON()
         else
-            checkList[45] = PEA_OFF()
+            checkList[45] = UC_OFF()
         end
     end
     if tsu[46] ~= checkList[46]  then
         if tsu[46]  then
-            checkList[46] = UC_ON()
+            checkList[46] = EVI_ON()
         else
-            checkList[46] = UC_OFF()
+            checkList[46] = EVI_OFF()
         end
     end
     if tsu[47] ~= checkList[47]  then
         if tsu[47]  then
-            checkList[47] = EVI_ON()
+            checkList[47] = ITM_ON()
         else
-            checkList[47] = EVI_OFF()
+            checkList[47] = ITM_OFF()
         end
     end
     if tsu[48] ~= checkList[48]  then
         if tsu[48]  then
-            checkList[48] = ITM_ON()
+            checkList[48] = FHA_ON()
         else
-            checkList[48] = ITM_OFF()
+            checkList[48] = FHA_OFF()
         end
     end
     if tsu[49] ~= checkList[49]  then
         if tsu[49]  then
-            checkList[49] = FHA_ON()
+            checkList[49] = FHD_ON()
         else
-            checkList[49] = FHA_OFF()
+            checkList[49] = FHD_OFF()
         end
     end
     if tsu[50] ~= checkList[50]  then
         if tsu[50]  then
-            checkList[50] = FHD_ON()
+            checkList[50] = CCF_ON()
         else
-            checkList[50] = FHD_OFF()
+            checkList[50] = CCF_OFF()
         end
     end
     if tsu[51] ~= checkList[51]  then
         if tsu[51]  then
-            checkList[51] = CCF_ON()
+            checkList[51] = CARD_ON()
         else
-            checkList[51] = CCF_OFF()
+            checkList[51] = CARD_OFF()
         end
     end
-    if tsu[52] ~= checkList[52]  then
-        if tsu[52]  then
-            checkList[52] = CARD_ON()
-        else
-            checkList[52] = CARD_OFF()
-        end
-    end
-    if tsu[53]  then
+    if tsu[52]  then
         gg.getListItems()
         gg.clearList()
         print("────୨ৎ────────୨ৎ────")
