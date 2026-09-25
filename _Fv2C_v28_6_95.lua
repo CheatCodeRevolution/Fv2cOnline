@@ -8,6 +8,11 @@ local gameName = info.label
 local package = info.packageName
 local version = info.versionName
 
+local GoC_PinList = { "PowerPin_ExtraPeachy_14d", "PowerPin_ReadyEddie_3d", "PowerPin_CashBunny_30d", "PowerPin_SoupStirrir_7d", "PowerPin_DogDrop_14d", "PowerPin_SpecialSeedDelivery_7d", "PowerPin_BoatRacePoints_01", "PowerPin_Rainbow_01", "PowerPin_ButterChurner_5d", "PowerPin_ExtremeExpansion_01", "PowerPin_ExtraStamps_01", "PowerPin_MineralUpgrade_01", "PowerPin_SpeedUpPrizedAnimal_01", "PowerPin_BarnUpgrade_01", "MakeItRainPin_01", "GoneFishingPin_01", "AncientMarinerPin_01", "ReadyEddiePin_01", "SpringSheepPin_01", "SweetToothPin_01", "EggtasticPin_01", "HolyCowPin_01", "PondWaitTime_Level3", "OldMillWaitTime_Level3", "PierWaitTime_Level3", "GladeWaitTime_Level3", "WaterTiles_Pin2", "WaterTiles_Pin1", "FestiveFinderPin_01", "MaxRefreshPin_01", "PeppyProduction_boost_consumable" };
+local GoC_ItemList = { "animalCount", "Blue_Ribbon_01", "Boost_Bell_01","BattlePass_Token", "coin", "CountyFair_Points", "Dinner_Bell_01", "FarmCup_Points", "Lighthouse_01_certificate", "MissionPursuit_Token", "Mineral_01", "MysteryCollection_Social_Token", "Net_Common_01", "Net_Uncommon_01", "Net_Rare_01", "OrderBoard_02_certificate", "Red_Ribbon_01", "Seashell_01", "Stamp_Rare_01", "Stamp_Common_01", "Stamp_Uncommon_01", "VipClub_Token", "WholeSaler_01_certificate", "Yellow_Ribbon_01", "ZooTokenAnimal", "ZooTokenAxe", "ZooTokenRubber", "ZooTokenShear", "ZooTokenStamp", "diamondglove", "elbowgrease", "key", "speedseed", "timber" };
+local GoC_SeaItemList = { "Ale_Mug_01", "Antique_Diving_Helmet_01", "Apple_01", "Apple_01_Bonus", "Apple_01_UpgradeMill", "Apple_Cider_01", "Apple_Pie_01", "Baked_Herring_01", "Baked_Potato_01", "Barn_Nail_01", "Barn_Padlock_01", "Bass_01", "Beeswax_Candle_01", "Birdhouse_Item_01", "Black_Rice_01", "Black_Rice_Pudding_01", "Black_Rice_Risotto_01", "Black_Rice_Sushi_01", "Black_Rice_and_Salmon_01", "Black_Veggie_Risotto_01", "Blackberries_01", "Blackberry_Custard_01", "Blackberry_Jelly_01", "Blackberry_Pie_01", "Blackberry_Tart_01", "Blanket_01", "Blueberries_01", "Blueberry_Granola_Muffin_01", "Blueberry_Jam_01", "Blueberry_Pancakes_01", "Bottle_01", "Brass_01", "Brie_Cheese_01", "Butter_01", "Buttermilk_Biscuit_01", "Cajun_Crab_01", "Candied_Cranberries_01", "Canvas_01", "Canvas_Tote_01", "Carrot_01", "Carrot_01_UpgradeMill", "Carrot_Cake_01", "Cat_Stuffed_Animal_01", "Cedar_Plank_Trout_01", "Cedar_Wood_01", "Champagne_01", "Chardonnay_01", "Cheesy_Urchin_Risotto_01", "Chives_01", "Clam_01", "Clam_Chowder_01", "Clam_Urchin_Paella_01", "Clay_01", "Clay_01_UpgradeMill", "Compass_01", "Copper_01", "Copper_Button_01", "Corn_01", "Corn_01_UpgradeMill", "Corn_Husk_Doll_01", "Cove_Punch_01", "Cow_Milk_01", "Cow_Milk_01_UpgradeMill", "Crab_01", "Crab_Cakes_01", "Crab_Souffle_01", "Cranberries_01", "Cranberry_Apple_Puff_Bono_01", "Cranberry_Jam_01", "Cranberry_Muffins_01", "Cranberry_Sauce_Bono_01", "Cranberry_Scones_01", "Deviled_Eggs_01", "Dog_Stuffed_Animal_01", "Dried_Fruit_01", "Duck_Feathers_01", "Duck_Stuffed_Animal_01", "Egg_01", "Egg_01_UpgradeMill", "Egg_Whites_01", "Farmers_Soup_01", "Fish_And_Chips_01", "Fish_Bowl_01", "Fish_Sauce_01", "Fishermans_Hat_01", "Flour_01", "Gelato_01", "Glass_Float_01", "Glass_Horse_01", "Goat_Cheese_01", "Goat_Milk_01", "Goat_Milk_01_UpgradeMill", "Granola_01", "Grape_Juice_01", "Herb_Butter_01", "Herring_01", "Herring_Potato_Salad_01", "Honey_Butter_01", "Honeycomb_01", "Honeycomb_01_UpgradeMill", "Jacket_01", "Jar_01", "Knit_Cap_01", "Krill_01", "Krill_Cakes_01", "Krill_Fries_01", "Krill_Potato_01", "Krill_Salad_01", "Krill_Tortilla_01", "Lemon_01", "Lemon_01_UpgradeMill", "Lemon_Gelato", "Lemon_Scented_Candle_01", "Lemon_Tart_01", "Lemon_Yogurt_01", "Lemon_Zest_01", "Lemonade_01", "Light_Bulb_01", "Loaded_Baked_Potato_01", "Lobster_01", "Lobster_Mac_And_Cheese_01", "Mac_And_Cheese_01", "Mermaid_Figurine_01", "Mineral_01", "Mint_01", "Mint_Chip_Cookies_01", "Mixed_Peppers_01", "Mixed_Peppers_01_UpgradeMill", "Oars_01", "Oatmeal_Cookies_01", "Oil_Lantern_01", "Ornate_Stein_01", "Overalls_01", "Pan_Fries_01", "Pan_Seared_Trout_01", "Peach_01", "Peach_01_UpgradeMill", "Peach_Yogurt_01", "Pear_01", "Pear_01_UpgradeMill", "Pear_Juice_01", "Pear_Preserves_01", "Pearl_01", "Pen_Shell_01", "Pen_Shell_Box_01", "Pen_Shell_Candle_01", "Pen_Shell_Jar_01", "Pen_Shell_Mermaid_01", "Pen_Shell_Mirror_01", "Pepper_Poppers_01", "Pillow_01", "Pinot_Noir_01", "Porcelain_Doll_01", "Pot_Pie_01", "Potato_01", "Potato_01_UpgradeMill", "Prized_Chicken_Feed_01", "Prized_Cow_Feed_01", "Prized_Goat_Feed_01", "Prized_Horse_Feed_01", "Prized_Pig_Feed_01", "Prized_Sheep_Feed_01", "Quartz_01", "Quilt_01", "Raggety_Doll_01", "Rain_Slicker_01", "Red_Grapes_01", "Red_Grapes_01_UpgradeMill", "Rocking_Chair_01", "Rose_Wine_01", "Royal_Sextant_01", "Salmon_01", "Salmon_Bisque_01", "Sandwich_and_Fries_01", "Scone_01", "Sea_Biscuits_01", "Sea_Salt_01", "Sea_Urchin_01", "Sea_Urchin_Gratin_01", "Sea_Urchin_Ice_Cream_01", "Seafood_Bruschetta_01", "Seafood_Chowder_01", "Seafood_Creole_01", "Seasoned_Clams_01", "Ship_In_A_Bottle_01", "Shovel_01", "Shrimp_01", "Shrimp_Gumbo_01", "Shrimp_Pasta_01", "Shrimp_Skewers_01", "Shrimp_and_Spinach_01", "Silver_Anchor_01", "Smoked_Salmon_01", "Smoked_Trout_01", "Socks_01", "Spinach_Bread_01", "Spinach_Caesar_01", "Spinach_Casserole_01", "Spinach_Salad_01", "Spyglass_01", "Strawberry_01", "Strawberry_01_UpgradeMill", "Strawberry_Gelato_Bono_01", "Strawberry_Jam_01", "Strawberry_Milk_01", "Strawberry_Shortcake_01", "Strawberry_Sundae_01", "Stuffed_Bass_01", "Sugar_01", "Sushi_and_Wasabi_01", "Sweet_Potato_Bites_01", "Swiss_Cheese_01", "Tangy_Ceviche_01", "Teddy_Bear_01", "Tin_01", "Tin_Button_01", "Tomato_01", "Tomato_01_UpgradeMill", "Tomato_Juice_01", "Trout_01", "Trout_Souflee_01", "Trout_and_Wilted_Spinach_01", "Trousers_01", "Wasabi_01", "Wasabi_Bread_01", "Water_Spinach_01", "Wheat_01", "Wheat_01_UpgradeMill", "Whistle_01", "White_Grapes_01", "White_Grapes_01_UpgradeMill", "Wind_Chime_01", "Wool_01", "Wool_01_UpgradeMill", "Woolen_Scarf_01", "Yarn_Doll_01" };
+local itemStringnt = { "Newshop_A_Line_Dress_01", "Newshop_Apricots_01", "Newshop_Artisan_Brooch_01", "Newshop_Baby_Wool_Set_01", "Newshop_Barley_01", "Newshop_Barley_Bagel_01", "Newshop_Barley_Bonbon_01", "Newshop_Barley_Cream_Bonbon_01", "Newshop_Black_Rice_Bagel_01", "Newshop_Blackberry_Cream_Torte_01", "Newshop_Boho_Dress_01", "Newshop_Boho_Fringe_Wrap_01", "Newshop_Boho_Market_Tote_01", "Newshop_Boho_Shawl_01", "Newshop_Brass_Perfume_Charm_01", "Newshop_Carolina_Reaper_01", "Newshop_Cedar_Aroma_Blend_01", "Newshop_Cedar_Farm_Piece_01", "Newshop_Cedar_Fragrance_Sticks_01", "Newshop_Cedar_Hanger_01", "Newshop_Cherries_01", "Newshop_Cherry_Bloom_01", "Newshop_Chive_Cream_Ganache_01", "Newshop_Chive_Egg_Taco_01", "Newshop_Classic_Trout_Pie_01", "Newshop_Clay_Barn_Tile_01", "Newshop_Clay_Farm_Brick_01", "Newshop_Coastal_Heat_Rub_01", "Newshop_Coffee_Beans_01", "Newshop_Color_Dye_01", "Newshop_Copper_Farm_Charm_01", "Newshop_Copper_Perfume_Holder_01", "Newshop_Cranberry_Butter_Pancake_01", "Newshop_Cranberry_Mango_Tart_01", "Newshop_Creamy_Milk_Bagel_01", "Newshop_Creamy_Salmon_Pie_01", "Newshop_Creamy_Trout_Quesadilla_01", "Newshop_Egg_Ganache_01", "Newshop_Everyday_Wool_Scarf_01", "Newshop_Farm_Craft_Dye_01", "Newshop_Farmhouse_Clay_Mug_01", "Newshop_Floral_Berry_Rub_01", "Newshop_Garden_Berry_Rub_01", "Newshop_Goat_Milk_Bonbon_01", "Newshop_Herb_Onion_Crepe_01", "Newshop_Herring_Barley_Pancake_01", "Newshop_Herring_Pot_Pie_01", "Newshop_Homemakers_Wool_Dress_01", "Newshop_Kitchen_Patch_Apron_01", "Newshop_Kiwi_01", "Newshop_Kiwi_Custard_Bagel_01", "Newshop_Kiwi_Empanadas_01", "Newshop_Kiwi_Soy_Bagel_01", "Newshop_Krill_Spinach_Taco_01", "Newshop_Lavender_01", "Newshop_Lavender_Berry_Scoop_01", "Newshop_Lavender_Cherry_Scoop_01", "Newshop_Lavender_Cooler_01", "Newshop_Lavender_Cranberry_Scoop_01", "Newshop_Lavender_Cream_Pancake_01", "Newshop_Lavender_Cream_Tart_01", "Newshop_Lavender_Pastry_Roll_01", "Newshop_Lobster_Sunrise_Pancake_01", "Newshop_Mango_01", "Newshop_Mango_Berry_Scoop_01", "Newshop_Mango_Blossom_01", "Newshop_Mango_Cooler_01", "Newshop_Mango_Marigold_Bagel_01", "Newshop_Mango_Mint_Truffle_01", "Newshop_Marigold_01", "Newshop_Marigold_Pastry_Twist_01", "Newshop_Milk_Ganache_01", "Newshop_Mint_Custard_Tart_01", "Newshop_Mod_Canvas_Purse_01", "Newshop_Mod_Wool_Dress_01", "Newshop_Orange_Blossom_01", "Newshop_Orange_Cream_Bagel_01", "Newshop_Orange_Farm_Figurine_01", "Newshop_Oranges_01", "Newshop_Pearl_Outfit_01", "Newshop_Pineapple_01", "Newshop_Pineapple_Bagel_Pie_01", "Newshop_Pineapple_Blossom_01", "Newshop_Pineapple_Cranberry_Tart_01", "Newshop_Pineapple_Pie_01", "Newshop_Pom_Cream_Bagel_01", "Newshop_Pomegranate_01", "Newshop_Pomegranate_Aroma_Soap_01", "Newshop_Pomegranate_Perfume_Oil_01", "Newshop_Puff_Pastry_Flowers_01", "Newshop_Quartz_Aroma_Stone_01", "Newshop_Reaper_Crunch_Fries_01", "Newshop_Reaper_Pepper_Rub_01", "Newshop_Reaper_Punch_01", "Newshop_Retro_Knit_Coat_01", "Newshop_Ruby_Berry_Refresher_01", "Newshop_Salted_Coffee_Pancake_01", "Newshop_Salted_Lavender_Scoop_01", "Newshop_Sea_Brew_Bonbon_01", "Newshop_Sea_Clam_Taco_01", "Newshop_Sea_Salt_Truffle_01", "Newshop_Sea_Surf_Rub_01", "Newshop_Shell_Perfume_Compact_01", "Newshop_Shell_Thread_01", "Newshop_Soft_Bagel_01", "Newshop_Sorghum_01", "Newshop_Soybeans_01", "Newshop_Spiced_Cranberry_Scoop_01", "Newshop_Spiced_Kiwi_Scoop_01", "Newshop_Spicy_Bass_Pancake_01", "Newshop_Spicy_Spinach_Pie_01", "Newshop_Spinach_Egg_Taco_01", "Newshop_Spinach_Savory_Tart_01", "Newshop_Spinach_Tart_01", "Newshop_Spinach_Tea_Pancake_01", "Newshop_Steamed_Trout_Pie_01", "Newshop_Sunday_Dress_01", "Newshop_Sunflower_01", "Newshop_Sunset_Crochet_Shawl_01", "Newshop_Sweater_Dress_01", "Newshop_Sweet_Barley_Scoop_01", "Newshop_Sweet_Heat_Rub_01", "Newshop_Tealeaves_01", "Newshop_Tin_Feed_Can_01", "Newshop_Tropical_Krill_Pancake_01", "Newshop_Tropical_Spice_Rub_01", "Newshop_Trout_Herb_Tart_01", "Newshop_Vintage_Dress_01", "Newshop_Wasabi_Lavender_Scoop_01", "Newshop_White_Onion_01", "Newshop_Winter_Kitchen_Shawl_01" };
+
 
 -- gg.setRanges(gg.REGION_ANONYMOUS)
 -- gg.searchNumber(";key")
@@ -2430,6 +2435,29 @@ end
 
 function EVI_ON()
 
+    -- Conflict check: if Normal Items hack is active, turn it off first
+    if ITM_initialized then
+        gg.toast("⚠️ Disabling Normal Items hack first...")
+        if ITM_initialized then
+            if info.x64 then
+                gg.setValues(ITM_RVT1)
+                gg.setValues(ITM_RVT2)
+                gg.setValues(ITM_RVT3)
+            else
+                gg.setValues(ITM_RVT1)
+                gg.setValues(ITM_RVT2)
+            end
+        end
+        ITM_initialized = false
+        ITM_protoLootResults = nil
+        ITM_RVT1 = nil
+        ITM_RVT2 = nil
+        ITM_RVT3 = nil
+        ITM_xxx = nil
+        if checkList then checkList[47] = nil end
+        gg.sleep(300)
+    end
+
     if not EVI_initialized then
         -- Ask source
         local selectfrom = gg.choice({
@@ -2513,16 +2541,6 @@ function EVI_ON()
         EVI_initialized = true
     end
 
-    -- Reset values each time
-    if info.x64 then
-        gg.setValues(EVI_RVT1)
-        gg.setValues(EVI_RVT2)
-        gg.setValues(EVI_RVT3)
-    else
-        gg.setValues(EVI_RVT1)
-        gg.setValues(EVI_RVT2)
-    end
-
     -- Find the highest event number
     local maxEventNum = -1
     for _, name in ipairs(EVI_dynamicNames) do
@@ -2559,29 +2577,70 @@ function EVI_ON()
     -- Sort the filtered items alphabetically
     table.sort(filteredItems, function(a, b) return a:lower() < b:lower() end)
 
-    -- Ask for amount
-    ::EVI_SELECT_AMT::
-    local pr1 = gg.prompt({'Input Amount'}, nil, {[1] = 'number'})
-    if pr1 == nil then return nil end
-    if #(pr1[1]) == 0 then goto EVI_SELECT_AMT return end
-    if type(tonumber(pr1[1])) ~= "number" then gg.alert("INPUT VALUE") goto EVI_SELECT_AMT return end
-    if tonumber(pr1[1]) < 1 or tonumber(pr1[1]) > 255 then gg.alert("INPUT VALUE 1~255") goto EVI_SELECT_AMT return end
-    EVI_pv1 = pr1[1]
-
-    local itemIndex = gg.choice(filteredItems, nil, "Select Item (" .. prefix .. "):")
-    if not itemIndex then return nil end
-
-    EVI_targetName = filteredItems[itemIndex]
-    EVI_targetLen = #EVI_targetName
-    gg.toast("Searching for " .. EVI_targetName)
-
-    if info.x64 then t = 32 else t = 4 end
-    gg.loadResults(EVI_xxx)
-    local ok = EVI_filterstringname()
-    if ok then
-        EVI_script()
+    -- Add Back to Home option
+    local itemChoicesEVI = {}
+    for _, name in ipairs(filteredItems) do
+        table.insert(itemChoicesEVI, name)
     end
-    return true
+    table.insert(itemChoicesEVI, "🏠 Back to Home (OFF)")
+
+    -- Item selection loop
+    while true do
+        local itemIndex = gg.choice(itemChoicesEVI, nil, "Select Item (" .. prefix .. "):\n────୨ৎ────────୨ৎ────")
+        if not itemIndex then 
+            EVI_OFF()
+            return nil 
+        end -- Return to main menu and turn OFF if cancelled
+
+        -- Back to Home
+        if itemIndex == #itemChoicesEVI then
+            EVI_OFF()
+            return nil
+        end
+
+        local amountSelected = false
+        while not amountSelected do
+            local pr1 = gg.prompt({'Input Amount (1~255)'}, nil, {[1] = 'number'})
+            if pr1 == nil then 
+                break -- Cancelled amount, break to go back to item selection
+            end
+            if #(pr1[1]) > 0 and tonumber(pr1[1]) and tonumber(pr1[1]) >= 1 and tonumber(pr1[1]) <= 255 then
+                EVI_pv1 = pr1[1]
+                amountSelected = true
+            else
+                gg.alert("INPUT VALUE 1~255")
+            end
+        end
+
+        if amountSelected then
+            -- Reset values before applying
+            if info.x64 then
+                gg.setValues(EVI_RVT1)
+                gg.setValues(EVI_RVT2)
+                gg.setValues(EVI_RVT3)
+            else
+                gg.setValues(EVI_RVT1)
+                gg.setValues(EVI_RVT2)
+            end
+
+            EVI_targetName = filteredItems[itemIndex]
+            EVI_targetLen = #EVI_targetName
+            gg.toast("Searching for " .. EVI_targetName)
+
+            if info.x64 then t = 32 else t = 4 end
+            gg.loadResults(EVI_xxx)
+            local ok = EVI_filterstringname()
+            if ok then
+                EVI_script()
+            end
+
+            -- Wait for user to collect item and tap GG again
+            while not gg.isVisible(true) do
+                gg.sleep(100)
+            end
+            gg.setVisible(false)
+        end
+    end
 end
 
 
@@ -2613,499 +2672,444 @@ function EVI_OFF()
 end
 
 
+-- ===== Normal Items Helper (uses EVI hack logic with custom lists) =====
+local ITM_offsetLength = info.x64 and 0x10 or 0x8
+local ITM_protoLootResults = nil
+local ITM_RVT1 = nil
+local ITM_RVT2 = nil
+local ITM_RVT3 = nil
+local ITM_xxx = nil
+local ITM_initialized = false
+
+function ITM_class()
+    gg.clearResults()
+    gg.setRanges(gg.REGION_OTHER)
+    gg.searchNumber(":"..x, 1)
+    if gg.getResultsCount() == 0 then E = 0 return end
+    local apexu = gg.getResults(gg.getResultsCount())
+    local filtered = {}
+    for i, v in ipairs(apexu) do
+        local baseAddr = v.address - 1
+        local checkVal = gg.getValues({{address = baseAddr, flags = 1}})[1].value
+        if checkVal == 0 then
+            local secondCheckAddr = baseAddr + #x + 1
+            local secondCheckVal = gg.getValues({{address = secondCheckAddr, flags = 1}})[1].value
+            if secondCheckVal == 0 then
+                filtered[#filtered + 1] = {address = secondCheckAddr - #x, flags = 1}
+            end
+        end
+    end
+    if #filtered == 0 then E = 0 return end
+    gg.setRanges(gg.REGION_ANONYMOUS)
+    gg.loadResults(filtered)
+    gg.searchPointer(0)
+    if gg.getResultsCount() == 0 then E = 0 return end
+    local pointers = gg.getResults(gg.getResultsCount())
+    local is64 = info.x64
+    local offsets = is64 and {o1 = 48, o2 = 56, vt = 32} or {o1 = 24, o2 = 28, vt = 4}
+    local function find_matches(off1, off2)
+        local targets = {}
+        local addr_list1, addr_list2 = {}, {}
+        for i, v in ipairs(pointers) do
+            addr_list1[i] = {address = v.address + off1, flags = offsets.vt}
+            addr_list2[i] = {address = v.address + off2, flags = offsets.vt}
+        end
+        local vals1 = gg.getValues(addr_list1)
+        local vals2 = gg.getValues(addr_list2)
+        for i = 1, #vals1 do
+            if vals1[i].value == vals2[i].value and #tostring(vals1[i].value) >= 8 then
+                targets[#targets + 1] = vals1[i].value
+            end
+        end
+        return targets
+    end
+    local apexp = find_matches(offsets.o1, offsets.o2)
+    if #apexp == 0 then
+        local retry_o1, retry_o2 = (is64 and 32 or 16), (is64 and 40 or 20)
+        apexp = find_matches(retry_o1, retry_o2)
+    end
+    if #apexp == 0 then E = 0 return end
+    gg.setRanges(gg.REGION_ANONYMOUS)
+    gg.clearResults()
+    local final_results = {}
+    for i, val in ipairs(apexp) do
+        gg.searchNumber(tonumber(val), offsets.vt)
+        local found = gg.getResults(gg.getResultsCount())
+        for j, res in ipairs(found) do
+            res.name = "APEX[GG]v2"
+            final_results[#final_results + 1] = res
+        end
+        gg.clearResults()
+    end
+    if #final_results == 0 then E = 0 return end
+    local load_list = {}
+    for i, v in ipairs(final_results) do
+        load_list[#load_list + 1] = {address = v.address + o, flags = t}
+    end
+    gg.loadResults(load_list)
+end
+
+function ITM_getPointedString(pointerAddress)
+    local offsetChars = ITM_offsetLength + 4
+    if pointerAddress == 0 then return nil end
+    local lengthData = gg.getValues({{address = pointerAddress + ITM_offsetLength, flags = gg.TYPE_DWORD}})
+    local len = lengthData[1].value
+    if len <= 0 or len > 200 then return nil end
+
+    local charTable = {}
+    for i = 0, len - 1 do
+        table.insert(charTable, {address = pointerAddress + offsetChars + (i * 2), flags = gg.TYPE_WORD})
+    end
+    charTable = gg.getValues(charTable)
+    local str = ""
+    for _, val in ipairs(charTable) do
+        local charCode = val.value & 0xFFFF
+        if charCode > 0 then
+            if charCode <= 0x7F then
+                str = str .. string.char(charCode)
+            elseif charCode <= 0x7FF then
+                str = str .. string.char(0xC0 | (charCode >> 6), 0x80 | (charCode & 0x3F))
+            else
+                str = str .. string.char(0xE0 | (charCode >> 12), 0x80 | ((charCode >> 6) & 0x3F), 0x80 | (charCode & 0x3F))
+            end
+        end
+    end
+    return str
+end
+
+function ITM_filterstringname()
+    local count = gg.getResultsCount()
+    local results = gg.getResults(count)
+    local pointers = {}
+
+    for i, v in ipairs(results) do
+        pointers[i] = {address = v.value + ITM_offsetLength, flags = gg.TYPE_DWORD}
+    end
+
+    local values = gg.getValues(pointers)
+    local matchingAddresses = {}
+    for i, val in ipairs(values) do
+        if val.value == ITM_targetLen then
+            table.insert(matchingAddresses, results[i].address)
+        end
+    end
+
+    if #matchingAddresses > 0 then
+        local finalResults = {}
+        for i, address in ipairs(matchingAddresses) do
+            finalResults[i] = {address = address, flags = t}
+        end
+        gg.loadResults(finalResults)
+    else
+        gg.alert("No matching addresses found for string length value " .. ITM_targetLen)
+        gg.clearResults()
+        return false
+    end
+
+    local results2 = gg.getResults(gg.getResultsCount())
+    local foundVal = nil
+    local finalMatchingAddresses = {}
+
+    for _, res in ipairs(results2) do
+        if ITM_getPointedString(res.value) == ITM_targetName then
+            foundVal = res.value
+            table.insert(finalMatchingAddresses, res.address)
+            break
+        end
+    end
+
+    if #finalMatchingAddresses > 0 then
+        local finalResults = {}
+        for i, address in ipairs(finalMatchingAddresses) do
+            finalResults[i] = {address = address, flags = t}
+        end
+        gg.loadResults(finalResults)
+
+        if info.x64 then
+            ITM_x1 = foundVal & 0xFFFFFFFF
+            ITM_x2 = (foundVal >> 32) & 0xFFFFFFFF
+        else
+            ITM_x1 = foundVal
+        end
+    else
+        gg.alert("Could not find string: " .. ITM_targetName)
+        return false
+    end
+    return true
+end
+
+function ITM_script()
+    local target = tonumber(ITM_pv1)
+    local pType = info.x64 and gg.TYPE_QWORD or gg.TYPE_DWORD
+    local itemOff = info.x64 and 0x10 or 0x8
+    local amountOff = info.x64 and 0x18 or 0xC
+
+    for i, res in ipairs(ITM_protoLootResults) do
+        local baseAddr = res.address
+
+        -- Edit item string pointer
+        if info.x64 then
+            gg.setValues({
+                {address = baseAddr + itemOff, flags = gg.TYPE_DWORD, value = ITM_x1},
+                {address = baseAddr + itemOff + 0x4, flags = gg.TYPE_DWORD, value = ITM_x2}
+            })
+        else
+            gg.setValues({
+                {address = baseAddr + itemOff, flags = gg.TYPE_DWORD, value = ITM_x1}
+            })
+        end
+
+        -- Bypass ISecureVar<int> _amount
+        local p = gg.getValues({{address = baseAddr + amountOff, flags = pType}})
+        local secureObj = p[1].value
+
+        if secureObj ~= nil and secureObj ~= 0 then
+            local q = gg.getValues({{address = secureObj + 0x20, flags = pType}})
+            local partsPtr = q[1].value
+
+            if partsPtr ~= nil and partsPtr ~= 0 then
+                local b = gg.getValues({{address = partsPtr + 0x20, flags = gg.TYPE_BYTE}})
+                local function ub(n) if n < 0 then return n + 256 else return n end end
+                local k0 = ub(b[1].value)
+
+                local encoded = (k0 ~ target) & 0xFF
+
+                gg.setValues({
+                    {address = partsPtr + 0x22, flags = gg.TYPE_BYTE, value = encoded},
+                    {address = secureObj + 0x38, flags = gg.TYPE_DWORD, value = target},
+                    {address = secureObj + 0x40, flags = gg.TYPE_BYTE, value = target}
+                })
+            end
+        end
+    end
+    clearAll()
+    gg.toast("FINISH")
+end
+
 function ITM_ON()
-    gg.alert("@credit - Ertan Hancer\n@ertanhancer", "","")
-    local saved = gg.getListItems()
-    if #saved == 0 then
-        x = "ProtoFixedLootInfo"
-        o = 0x10 t = 32 findClass()
-        o = 0x10 t = 32 sv = 8 checkString()
-        o = 0x14 t = 32 sv = 6357079 checkString()
-        o = 0x18 t = 32 sv = 6619252 checkString()
-        o = 0x1C t = 32 sv = 6226034 checkString()
-        o = 0x20 t = 32 sv = 3211312 checkString()
-        o = 0x0  t = 4 applyOffset()
+
+    -- Conflict check: if Event Items hack is active, turn it off first
+    if EVI_initialized then
+        gg.toast("⚠️ Disabling Event Items hack first...")
+        if EVI_initialized then
+            if info.x64 then
+                gg.setValues(EVI_RVT1)
+                gg.setValues(EVI_RVT2)
+                gg.setValues(EVI_RVT3)
+            else
+                gg.setValues(EVI_RVT1)
+                gg.setValues(EVI_RVT2)
+            end
+        end
+        EVI_initialized = false
+        EVI_protoLootResults = nil
+        EVI_RVT1 = nil
+        EVI_RVT2 = nil
+        EVI_RVT3 = nil
+        EVI_xxx = nil
+        EVI_dynamicNames = nil
+        if checkList then checkList[46] = nil end
+        gg.sleep(300)
+    end
+
+    if not ITM_initialized then
+        -- Ask source
+        local selectfrom = gg.choice({
+            "🍎 Apple Tree",
+            "💧 Water",
+        }, nil, '👇 Get Items From 👇')
+        if not selectfrom then return nil end
+        local ITM_item
+        if selectfrom == 1 then ITM_item = "Apple_01" end
+        if selectfrom == 2 then ITM_item = "Water_01" end
+
+        -- Find ProtoFixedLootInfo via EVI_refineclassname
+        EVI_targetClassname = "ProtoFixedLootInfo"
+        EVI_stringlengthvalue = 8
+        EVI_item = ITM_item
+        if info.x64 then EVI_oo = -0x10 else EVI_oo = -0x8 end
+        EVI_refineclassname()
+
         checkResults()
         if E == 0 then
-            gg.alert("Error : Meoww Happened")
+            gg.alert("Error: Could not find ProtoFixedLootInfo")
             return nil
         end
-        freeze()
+        ITM_protoLootResults = gg.getResults(gg.getResultsCount())
+
+        -- Get offset values for reset
+        if info.x64 then
+            o = 0x10 t = 4 applyOffset()
+            ITM_RVT1 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            ITM_RVT2 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            ITM_RVT3 = gg.getResults(gg.getResultsCount())
+        else
+            checkResults()
+            if E == 0 then
+                gg.alert("Error: No results after ProtoFixedLootInfo search")
+                return nil
+            end
+            o = 0x8 t = 4 applyOffset()
+            ITM_RVT1 = gg.getResults(gg.getResultsCount())
+            o = 0x4 t = 4 applyOffset()
+            ITM_RVT2 = gg.getResults(gg.getResultsCount())
+        end
         clearAll()
-        gg.setValues(frz)
-    else
-        frz = saved
+
+        -- Find ProtoInventoryItem class
+        x = "ProtoInventoryItem"
+        if info.x64 then o = 0x10 t = 32 else o = 0x8 t = 4 end
+        ITM_class()
+
+        ITM_xxx = gg.getResults(gg.getResultsCount())
+        clearAll()
+
+        ITM_initialized = true
     end
 
-    local items = {
-        "[ + ] Ale Mug",
-        "[ + ] Antique Diving Helmet",
-        "[ + ] Apple",
-        "[ + ] Apple Pie",
-        "[ + ] Baked Herring",
-        "[ + ] Baked Potato",
-        "[ + ] Bass",
-        "[ + ] Beeswax Candle",
-        "[ + ] Birdhouse",
-        "[ + ] Black Rice",
-        "[ + ] Black Rice and Salmon",
-        "[ + ] Black Rice Pudding",
-        "[ + ] Black Rice Risotto",
-        "[ + ] Blackrice Sushi",
-        "[ + ] Black Veggie Risotto",
-        "[ + ] Blackberries",
-        "[ + ] Blackberry Custard",
-        "[ + ] Blackberry Jam",
-        "[ + ] Blackberry Pie",
-        "[ + ] Blackberry Tart",
-        "[ + ] Blanket",
-        "[ + ] Blueberries",
-        "[ + ] Blueberry Granola Muffin",
-        "[ + ] Blueberry Jam",
-        "[ + ] Blueberry Pancakes",
-        "[ + ] Bottle",
-        "[ + ] Brass",
-        "[ + ] Brie Cheese",
-        "[ + ] Butter",
-        "[ + ] Cajun Crab",
-        "[ + ] Candied Cranberries",
-        "[ + ] Canvas",
-        "[ + ] Canvas Tote",
-        "[ + ] Carrot",
-        "[ + ] Carrot Cake",
-        "[ + ] Cedar Plank Trout",
-        "[ + ] Cedar Wood",
-        "[ + ] Champagne",
-        "[ + ] Chardonnay",
-        "[ + ] Cheesy Urchin Risotto",
-        "[ + ] Chives",
-        "[ + ] Clam",
-        "[ + ] Clam Chowder",
-        "[ + ] Clam Urchin Paella",
-        "[ + ] Clay",
-        "[ + ] Compass",
-        "[ + ] Copper",
-        "[ + ] Copper Button",
-        "[ + ] Corn",
-        "[ + ] Corn Husk Doll",
-        "[ + ] Country Biscuits",
-        "[ + ] Cove Punch",
-        "[ + ] Cow Milk",
-        "[ + ] Crab",
-        "[ + ] Crab Cake",
-        "[ + ] Crab Souffle",
-        "[ + ] Cranberries",
-        "[ + ] Cranberry Jam",
-        "[ + ] Cranberry Muffin",
-        "[ + ] Cranberry Scones",
-        "[ + ] Deviled Eggs",
-        "[ + ] Dried Fruits",
-        "[ + ] Duck Feathers",
-        "[ + ] Eggs",
-        "[ + ] Egg White",
-        "[ + ] Farmer's Soup",
-        "[ + ] Fish & Chips",
-        "[ + ] Fish Bowl",
-        "[ + ] Fish Sauce",
-        "[ + ] Fishermans Hat",
-        "[ + ] Flour",
-        "[ + ] Gelato",
-        "[ + ] Glass Float",
-        "[ + ] Glass Horse",
-        "[ + ] Goat Cheese",
-        "[ + ] Goat Milk",
-        "[ + ] Granola Bar",
-        "[ + ] Grape Juice",
-        "[ + ] Herb Butter",
-        "[ + ] Herring",
-        "[ + ] Herring Potato Salad",
-        "[ + ] Honey Butter",
-        "[ + ] Honeycomb",
-        "[ + ] Jacket",
-        "[ + ] Jar",
-        "[ + ] Knit Cap",
-        "[ + ] Krill",
-        "[ + ] Krill Cakes",
-        "[ + ] Krill Fries",
-        "[ + ] Krill Potato",
-        "[ + ] Krill Salad",
-        "[ + ] Krill Tortilla",
-        "[ + ] Lemon",
-        "[ + ] Lemon Gelato",
-        "[ + ] Lemon Tart",
-        "[ + ] Lemon Yogurt",
-        "[ + ] Lemon Zest",
-        "[ + ] Lemonade",
-        "[ + ] Lemon-Scented Candle",
-        "[ + ] Loaded Baked Potato",
-        "[ + ] Lobsters",
-        "[ + ] Lobster Mac & Cheese",
-        "[ + ] Mac&Cheese",
-        "[ + ] Mermaid Figure",
-        "[ + ] Mint",
-        "[ + ] Mint Chip Cookies",
-        "[ + ] Mixed Pepper",
-        "[ + ] Oars",
-        "[ + ] Oatmeal Cookie",
-        "[ + ] Oil Lantern",
-        "[ + ] Ornate Stein",
-        "[ + ] Overalls",
-        "[ + ] Pan Fries",
-        "[ + ] Pan-Seared Trout",
-        "[ + ] Peach",
-        "[ + ] Peach Yogurt",
-        "[ + ] Pear",
-        "[ + ] Pear Jam",
-        "[ + ] Pear Juice",
-        "[ + ] Pearl",
-        "[ + ] Pen Shell",
-        "[ + ] Pen Shell Box",
-        "[ + ] Pen Shell Candle",
-        "[ + ] Pen Shell Jar",
-        "[ + ] Pen Shell Mermaid",
-        "[ + ] Pen Shell Mirror",
-        "[ + ] Pepper Poppers",
-        "[ + ] Pillow",
-        "[ + ] Pinot Noir",
-        "[ + ] Plush Cat",
-        "[ + ] Plush Dog",
-        "[ + ] Plush Duck",
-        "[ + ] Porcelain Doll",
-        "[ + ] Pot Pie",
-        "[ + ] Potato",
-        "[ + ] Prized Chiken Feed",
-        "[ + ] Prized Cow Feed",
-        "[ + ] Prized Goat Feed",
-        "[ + ] Prized Horse Feed",
-        "[ + ] Prized Pig Feed",
-        "[ + ] Prized Sheep Feed",
-        "[ + ] Quartz",
-        "[ + ] Quilt",
-        "[ + ] Raggety Doll",
-        "[ + ] Rain Slicker",
-        "[ + ] Red Grapes",
-        "[ + ] Rocking Chair",
-        "[ + ] Rose Wine",
-        "[ + ] Royal Sextant",
-        "[ + ] Salmon",
-        "[ + ] Salmon Bisque",
-        "[ + ] Sandwich and Fries",
-        "[ + ] Scone",
-        "[ + ] Sea Biscuit",
-        "[ + ] Sea Salt",
-        "[ + ] Sea Urchin",
-        "[ + ] Sea Urchin Gratin",
-        "[ + ] Sea Urchin Ice Cream",
-        "[ + ] Seafood Bruschetta",
-        "[ + ] Seafood Chowder",
-        "[ + ] Seafood Creole",
-        "[ + ] Seasoned Clams",
-        "[ + ] Ship In A Bottle",
-        "[ + ] Shovel",
-        "[ + ] Shrimp",
-        "[ + ] Shrimp and Spinach",
-        "[ + ] Shrimp Gumbo",
-        "[ + ] Shrimp Pasta",
-        "[ + ] Shrimp Skewers",
-        "[ + ] Silver Anchor",
-        "[ + ] Smoked Salmon",
-        "[ + ] Smoked Trout",
-        "[ + ] Socks",
-        "[ + ] Sparkling Cider",
-        "[ + ] Spinach Bread",
-        "[ + ] Spinach Caesar",
-        "[ + ] Spinach Casserole",
-        "[ + ] Spinach Salad",
-        "[ + ] Spyglass",
-        "[ + ] Strawberry",
-        "[ + ] Strawberry Jam",
-        "[ + ] Strawberry Milk",
-        "[ + ] Strawberry Shortcake",
-        "[ + ] Strawberry Sundae",
-        "[ + ] Stuffed Bass",
-        "[ + ] Sugar",
-        "[ + ] Sushi and Wasabi",
-        "[ + ] Sweet Potato Bites",
-        "[ + ] Swiss Cheese",
-        "[ + ] Tangy Ceviche",
-        "[ + ] Teddy Bear",
-        "[ + ] Tin",
-        "[ + ] Tin Button",
-        "[ + ] Tomato",
-        "[ + ] Tomato Juice",
-        "[ + ] Trouser",
-        "[ + ] Trout",
-        "[ + ] Trout and Wilted Spinach",
-        "[ + ] Trout Souffle",
-        "[ + ] Wasabi",
-        "[ + ] Wasabi Bread",
-        "[ + ] Water Spinach",
-        "[ + ] Wheat",
-        "[ + ] Whistle",
-        "[ + ] White Grapes",
-        "[ + ] Wind Chime",
-        "[ + ] Wool",
-        "[ + ] Woolen Scarf",
-        "[ + ] Yarn Doll",
-        "[ + ] Grandmas Glade",
-        "[ + ] Mariner Orders (Lighthouse)",
-        "[ + ] Merryweather Mine",
-        "[ + ] Pappys Pond",
-        "[ + ] Silo"
-    }
-    local menu2 = gg.choice(items, nil, "💥 Select an item:\n────୨ৎ────────୨ৎ────")
-    if not menu2 then
-        gg.alert("No item selected")
-        return
-    end
+    -- Main category loop
+    while true do
+        -- Reset values before each new item
+        if info.x64 then
+            gg.setValues(ITM_RVT1)
+            gg.setValues(ITM_RVT2)
+            gg.setValues(ITM_RVT3)
+        else
+            gg.setValues(ITM_RVT1)
+            gg.setValues(ITM_RVT2)
+        end
 
-    local p = gg.prompt({ "Input Amount" }, nil, { [1] = "number" })
-    if not p or not tonumber(p[1]) or tonumber(p[1]) < 1 then
-        gg.alert("Invalid input")
-        return nil
+        -- Show item category selection with Back to Home
+        local categoryChoice = gg.choice({
+            "📌 Pin Items",
+            "🎒 Game Items",
+            "🌊 Sea Items",
+            "🏪 Newshop Items",
+            "🏠 Back to Home (OFF)",
+        }, nil, "📦 Select Item Category:\n────୨ৎ────────୨ৎ────")
+
+        if not categoryChoice then 
+            ITM_OFF()
+            return nil 
+        end  -- cancelled -> turn off and return
+
+        -- Back to Home - turn OFF and return
+        if categoryChoice == 5 then
+            ITM_OFF()
+            return nil
+        end
+
+        local selectedList = nil
+        local categoryTitle = ""
+        if categoryChoice == 1 then
+            selectedList = GoC_PinList
+            categoryTitle = "📌 Pin Items"
+        elseif categoryChoice == 2 then
+            selectedList = GoC_ItemList
+            categoryTitle = "🎒 Game Items"
+        elseif categoryChoice == 3 then
+            selectedList = GoC_SeaItemList
+            categoryTitle = "🌊 Sea Items"
+        elseif categoryChoice == 4 then
+            selectedList = itemStringnt
+            categoryTitle = "🏪 Newshop Items"
+        end
+
+        if not selectedList or #selectedList == 0 then
+            gg.alert("Item list is empty!")
+        else
+            -- Build choice menu with Back button
+            local itemChoices = {}
+            for i, name in ipairs(selectedList) do
+                table.insert(itemChoices, "[ + ] " .. name)
+            end
+            table.insert(itemChoices, "⬅️ Back to Categories")
+
+            -- Item selection loop (stays in same category)
+            local stayInCategory = true
+            while stayInCategory do
+                local itemIndex = gg.choice(itemChoices, nil, "Select Item (" .. categoryTitle .. "):\n────୨ৎ────────୨ৎ────")
+
+                if not itemIndex then 
+                    stayInCategory = false  -- cancelled, go back to categories
+                elseif itemIndex == #itemChoices then
+                    stayInCategory = false  -- Back to Categories selected
+                else
+                    local amountSelected = false
+                    while not amountSelected do
+                        local pr1 = gg.prompt({'Input Amount (1~255)'}, nil, {[1] = 'number'})
+                        if pr1 == nil then 
+                            break -- Cancelled amount, break to go back to item selection
+                        end
+                        if #(pr1[1]) > 0 and tonumber(pr1[1]) and tonumber(pr1[1]) >= 1 and tonumber(pr1[1]) <= 255 then
+                            ITM_pv1 = pr1[1]
+                            amountSelected = true
+                        else
+                            gg.alert("INPUT VALUE 1~255")
+                        end
+                    end
+
+                    if amountSelected then
+                        -- Reset values before applying new item
+                        if info.x64 then
+                            gg.setValues(ITM_RVT1)
+                            gg.setValues(ITM_RVT2)
+                            gg.setValues(ITM_RVT3)
+                        else
+                            gg.setValues(ITM_RVT1)
+                            gg.setValues(ITM_RVT2)
+                        end
+
+                        ITM_targetName = selectedList[itemIndex]
+                        ITM_targetLen = #ITM_targetName
+                        gg.toast("Searching for " .. ITM_targetName)
+
+                        if info.x64 then t = 32 else t = 4 end
+                        gg.loadResults(ITM_xxx)
+                        local ok = ITM_filterstringname()
+                        if ok then
+                            ITM_script()
+                        end
+
+                        -- Wait for user to collect item and tap GG again
+                        while not gg.isVisible(true) do
+                            gg.sleep(100)
+                        end
+                        gg.setVisible(false)
+                    end
+                end
+            end
+            -- Back to Categories → continue main loop
+        end
     end
-    pv1 = tonumber(p[1])
-    
-    if menu2==1 then y1=584708988 y2=-1 scripNew() end
-    if menu2==2 then y1=580532843 y2=-1 scripNew() end
-    if menu2==3 then y1=2056534324 y2=-1 scripNew() end
-    if menu2==4 then y1=757373017 y2=-1 scripNew() end
-    
-    if menu2==5 then y1=438771353 y2=-1 scripNew() end
-    if menu2==6 then y1=2033540097 y2=-1 scripNew() end
-    if menu2==7 then y1=1662852189 y2=-1 scripNew() end
-    if menu2==8 then y1=1380533299 y2=-1 scripNew() end
-    if menu2==9 then y1=1114600953 y2=-1 scripNew() end
-    if menu2==10 then y1=1024151519 y2=-1 scripNew() end
-    if menu2==11 then y1=1043083818 y2=-1 scripNew() end
-    if menu2==12 then y1=1099305937 y2=-1 scripNew() end
-    if menu2==13 then y1=1511367070 y2=-1 scripNew() end
-    if menu2==14 then y1=1187808016 y2=-1 scripNew() end
-    if menu2==15 then y1=233723854 y2=-1 scripNew() end
-    if menu2==16 then y1=767570657 y2=-1 scripNew() end
-    if menu2==17 then y1=1096487734 y2=-1 scripNew() end
-    if menu2==18 then y1=2137899422 y2=-1 scripNew() end
-    if menu2==19 then y1=1206796448 y2=-1 scripNew() end
-    if menu2==20 then y1=983962679 y2=-1 scripNew() end
-    if menu2==21 then y1=1842858245 y2=-1 scripNew() end
-    if menu2==22 then y1=1882411672 y2=-1 scripNew() end
-    if menu2==23 then y1=1830790717 y2=-1 scripNew() end
-    if menu2==24 then y1=190331075 y2=-1 scripNew() end
-    if menu2==25 then y1=162591925 y2=-1 scripNew() end
-    if menu2==26 then y1=1583217416 y2=-1 scripNew() end
-    if menu2==27 then y1=957927607 y2=-1 scripNew() end
-    if menu2==28 then y1=997605494 y2=-1 scripNew() end
-    if menu2==29 then y1=474415542 y2=-1 scripNew() end
-    
-    
-    if menu2==30 then y1=43045268 y2=-1 scripNew() end
-    if menu2==31 then y1=819748063 y2=-1 scripNew() end
-    if menu2==32 then y1=1200527644 y2=-1 scripNew() end
-    if menu2==33 then y1=1962459799 y2=-1 scripNew() end
-    if menu2==34 then y1=1528702703 y2=-1 scripNew() end
-    if menu2==35 then y1=1969829604 y2=-1 scripNew() end
-    if menu2==36 then y1=1905547111 y2=-1 scripNew() end
-    if menu2==37 then y1=1527285887 y2=-1 scripNew() end
-    if menu2==38 then y1=429824234 y2=-1 scripNew() end
-    if menu2==39 then y1=1045025557 y2=-1 scripNew() end
-    if menu2==40 then y1=1741694226 y2=-1 scripNew() end
-    if menu2==41 then y1=1135390172 y2=-1 scripNew() end
-    if menu2==42 then y1=370046541 y2=-1 scripNew() end
-    if menu2==43 then y1=762617362 y2=-1 scripNew() end
-    if menu2==44 then y1=1408793715 y2=-1 scripNew() end
-    if menu2==45 then y1=1341434345 y2=-1 scripNew() end
-    if menu2==46 then y1=2135483436 y2=-1 scripNew() end
-    if menu2==47 then y1=181127829 y2=-1 scripNew() end
-    if menu2==48 then y1=1290443054 y2=-1 scripNew() end
-    if menu2==49 then y1=480560382 y2=-1 scripNew() end
-    if menu2==50 then y1=401641490 y2=-1 scripNew() end
-    if menu2==51 then y1=629271241 y2=-1 scripNew() end
-    if menu2==52 then y1=524467268 y2=-1 scripNew() end
-    if menu2==53 then y1=487289217 y2=-1 scripNew() end
-    if menu2==54 then y1=307344386 y2=-1 scripNew() end
-    if menu2==55 then y1=1165551304 y2=-1 scripNew() end
-    if menu2==56 then y1=953227955 y2=-1 scripNew() end
-    if menu2==57 then y1=550869814 y2=-1 scripNew() end
-    if menu2==58 then y1=1032148527 y2=-1 scripNew() end
-    if menu2==59 then y1=1501635289 y2=-1 scripNew() end
-    if menu2==60 then y1=1299066260 y2=-1 scripNew() end
-    
-    if menu2==61 then y1=484431750 y2=-1 scripNew() end
-    if menu2==62 then y1=511408819 y2=-1 scripNew() end
-    if menu2==63 then y1=821387058 y2=-1 scripNew() end
-    
-    if menu2==64 then y1=2120430547 y2=-1 scripNew() end
-    if menu2==65 then y1=915020220 y2=-1 scripNew() end
-    
-    if menu2==66 then y1=433242438 y2=-1 scripNew() end
-    if menu2==67 then y1=1876776112 y2=-1 scripNew() end
-    if menu2==68 then y1=288018039 y2=-1 scripNew() end
-    if menu2==69 then y1=720272854 y2=-1 scripNew() end
-    if menu2==70 then y1=1071319662 y2=-1 scripNew() end
-    if menu2==71 then y1=1357751624 y2=-1 scripNew() end
-    
-    if menu2==72 then y1=427969226 y2=-1 scripNew() end
-    if menu2==73 then y1=1191344987 y2=-1 scripNew() end
-    if menu2==74 then y1=1223292370 y2=-1 scripNew() end
-    if menu2==75 then y1=793980477 y2=-1 scripNew() end
-    if menu2==76 then y1=641975235 y2=-1 scripNew() end
-    if menu2==77 then y1=1652496164 y2=-1 scripNew() end
-    if menu2==78 then y1=1785717968 y2=-1 scripNew() end
-    
-    if menu2==79 then y1=865983102 y2=-1 scripNew() end
-    if menu2==80 then y1=630212251 y2=-1 scripNew() end
-    if menu2==81 then y1=1815886685 y2=-1 scripNew() end
-    if menu2==82 then y1=559718598 y2=-1 scripNew() end
-    if menu2==83 then y1=815092402 y2=-1 scripNew() end
-    
-    if menu2==84 then y1=1973304702 y2=-1 scripNew() end
-    if menu2==85 then y1=1393658783 y2=-1 scripNew() end
-    
-    if menu2==86 then y1=1251119939 y2=-1 scripNew() end
-    if menu2==87 then y1=1124071716 y2=-1 scripNew() end
-    if menu2==88 then y1=1444414566 y2=-1 scripNew() end
-    if menu2==89 then y1=1067522712 y2=-1 scripNew() end
-    if menu2==90 then y1=1513204702 y2=-1 scripNew() end
-    if menu2==91 then y1=1769277298 y2=-1 scripNew() end
-    if menu2==92 then y1=1527700848 y2=-1 scripNew() end
-    
-    if menu2==93 then y1=67782079 y2=-1 scripNew() end
-    if menu2==94 then y1=427453308 y2=-1 scripNew() end
-    if menu2==95 then y1=1169376651 y2=-1 scripNew() end
-    if menu2==96 then y1=451500238 y2=-1 scripNew() end
-    if menu2==97 then y1=1493295682 y2=-1 scripNew() end
-    if menu2==98 then y1=1045153543 y2=-1 scripNew() end
-    if menu2==99 then y1=1664945974 y2=-1 scripNew() end
-    if menu2==100 then y1=558634293 y2=-1 scripNew() end
-    if menu2==101 then y1=1460784375 y2=-1 scripNew() end
-    if menu2==102 then y1=1509271265 y2=-1 scripNew() end
-    
-    if menu2==103 then y1=813854671 y2=-1 scripNew() end
-    if menu2==104 then y1=1722438611 y2=-1 scripNew() end
-    if menu2==105 then y1=2136698672 y2=-1 scripNew() end
-    if menu2==106 then y1=705842545 y2=-1 scripNew() end
-    if menu2==107 then y1=463804525 y2=-1 scripNew() end
-    
-    if menu2==108 then y1=1663026233 y2=-1 scripNew() end
-    if menu2==109 then y1=1745807241 y2=-1 scripNew() end
-    if menu2==110 then y1=1952515553 y2=-1 scripNew() end
-    if menu2==111 then y1=960361411 y2=-1 scripNew() end
-    if menu2==112 then y1=561584978 y2=-1 scripNew() end
-    
-    if menu2==113 then y1=1679071937 y2=-1 scripNew() end
-    if menu2==114 then y1=572283885 y2=-1 scripNew() end
-    if menu2==115 then y1=1242858541 y2=-1 scripNew() end
-    if menu2==116 then y1=1400004712 y2=-1 scripNew() end
-    if menu2==117 then y1=771091012 y2=-1 scripNew() end
-    if menu2==118 then y1=2131121158 y2=-1 scripNew() end
-    if menu2==119 then y1=1596593543 y2=-1 scripNew() end
-    if menu2==120 then y1=1307858964 y2=-1 scripNew() end
-    if menu2==121 then y1=615183866 y2=-1 scripNew() end
-    if menu2==122 then y1=1339770052 y2=-1 scripNew() end
-    if menu2==123 then y1=316413778 y2=-1 scripNew() end
-    if menu2==124 then y1=2111909728 y2=-1 scripNew() end
-    if menu2==125 then y1=649499202 y2=-1 scripNew() end
-    if menu2==126 then y1=172280464 y2=-1 scripNew() end
-    if menu2==127 then y1=1733178416 y2=-1 scripNew() end
-    if menu2==128 then y1=1179965051 y2=-1 scripNew() end
-    if menu2==129 then y1=743323227 y2=-1 scripNew() end
-    if menu2==130 then y1=639603949 y2=-1 scripNew() end
-    if menu2==131 then y1=1664295631 y2=-1 scripNew() end
-    if menu2==132 then y1=1961104322 y2=-1 scripNew() end
-    if menu2==133 then y1=584053963 y2=-1 scripNew() end
-    if menu2==134 then y1=1249969726 y2=-1 scripNew() end
-    if menu2==135 then y1=854672031 y2=-1 scripNew() end
-    if menu2==136 then y1=1343728189 y2=-1 scripNew() end
-    if menu2==137 then y1=152318775 y2=-1 scripNew() end
-    if menu2==138 then y1=185328661 y2=-1 scripNew() end
-    if menu2==139 then y1=637076475 y2=-1 scripNew() end
-    if menu2==140 then y1=1426907328 y2=-1 scripNew() end
-    if menu2==141 then y1=1885804815 y2=-1 scripNew() end
-    
-    if menu2==142 then y1=1583451799 y2=-1 scripNew() end
-    if menu2==143 then y1=87061843 y2=-1 scripNew() end
-    
-    if menu2==144 then y1=2022755633 y2=-1 scripNew() end
-    if menu2==145 then y1=2104545058 y2=-1 scripNew() end
-    if menu2==146 then y1=1393281460 y2=-1 scripNew() end
-    if menu2==147 then y1=923583125 y2=-1 scripNew() end
-    if menu2==148 then y1=773438943 y2=-1 scripNew() end
-    if menu2==149 then y1=1833304037 y2=-1 scripNew() end
-    
-    if menu2==150 then y1=1956180846 y2=-1 scripNew() end
-    if menu2==151 then y1=1797195464 y2=-1 scripNew() end
-    if menu2==152 then y1=2126719907 y2=-1 scripNew() end
-    if menu2==153 then y1=96923818 y2=-1 scripNew() end
-    if menu2==154 then y1=517077252 y2=-1 scripNew() end
-    if menu2==155 then y1=1141606664 y2=-1 scripNew() end
-    if menu2==156 then y1=2018490605 y2=-1 scripNew() end
-    if menu2==157 then y1=1045445505 y2=-1 scripNew() end
-    if menu2==158 then y1=2042400386 y2=-1 scripNew() end
-    if menu2==159 then y1=688451769 y2=-1 scripNew() end
-    if menu2==160 then y1=1051916352 y2=-1 scripNew() end
-    if menu2==161 then y1=1232836718 y2=-1 scripNew() end
-    if menu2==162 then y1=1222853125 y2=-1 scripNew() end
-    if menu2==163 then y1=1982316285 y2=-1 scripNew() end
-    if menu2==164 then y1=1103768341 y2=-1 scripNew() end
-    if menu2==165 then y1=1196605883 y2=-1 scripNew() end
-    if menu2==166 then y1=1345218702 y2=-1 scripNew() end
-    if menu2==167 then y1=2110017236 y2=-1 scripNew() end
-    if menu2==168 then y1=440022827 y2=-1 scripNew() end
-    if menu2==169 then y1=1204170634 y2=-1 scripNew() end
-    if menu2==170 then y1=471405435 y2=-1 scripNew() end
-    if menu2==171 then y1=536387662 y2=-1 scripNew() end
-    if menu2==172 then y1=2097887426 y2=-1 scripNew() end
-    if menu2==173 then y1=672992513 y2=-1 scripNew() end
-    if menu2==174 then y1=1060946504 y2=-1 scripNew() end
-    if menu2==175 then y1=1320888967 y2=-1 scripNew() end
-    if menu2==176 then y1=99612818 y2=-1 scripNew() end
-    if menu2==177 then y1=1745400274 y2=-1 scripNew() end
-    if menu2==178 then y1=1653841770 y2=-1 scripNew() end
-    if menu2==179 then y1=1046337774 y2=-1 scripNew() end
-    if menu2==180 then y1=1023354295 y2=-1 scripNew() end
-    if menu2==181 then y1=1022651770 y2=0 scripNew() end
-    if menu2==182 then y1=923150903 y2=-1 scripNew() end
-    if menu2==183 then y1=1255365216 y2=-1 scripNew() end
-    if menu2==184 then y1=1858908406 y2=-1 scripNew() end
-    if menu2==185 then y1=1273205001 y2=-1 scripNew() end
-    if menu2==186 then y1=1438718190 y2=-1 scripNew() end
-    if menu2==187 then y1=2067431436 y2=-1 scripNew() end
-    if menu2==188 then y1=1553338358 y2=-1 scripNew() end
-    if menu2==189 then y1=1327425141 y2=-1 scripNew() end
-    
-    if menu2==190 then y1=1852930163 y2=-1 scripNew() end
-    if menu2==191 then y1=282742189 y2=-1 scripNew() end
-    if menu2==192 then y1=2042227065 y2=-1 scripNew() end
-    if menu2==193 then y1=771608676 y2=-1 scripNew() end
-    if menu2==194 then y1=850790506 y2=-1 scripNew() end
-    if menu2==195 then y1=257027305 y2=-1 scripNew() end
-    if menu2==196 then y1=2054828325 y2=-1 scripNew() end
-    if menu2==197 then y1=1685235254 y2=-1 scripNew() end
-    if menu2==198 then y1=1387698379 y2=-1 scripNew() end
-    if menu2==199 then y1=2016456592 y2=-1 scripNew() end
-    
-    if menu2==200 then y1=322235033 y2=-1 scripNew() end
-    if menu2==201 then y1=2031378012 y2=-1 scripNew() end
-    if menu2==202 then y1=357001560 y2=-1 scripNew() end
-    if menu2==203 then y1=756102493 y2=-1 scripNew() end
-    if menu2==204 then y1=1365093926 y2=-1 scripNew() end
-    if menu2==205 then y1=1666948854 y2=-1 scripNew() end
-    if menu2==206 then y1=395809115 y2=-1 scripNew() end
-    if menu2==207 then y1=763312769 y2=-1 scripNew() end
-    if menu2==208 then y1=184046900 y2=-1 scripNew() end
-    if menu2==209 then y1=1398167486 y2=-1 scripNew() end
-    if menu2==210 then y1=-3033444999 y2=-1 scripNew() end
-    if menu2==211 then y1=-2906145885 y2=-1 scripNew() end
-    if menu2==212 then y1=804473471055 y2=-1 scripNew() end
-    if menu2==213 then y1=-3193205514 y2=-1 scripNew() end
-    if menu2==214 then y1=-4092688356 y2=-1 scripNew() end
-    
-    gg.toast("💂 Farm Hands Always Available - ON")
 end
 
 
 function ITM_OFF()
-    gg.toast("- Meowww -")
+    -- Restore original loot table values (undo the hack)
+    if ITM_initialized then
+        if info.x64 then
+            gg.setValues(ITM_RVT1)
+            gg.setValues(ITM_RVT2)
+            gg.setValues(ITM_RVT3)
+        else
+            gg.setValues(ITM_RVT1)
+            gg.setValues(ITM_RVT2)
+        end
+    end
+    -- Clear saved list items
+    gg.getListItems()
+    gg.clearList()
+    -- Reset cached data
+    ITM_initialized = false
+    ITM_protoLootResults = nil
+    ITM_RVT1 = nil
+    ITM_RVT2 = nil
+    ITM_RVT3 = nil
+    ITM_xxx = nil
+    gg.toast("- Normal Items Reset -")
     return nil
 end
 
@@ -3761,19 +3765,18 @@ end
 
 gg.setVisible(true)
 local menuList = {
-	-- 🐾 Items & Selling
+	-- 💎 Items & Selling
 	"❄️ Freeze All Items",
-	"💰 Sell Goods For Free",
+	"💸 Sell Goods For Free",
 	"🏷️ Sell Anything In Farm",
-	"🤠 Prospector Corner Item",
 
-	-- 💰 Expansions & Buildings
+	-- 🚜 Expansions & Buildings
 	"🚜 Expand Farm With Coins",
-	"⛩️ Upgrade All Buildings",
+	"🏘️ Upgrade All Buildings",
 
-	-- 🗝️ Costs & Keys
-	"🗝️ Item Cost 0 Key",
-	"🆓 Prospector Corner Free Play",
+	-- 🔑 Costs & Keys
+	"🔑 Item Cost 0 Key",
+	"🎰 Prospector Corner Free Play",
 
 	-- 🐷 Animals
 	"🌾 One Feed Gold",
@@ -3782,78 +3785,78 @@ local menuList = {
 	-- 🏕️ Farming & Barn
 	"⚡ Fast Farming",
 	"📦 Set Barn Seaway",
-	"💂 Farm Hands Always Available For Use",
+	"👨‍🌾 Farm Hands Always Available For Use",
 
-	-- 🙌 Helpers
-	"🙋 Request Farmhands",
-	"🤝 Send Helping Hands",
+	-- 👐 Helpers
+	"👋 Request Farmhands",
+	"👐 Send Helping Hands",
 
 	-- ⚡ Quest & Orders
-	"📜 Quest Book Fast Finish",
+	"📖 Quest Book Fast Finish",
 	"📝 Maries Orders Ask Button",
-	"🛒 Maries Orders Sell Active",
-	"📦 Marie Order Item Amount",
-	"📊 Maries Board Get/Send Xp, Coin, Timber",
+	"🛍️ Maries Orders Sell Active",
+	"🔢 Marie Order Item Amount",
+	"📈 Maries Board Get/Send Xp, Coin, Timber",
 	"🏆 Maries Order Weekly Score",
 
-	-- 🛒 Market
-	"🛒 Auto Buy (Market)",
+	-- 🛍️ Market
+	"💸 Auto Buy (Market)",
 	"👁️ Active Hidden Market Items",
 
-	-- 🎄 Fair & Workshops
+	-- 🎪 Fair & Workshops
 	"🎪 Country Fair Workshop Multiplier",
-	"🌾 Unlimited Crops/Workshop/Decoration",
-	"🛠️ Workshops Crafting Amount",
+	"♾️ Unlimited Crops/Workshop/Decoration",
+	"🔨 Workshops Crafting Amount",
 
-	-- 🎰 Co-Op
-	"🎰 Enable 8 Co-Op Slots",
-	"⏳ Co-op Order Instant Expire",
+	-- 👥 Co-Op
+	"👥 Enable 8 Co-Op Slots",
+	"⌛ Co-op Order Instant Expire",
 
-	-- 🙃 Chat & Social
+	-- 💬 Chat & Social
 	"💬 Unlock Chat Emoji",
 	"🎨 Edit UserName With Rainbow Colour",
 
 	-- ⛵ Boat Race
 	"⛵ (Br) Bonus Task Points",
-	"⛵ (Br) Set Bonus Task Completed",
-	"⛵ (Br) Set Task Limit",
-	"⛵ (Br) Bonus Task Skip Price",
-	"⛵ (Br) Task Requirement (1)",
-	"⛵ (Br) Co-op Shoot Point",
+	"✅ (Br) Set Bonus Task Completed",
+	"🎯 (Br) Set Task Limit",
+	"⏭️ (Br) Bonus Task Skip Price",
+	"1️⃣ (Br) Task Requirement (1)",
+	"✨ (Br) Co-op Shoot Point",
 
-	-- ♻️ Wheel & Spins
+	-- 🎡 Wheel & Spins
 	"🎡 Prize Wheel Unlimited Spins",
 
 	-- ⭐ Decoration
 	"⭐ Unlimited Decoration",
 
-	-- 🔓 Unlocks & Passes
-	"📜 Unlock Heirloom Pass",
-	"🔮 Unlock Mystery Master Pass",
-	"🥇 Unlock Elite Plus Badge",
+	-- 🎟️ Unlocks & Passes
+	"🎟️ Unlock Heirloom Pass",
+	"🎫 Unlock Mystery Master Pass",
+	"🏅 Unlock Elite Plus Badge",
 
 
 	-- 🎃 Elite Features
-	"⚡ Auto Complete Elite Tokens",
+	"✨ Auto Complete Elite Tokens",
 	"🎖️ Get Elite Badge Tokens",
 
-	-- 🤷 Place & Entity
-	"🗺️ Place Entity Anywhere (Water/Land)",
+	-- 🌍 Place & Entity
+	"🌍 Place Entity Anywhere (Water/Land)",
 
-	-- 🔓 Unlimited Resources
-	"🌾 Unlimited Crops, Animals, Key Maker",
+	-- 🌟 Unlimited Resources
+	"🌟 Unlimited Crops, Animals, Key Maker",
 
-	-- 🔥 Water Items
-	"🌊 Get Event Items",
-	"💧 Get Normal Items (From Water)",
+	-- 🎁 Water Items
+	"🎁 Get Event Items",
+	"🎒 Get Normal Items",
 
-	"🎁 Farm Hands Reward Amount",
-	"🎯 Farm Hands Reward Chance 100%",
-	"🍬 Confection Collection Fast Finish",
-	"🎴 Disable Card Collection Pop-up",
+	"💎 Farm Hands Reward Amount",
+	"💯 Farm Hands Reward Chance 100%",
+	"🍭 Confection Collection Fast Finish",
+	"🃏 Disable Card Collection Pop-up",
 
-	-- 🚫 Exit
-	"🚫 Exit Script...."
+	-- ❌ Exit
+	"❌ Exit Script...."
 }
 
 -- Auto-translate menu (skip if English is selected)
@@ -3867,13 +3870,13 @@ if TargetLang ~= "en" then
     gg.setVisible(true)
 end
 
-local checkList = {
+checkList = {
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
     nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, 
-    nil, nil
+    nil
 }
 
 function menu()
@@ -3907,350 +3910,345 @@ function menu()
     end
     if tsu[4] ~= checkList[4]  then
         if tsu[4]  then
-            checkList[4] = PC_ON()
+            checkList[4] = CanExpandWithCoins_ON()
         else
-            checkList[4] = PC_OFF()
+            checkList[4] = CanExpandWithCoins_OFF()
         end
     end
     if tsu[5] ~= checkList[5]  then
         if tsu[5]  then
-            checkList[5] = CanExpandWithCoins_ON()
+            checkList[5] = UB_ON()
         else
-            checkList[5] = CanExpandWithCoins_OFF()
+            checkList[5] = UB_OFF()
         end
     end
     if tsu[6] ~= checkList[6]  then
         if tsu[6]  then
-            checkList[6] = UB_ON()
+            checkList[6] = ItemCost_ON()
         else
-            checkList[6] = UB_OFF()
+            checkList[6] = ItemCost_OFF()
         end
     end
     if tsu[7] ~= checkList[7]  then
         if tsu[7]  then
-            checkList[7] = ItemCost_ON()
+            checkList[7] = ProspectorCornerFreePlay_ON()
         else
-            checkList[7] = ItemCost_OFF()
+            checkList[7] = ProspectorCornerFreePlay_OFF()
         end
     end
     if tsu[8] ~= checkList[8]  then
         if tsu[8]  then
-            checkList[8] = ProspectorCornerFreePlay_ON()
+            checkList[8] = OFG_ON()
         else
-            checkList[8] = ProspectorCornerFreePlay_OFF()
+            checkList[8] = OFG_OFF()
         end
     end
     if tsu[9] ~= checkList[9]  then
         if tsu[9]  then
-            checkList[9] = OFG_ON()
+            checkList[9] = AWI_ON()
         else
-            checkList[9] = OFG_OFF()
+            checkList[9] = AWI_OFF()
         end
     end
     if tsu[10] ~= checkList[10]  then
         if tsu[10]  then
-            checkList[10] = AWI_ON()
+            checkList[10] = FFC_ON()
         else
-            checkList[10] = AWI_OFF()
+            checkList[10] = FFC_OFF()
         end
     end
     if tsu[11] ~= checkList[11]  then
         if tsu[11]  then
-            checkList[11] = FFC_ON()
+            checkList[11] = SetBarnSeaway_ON()
         else
-            checkList[11] = FFC_OFF()
+            checkList[11] = SetBarnSeaway_OFF()
         end
     end
     if tsu[12] ~= checkList[12]  then
         if tsu[12]  then
-            checkList[12] = SetBarnSeaway_ON()
+            checkList[12] = HH_ON()
         else
-            checkList[12] = SetBarnSeaway_OFF()
+            checkList[12] = HH_OFF()
         end
     end
     if tsu[13] ~= checkList[13]  then
         if tsu[13]  then
-            checkList[13] = HH_ON()
+            checkList[13] = FHND_ON()
         else
-            checkList[13] = HH_OFF()
+            checkList[13] = FHND_OFF()
         end
     end
     if tsu[14] ~= checkList[14]  then
         if tsu[14]  then
-            checkList[14] = FHND_ON()
+            checkList[14] = SHND_ON()
         else
-            checkList[14] = FHND_OFF()
+            checkList[14] = SHND_OFF()
         end
     end
     if tsu[15] ~= checkList[15]  then
         if tsu[15]  then
-            checkList[15] = SHND_ON()
+            checkList[15] = QuestBookFastFinish_ON()
         else
-            checkList[15] = SHND_OFF()
+            checkList[15] = QuestBookFastFinish_OFF()
         end
     end
     if tsu[16] ~= checkList[16]  then
         if tsu[16]  then
-            checkList[16] = QuestBookFastFinish_ON()
+            checkList[16] = MariesOrdersAskButton_ON()
         else
-            checkList[16] = QuestBookFastFinish_OFF()
+            checkList[16] = MariesOrdersAskButton_OFF()
         end
     end
     if tsu[17] ~= checkList[17]  then
         if tsu[17]  then
-            checkList[17] = MariesOrdersAskButton_ON()
+            checkList[17] = MariesOrdersSellActive_ON()
         else
-            checkList[17] = MariesOrdersAskButton_OFF()
+            checkList[17] = MariesOrdersSellActive_OFF()
         end
     end
     if tsu[18] ~= checkList[18]  then
         if tsu[18]  then
-            checkList[18] = MariesOrdersSellActive_ON()
+            checkList[18] = MIA_ON()
         else
-            checkList[18] = MariesOrdersSellActive_OFF()
+            checkList[18] = MIA_OFF()
         end
     end
     if tsu[19] ~= checkList[19]  then
         if tsu[19]  then
-            checkList[19] = MIA_ON()
+            checkList[19] = MB_ON()
         else
-            checkList[19] = MIA_OFF()
+            checkList[19] = MB_OFF()
         end
     end
     if tsu[20] ~= checkList[20]  then
         if tsu[20]  then
-            checkList[20] = MB_ON()
+            checkList[20] = MWS_ON()
         else
-            checkList[20] = MB_OFF()
+            checkList[20] = MWS_OFF()
         end
     end
     if tsu[21] ~= checkList[21]  then
         if tsu[21]  then
-            checkList[21] = MWS_ON()
+            checkList[21] = AutoBuyMarket_ON()
         else
-            checkList[21] = MWS_OFF()
+            checkList[21] = AutoBuyMarket_OFF()
         end
     end
     if tsu[22] ~= checkList[22]  then
         if tsu[22]  then
-            checkList[22] = AutoBuyMarket_ON()
+            checkList[22] = AHM_ON()
         else
-            checkList[22] = AutoBuyMarket_OFF()
+            checkList[22] = AHM_OFF()
         end
     end
     if tsu[23] ~= checkList[23]  then
         if tsu[23]  then
-            checkList[23] = AHM_ON()
+            checkList[23] = GetCountyFairPointsMultiplierForBuildingLevel_ON()
         else
-            checkList[23] = AHM_OFF()
-        end
-    end
-    if tsu[24] ~= checkList[24]  then
-        if tsu[24]  then
-            checkList[24] = GetCountyFairPointsMultiplierForBuildingLevel_ON()
-        else
-            checkList[24] = GetCountyFairPointsMultiplierForBuildingLevel_OFF()
+            checkList[23] = GetCountyFairPointsMultiplierForBuildingLevel_OFF()
         end
     end
     -- Add this new condition for county fair fast finish
-    if tsu[25] ~= checkList[25]  then
-        if tsu[25]  then
-            checkList[25] = CFF_ON()
+    if tsu[24] ~= checkList[24]  then
+        if tsu[24]  then
+            checkList[24] = CFF_ON()
         else
-            checkList[25] = CFF_OFF()
+            checkList[24] = CFF_OFF()
         end
     end
     -- Update the indices for all subsequent items (add +1 to each index)
+    if tsu[25] ~= checkList[25]  then
+        if tsu[25]  then
+            checkList[25] = WorkshopsCraftingAmount_ON()
+        else
+            checkList[25] = WorkshopsCraftingAmount_OFF()
+        end
+    end
     if tsu[26] ~= checkList[26]  then
         if tsu[26]  then
-            checkList[26] = WorkshopsCraftingAmount_ON()
+            checkList[26] = CoopSlots8_ON()
         else
-            checkList[26] = WorkshopsCraftingAmount_OFF()
+            checkList[26] = CoopSlots8_OFF()
         end
     end
     if tsu[27] ~= checkList[27]  then
         if tsu[27]  then
-            checkList[27] = CoopSlots8_ON()
+            checkList[27] = CEX_ON()
         else
-            checkList[27] = CoopSlots8_OFF()
+            checkList[27] = CEX_OFF()
         end
     end
     if tsu[28] ~= checkList[28]  then
         if tsu[28]  then
-            checkList[28] = CEX_ON()
+            checkList[28] = UnlockChatEmoji_ON()
         else
-            checkList[28] = CEX_OFF()
+            checkList[28] = UnlockChatEmoji_OFF()
         end
     end
     if tsu[29] ~= checkList[29]  then
         if tsu[29]  then
-            checkList[29] = UnlockChatEmoji_ON()
+            checkList[29] = NC_ON()
         else
-            checkList[29] = UnlockChatEmoji_OFF()
+            checkList[29] = NC_OFF()
         end
     end
     if tsu[30] ~= checkList[30]  then
         if tsu[30]  then
-            checkList[30] = NC_ON()
+            checkList[30] = BonusTaskPoints_ON()
         else
-            checkList[30] = NC_OFF()
+            checkList[30] = BonusTaskPoints_OFF()
         end
     end
     if tsu[31] ~= checkList[31]  then
         if tsu[31]  then
-            checkList[31] = BonusTaskPoints_ON()
+            checkList[31] = RBM_ON()
         else
-            checkList[31] = BonusTaskPoints_OFF()
+            checkList[31] = RBM_OFF()
         end
     end
     if tsu[32] ~= checkList[32]  then
         if tsu[32]  then
-            checkList[32] = RBM_ON()
+            checkList[32] = UnlimitedBRDiscardTask_ON()
         else
-            checkList[32] = RBM_OFF()
+            checkList[32] = UnlimitedBRDiscardTask_OFF()
         end
     end
     if tsu[33] ~= checkList[33]  then
         if tsu[33]  then
-            checkList[33] = UnlimitedBRDiscardTask_ON()
+            checkList[33] = BonusTaskSkipPrice_ON()
         else
-            checkList[33] = UnlimitedBRDiscardTask_OFF()
+            checkList[33] = BonusTaskSkipPrice_OFF()
         end
     end
     if tsu[34] ~= checkList[34]  then
         if tsu[34]  then
-            checkList[34] = BonusTaskSkipPrice_ON()
+            checkList[34] = BoatRaceTaskRequirement_ON()
         else
-            checkList[34] = BonusTaskSkipPrice_OFF()
+            checkList[34] = BoatRaceTaskRequirement_OFF()
         end
     end
     if tsu[35] ~= checkList[35]  then
         if tsu[35]  then
-            checkList[35] = BoatRaceTaskRequirement_ON()
+            checkList[35] = CSP_ON()
         else
-            checkList[35] = BoatRaceTaskRequirement_OFF()
+            checkList[35] = CSP_OFF()
         end
     end
     if tsu[36] ~= checkList[36]  then
         if tsu[36]  then
-            checkList[36] = CSP_ON()
+            checkList[36] = SPN_ON()
         else
-            checkList[36] = CSP_OFF()
+            checkList[36] = SPN_OFF()
         end
     end
     if tsu[37] ~= checkList[37]  then
         if tsu[37]  then
-            checkList[37] = SPN_ON()
+            checkList[37] = Deco_ON()
         else
-            checkList[37] = SPN_OFF()
+            checkList[37] = Deco_OFF()
         end
     end
     if tsu[38] ~= checkList[38]  then
         if tsu[38]  then
-            checkList[38] = Deco_ON()
+            checkList[38] = HPass_ON()
         else
-            checkList[38] = Deco_OFF()
+            checkList[38] = HPass_OFF()
         end
     end
     if tsu[39] ~= checkList[39]  then
         if tsu[39]  then
-            checkList[39] = HPass_ON()
+            checkList[39] = MPass_ON()
         else
-            checkList[39] = HPass_OFF()
+            checkList[39] = MPass_OFF()
         end
     end
     if tsu[40] ~= checkList[40]  then
         if tsu[40]  then
-            checkList[40] = MPass_ON()
+            checkList[40] = ELPass_ON()
         else
-            checkList[40] = MPass_OFF()
-        end
-    end
-    if tsu[41] ~= checkList[41]  then
-        if tsu[41]  then
-            checkList[41] = ELPass_ON()
-        else
-            checkList[41] = ELPass_OFF()
+            checkList[40] = ELPass_OFF()
         end
     end
 
+    if tsu[41] ~= checkList[41]  then
+        if tsu[41]  then
+            checkList[41] = ELtoken_ON()
+        else
+            checkList[41] = ELtoken_OFF()
+        end
+    end
     if tsu[42] ~= checkList[42]  then
         if tsu[42]  then
-            checkList[42] = ELtoken_ON()
+            checkList[42] = ELItoken_ON()
         else
-            checkList[42] = ELtoken_OFF()
+            checkList[42] = ELItoken_OFF()
         end
     end
     if tsu[43] ~= checkList[43]  then
         if tsu[43]  then
-            checkList[43] = ELItoken_ON()
+            checkList[43] = PEA_ON()
         else
-            checkList[43] = ELItoken_OFF()
+            checkList[43] = PEA_OFF()
         end
     end
     if tsu[44] ~= checkList[44]  then
         if tsu[44]  then
-            checkList[44] = PEA_ON()
+            checkList[44] = UC_ON()
         else
-            checkList[44] = PEA_OFF()
+            checkList[44] = UC_OFF()
         end
     end
     if tsu[45] ~= checkList[45]  then
         if tsu[45]  then
-            checkList[45] = UC_ON()
+            checkList[45] = EVI_ON()
         else
-            checkList[45] = UC_OFF()
+            checkList[45] = EVI_OFF()
         end
     end
     if tsu[46] ~= checkList[46]  then
         if tsu[46]  then
-            checkList[46] = EVI_ON()
+            checkList[46] = ITM_ON()
         else
-            checkList[46] = EVI_OFF()
+            checkList[46] = ITM_OFF()
         end
     end
     if tsu[47] ~= checkList[47]  then
         if tsu[47]  then
-            checkList[47] = ITM_ON()
+            checkList[47] = FHA_ON()
         else
-            checkList[47] = ITM_OFF()
+            checkList[47] = FHA_OFF()
         end
     end
     if tsu[48] ~= checkList[48]  then
         if tsu[48]  then
-            checkList[48] = FHA_ON()
+            checkList[48] = FHD_ON()
         else
-            checkList[48] = FHA_OFF()
+            checkList[48] = FHD_OFF()
         end
     end
     if tsu[49] ~= checkList[49]  then
         if tsu[49]  then
-            checkList[49] = FHD_ON()
+            checkList[49] = CCF_ON()
         else
-            checkList[49] = FHD_OFF()
+            checkList[49] = CCF_OFF()
         end
     end
     if tsu[50] ~= checkList[50]  then
         if tsu[50]  then
-            checkList[50] = CCF_ON()
+            checkList[50] = CARD_ON()
         else
-            checkList[50] = CCF_OFF()
+            checkList[50] = CARD_OFF()
         end
     end
-    if tsu[51] ~= checkList[51]  then
-        if tsu[51]  then
-            checkList[51] = CARD_ON()
-        else
-            checkList[51] = CARD_OFF()
-        end
-    end
-    if tsu[52]  then
+    if tsu[51]  then
         gg.getListItems()
         gg.clearList()
-        print("────୨ৎ────────୨ৎ────")
-        print("TG : @BadLuck_69")
-        print("YT : CheatCode Revolution")
-        print("────୨ৎ────────୨ৎ────")
+        print("╔══════════════════════════════════")
+        print("║      ✨ Thank You For Using! ✨ ")
+        print("║                                  ")
+        print("║      DEV : BadLuck_69            ")
+        print("║      OWNER : Manav               ")
+        print("╚══════════════════════════════════")
         os.exit()
     end
 end
