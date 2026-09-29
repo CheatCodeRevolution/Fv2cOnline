@@ -1776,7 +1776,7 @@ function MWS_ON()
   o=0xC8 t=4 applyOffset()
   x=0 t=4 editAll()
   clearAll()
-  setValue(currentOffset.set_MyWeeklyContribution+0x28, 4, "~A8 MOV W20, #0x64")
+  setValue(currentOffset.set_MyWeeklyContribution+0x40, 4, "~A8 MOV W20, #0x64")
   gg.toast("- Marie weekly score enabled -")
   return true
 end
