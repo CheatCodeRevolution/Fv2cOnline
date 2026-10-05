@@ -1805,23 +1805,74 @@ strv4=7471183
 
 
 function MWS_ON()
-  x="CoopOrderHelpContext" 
+  x="CoopOrderHelpContext"
   o=0x0 t=4 findClass()
-  o=0x8 t=4 applyOffset()
+  if arch then o=0x8 else o=0x4 end t=4 applyOffset()
   x=0 t=4 refineNum()
-  checkResults() 
-  if E==0 then 
-     gg.alert("Sorry something wrong happened") 
+  checkResults()
+  if E==0 then
+     gg.alert("Sorry something wrong happened")
      return nil
   end
-  o=0x10 t=32 applyOffset()
-  o=0x10 t=32 sv=strv1 checkString()
-  o=0x14 t=32 sv=strv2 checkString()
-  o=0x18 t=32 sv=strv3 checkString()
-  o=0x1C t=32 sv=strv4 checkString()
-  o=0xC8 t=4 applyOffset()
-  x=0 t=4 editAll()
+
+  if arch then
+    o=0x10 t=32 applyOffset()
+    o=0x10 t=32 sv=strv1 checkString()
+    o=0x14 t=32 sv=strv2 checkString()
+    o=0x18 t=32 sv=strv3 checkString()
+    o=0x1C t=32 sv=strv4 checkString()
+    o=0xC8 t=4 applyOffset()
+  else
+    o=0x8 t=4 applyOffset()
+    o=0x8 t=4 sv=strv1 checkString()
+    o=0xC t=4 sv=strv2 checkString()
+    o=0x10 t=4 sv=strv3 checkString()
+    o=0x14 t=4 sv=strv4 checkString()
+    o=0x74 t=4 applyOffset()
+  end
+
+  if arch then o=-0xE0 else o=-0x80 end t=4 applyOffset()
+  local rewards = gg.getResults(gg.getResultsCount())
   clearAll()
+
+  local target = 1
+  local pType = arch and gg.TYPE_QWORD or gg.TYPE_DWORD
+  local amountOff = arch and 0xE0 or 0x80
+
+  -- Dynamic structure offsets based on architecture
+  local partsOff   = arch and 0x20 or 0x10
+  local arrayData  = arch and 0x20 or 0x10
+  local arrayEnc   = arch and 0x22 or 0x12
+  local targetDword = arch and 0x38 or 0x1C
+  local targetByte  = arch and 0x40 or 0x20
+
+  for i, res in ipairs(rewards) do
+      local baseAddr = res.address
+
+      -- Bypass ISecureVar<int> _amount
+      local p = gg.getValues({{address=baseAddr+amountOff, flags=pType}})
+      local secureObj = p[1].value
+
+      if secureObj ~= nil and secureObj ~= 0 then
+          local q = gg.getValues({{address=secureObj+partsOff, flags=pType}})
+          local partsPtr = q[1].value
+
+          if partsPtr ~= nil and partsPtr ~= 0 then
+              local b = gg.getValues({{address=partsPtr+arrayData, flags=gg.TYPE_BYTE}})
+              local function ub(n) if n < 0 then return n + 256 else return n end end
+              local k0 = ub(b[1].value)
+
+              local encoded = (k0 ~ target) & 0xFF
+
+              gg.setValues({
+                  {address=partsPtr+arrayEnc, flags=gg.TYPE_BYTE, value=encoded},
+                  {address=secureObj+targetDword, flags=gg.TYPE_DWORD, value=target},
+                  {address=secureObj+targetByte, flags=gg.TYPE_BYTE, value=target}
+              })
+          end
+      end
+  end
+
   setValue(currentOffset.set_MyWeeklyContribution+0x40, 4, "~A8 MOV W20, #0x64")
   gg.toast("- Marie weekly score enabled -")
   return true
@@ -1829,7 +1880,7 @@ end
 
 
 function MWS_OFF()
-    reset(currentOffset.set_MyWeeklyContribution+0x28)
+    reset(currentOffset.set_MyWeeklyContribution+0x40)
     gg.toast("- Weekly  Score Disabled-")
     return nil
 end
